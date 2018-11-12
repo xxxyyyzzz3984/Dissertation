@@ -1,0 +1,58 @@
+\contentsline {section}{\numberline {}Abstract}{iii}{section.1}
+\contentsline {section}{\hspace {1.5pt} List of Figures}{vi}{section*.1}
+\contentsline {section}{\numberline {}Introduction}{1}{section.2}
+\contentsline {subsection}{\numberline {1.1}Multicast communications}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Privacy Preservation Scheme}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Advance Privacy Preservation Scheme}{5}{subsection.1.3}
+\contentsline {section}{\numberline {}Preliminaries}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}Bilinear Mapping and the Bilinear Diffie-Hellman problem}{6}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Secret Sharing}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Group Signature}{7}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}The Rabin Cryptosystem}{8}{subsection.2.4}
+\contentsline {section}{\numberline {}An Attribute-Based Signcryption Scheme to Secure Attribute-Defined Multicast Communications}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Motivations, System Model}{10}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Push-based Multicast Communications}{10}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Pull-based Multicast Communication}{11}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}System Model}{13}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Related works}{14}{subsubsection.3.1.4}
+\contentsline {subsection}{\numberline {3.2}CP\_ABSC: A Ciphertext-Policy Attribute Based Signcryption Scheme}{16}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Access Control Policy -- the Access Tree}{16}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}CP\_ABSC: Ciphertext-Policy Attribute Based Signcryption}{18}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}CP\_ABSC v.s. CP\_ABE}{19}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Decryption (DeSignCryption)}{22}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}Application of CP\_ABSC in Smart Grids}{22}{subsubsection.3.2.5}
+\contentsline {subsection}{\numberline {3.3}Correctness and Performance Analysis}{24}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}The Correctness of CP\_ABSC}{25}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Security Strength}{26}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Efficiency and Cost Analysis}{29}{subsubsection.3.3.3}
+\contentsline {section}{\numberline {}Achieving Privacy Preservation and Billing via Delayed Information Release}{33}{section.4}
+\contentsline {subsection}{\numberline {4.1}Motivation and Problem Formulation}{33}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Privacy-Preserving Smart Metering}{33}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Privacy-Preserving Location-Based Services}{34}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Problem Formulation and Challenges}{36}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}Our Approach}{38}{subsubsection.4.1.4}
+\contentsline {subsection}{\numberline {4.2}System Model and Security Model}{39}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}System Model}{39}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Security Model}{40}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}The Proposed Scheme}{41}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Setup}{42}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Registration and Join}{42}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Group Signature}{44}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Encryption}{45}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Decryption and Verification}{46}{subsubsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.6}Response}{47}{subsubsection.4.3.6}
+\contentsline {subsubsection}{\numberline {4.3.7}Delayed Information Release}{47}{subsubsection.4.3.7}
+\contentsline {subsection}{\numberline {4.4}Security Analysis}{48}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}The Security Properties of Our Group Signature Scheme}{48}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Protection on Client Identity and Requests}{56}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Non-Repudiation and Accountability}{58}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Client Request Protection}{61}{subsubsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}Server Response Protection}{62}{subsubsection.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.6}Providing a One-Time Pad for the Client's Session Key}{62}{subsubsection.4.4.6}
+\contentsline {subsection}{\numberline {4.5}Performance Evaluation}{63}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}Computational Overhead}{63}{subsubsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.2}Communication Overhead}{64}{subsubsection.4.5.2}
+\contentsline {subsection}{\numberline {4.6}Conclusion and Future Work}{68}{subsection.4.6}
+\contentsline {section}{\numberline {}Future Research Plan}{70}{section.5}
+\contentsline {subsection}{\numberline {5.1}Motivation}{70}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}advance privacy preservation scheme based on Functional Encryption. (2015) }{70}{subsection.5.2}

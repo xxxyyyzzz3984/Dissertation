@@ -1,0 +1,652 @@
+@inproceedings{boneh2001identity,
+  title={Identity-based encryption from the Weil pairing},
+  author={Boneh, Dan and Franklin, Matt},
+  booktitle={Advances in Cryptology CRYPTO 2001},
+  pages={213--229},
+  year={2001},
+  organization={Springer}
+}
+@inproceedings{rial2011privacy,
+  title={Privacy-preserving smart metering},
+  author={Rial, Alfredo and Danezis, George},
+  booktitle={Proceedings of the 10th annual ACM workshop on Privacy in the electronic society},
+  pages={49--60},
+  year={2011},
+  organization={ACM}
+}
+@inproceedings{danezis2011differentially,
+  title={Differentially private billing with rebates},
+  author={Danezis, George and Kohlweiss, Markulf and Rial, Alfredo},
+  booktitle={Information Hiding},
+  pages={148--162},
+  year={2011},
+  organization={Springer}
+}
+
+@online{dai20095:Online,
+author = {Dai, Wei},
+title = {Crypto++ 5.6. 0 benchmarks},
+year = {2009},
+note="\url {http://www.cryptopp.com/benchmarks.html}",
+}
+
+@inproceedings{popa2009vpriv,
+  title={VPriv: Protecting Privacy in Location-Based Vehicular Services.},
+  author={Popa, Raluca A and Balakrishnan, Hari and Blumberg, Andrew J},
+  booktitle={USENIX security symposium},
+  pages={335--350},
+  year={2009}
+}
+
+@article{ma2013privacy,
+  title={Privacy vulnerability of published anonymous mobility traces},
+  author={Ma, Chris YT and Yau, David KY and Yip, Nung Kwan and Rao, Nageswara SV},
+  journal={Networking, IEEE/ACM Transactions on},
+  volume={21},
+  number={3},
+  pages={720--733},
+  year={2013},
+  publisher={IEEE}
+}
+@inproceedings{mokbel2006new,
+  title={The new Casper: query processing for location services without compromising privacy},
+  author={Mokbel, Mohamed F and Chow, Chi-Yin and Aref, Walid G},
+  booktitle={Proceedings of the 32nd international conference on Very large data bases},
+  pages={763--774},
+  year={2006},
+  organization={VLDB Endowment}
+}
+
+@inproceedings{jorns2007privacy,
+  title={A privacy enhancing mechanism based on pseudonyms for identity protection in location-based services},
+  author={Jorns, Oliver and Quirchmayr, Gerald and Jung, Oliver},
+  booktitle={Proceedings of the fifth Australasian symposium on ACSW frontiers-Volume 68},
+  pages={133--142},
+  year={2007},
+  organization={Australian Computer Society, Inc.}
+}
+
+@incollection{khoshgozaran2007blind,
+  title={Blind evaluation of nearest neighbor queries using space transformation to preserve location privacy},
+  author={Khoshgozaran, Ali and Shahabi, Cyrus},
+  booktitle={Advances in Spatial and Temporal Databases},
+  pages={239--257},
+  year={2007},
+  publisher={Springer}
+}
+
+@article{ma2013privacy,
+  title={Privacy vulnerability of published anonymous mobility traces},
+  author={Ma, Chris YT and Yau, David KY and Yip, Nung Kwan and Rao, Nageswara SV},
+  journal={Networking, IEEE/ACM Transactions on},
+  volume={21},
+  number={3},
+  pages={720--733},
+  year={2013},
+  publisher={IEEE}
+}
+
+@article{de2013unique,
+  title={Unique in the Crowd: The privacy bounds of human mobility},
+  author={de Montjoye, Yves-Alexandre and Hidalgo, C{\'e}sar A and Verleysen, Michel and Blondel, Vincent D},
+  journal={Scientific reports},
+  volume={3},
+  year={2013},
+  publisher={Nature Publishing Group}
+}
+
+@Article{USNIST2014SmartGrid:Online,
+author = {U.S. NIST},
+title = {NIST Framework and Roadmap for Smart Grid Interoperability Standards, Release 3.0},
+journal={National Institute of Standards and Technology},
+year = {2014},
+note="\url{http://www.nist.gov/smartgrid/upload/Draft-NIST-SG-Framework-3.pdf}",
+}
+
+@inproceedings{erkin2012private,
+  title={Private computation of spatial and temporal power consumption with smart meters},
+  author={Erkin, Zekeriya and Tsudik, Gene},
+  booktitle={Applied Cryptography and Network Security},
+  pages={561--577},
+  year={2012},
+  organization={Springer}
+}
+
+@inproceedings{chaum1991group,
+  title={Group signatures},
+  author={Chaum, David and Van Heyst, Eug{\`e}ne},
+  booktitle={EUROCRYPT 91},
+  pages={257--265},
+  year={1991},
+  organization={Springer}
+}
+@article{lagendijk2013encrypted,
+  title={Encrypted signal processing for privacy protection: Conveying the utility of homomorphic encryption and multiparty computation},
+  author={Lagendijk, Reginald L and Erkin, Zekeriya and Barni, Mauro},
+  journal={IEEE Signal Processing Magazine},
+  volume={30},
+  number={1},
+  pages={82--105},
+  year={2013},
+  publisher={IEEE}
+}
+
+@article{liu2014achieving,
+  title={Achieving Accountability in Smart Grid},
+  author={Liu, Jing and Xiao, Yang and Gao, Jingcheng},
+  journal={IEEE Systems Journal},
+  volume={8},
+  number={2},
+  pages={493--508},
+  year={2014},
+  publisher={IEEE}
+}
+@incollection{jagadeesan2009towards,
+  title={Towards a theory of accountability and audit},
+  author={Jagadeesan, Radha and Jeffrey, Alan and Pitcher, Corin and Riely, James},
+  booktitle={Computer Security--ESORICS 2009},
+  pages={152--167},
+  year={2009},
+  publisher={Springer}
+}
+
+@inproceedings{truderung2010accountability,
+  title={Accountability: definition and relationship to verifiability},
+  author={Truderung, Tomasz and Vogt, Andreas and others},
+  booktitle={Proceedings of the 17th ACM conference on Computer and communications security},
+  pages={526--535},
+  year={2010},
+  organization={ACM}
+}
+
+@inproceedings{feigenbaum2011towards,
+  title={Towards a formal model of accountability},
+  author={Feigenbaum, Joan and Jaggard, Aaron D and Wright, Rebecca N},
+  booktitle={Proceedings of the 2011 workshop on New security paradigms workshop},
+  pages={45--56},
+  year={2011},
+  organization={ACM}
+}
+
+@inproceedings{ko1993analysis,
+  title={Analysis of an algorithm for distributed recognition and accountability},
+  author={Ko, Calvin and Frincke, Deborah A and Goan Jr, Terrance and Heberlein, Todd and Levitt, Karl and Mukherjee, Biswanath and Wee, Christopher},
+  booktitle={Proceedings of the 1st ACM conference on Computer and communications security},
+  pages={154--164},
+  year={1993},
+  organization={ACM}
+}
+
+@inproceedings{anderson2010security,
+  title={On the Security Economics of Electricity Metering.},
+  author={Anderson, Ross and Fuloria, Shailendra},
+  booktitle={WEIS},
+  year={2010},
+  organization={Citeseer}
+}
+
+@incollection{garcia2011privacy,
+  title={Privacy-friendly energy-metering via homomorphic encryption},
+  author={Garcia, Flavio D and Jacobs, Bart},
+  booktitle={Security and Trust Management},
+  pages={226--238},
+  year={2011},
+  publisher={Springer}
+}
+
+@incollection{bauer2009recognizing,
+  title={Recognizing the use-mode of kitchen appliances from their current consumption},
+  author={Bauer, Gerald and Stockinger, Karl and Lukowicz, Paul},
+  booktitle={Smart sensing and context},
+  pages={163--176},
+  year={2009},
+  publisher={Springer}
+}
+
+@techreport{rabin1979digital,
+  title={Digital signatures and public key functions as intractable as factoring},
+  author={Rabin, MO},
+  year={1979},
+  institution={Technical Memo TM-212, Lab. for Computer Science, MIT}
+}
+@article{chen2003new,
+  title={A New ID-based Group Signature Scheme from Bilinear Pairings.},
+  author={Chen, Xiaofeng and Zhang, Fangguo and Kim, Kwangjo},
+  journal={IACR Cryptology ePrint Archive},
+  volume={2003},
+  pages={116},
+  year={2003},
+  publisher={Citeseer}
+}
+@book{menezes1996handbook,
+  title={Handbook of applied cryptography},
+  author={Menezes, Alfred J and Van Oorschot, Paul C and Vanstone, Scott A},
+  year={1996},
+  publisher={CRC press}
+}
+@incollection{choon2002identity,
+  title={An identity-based signature from gap Diffie-Hellman groups},
+  author={Choon, Jae Cha and Cheon, Jung Hee},
+  booktitle={Public key cryptography--PKC 2003},
+  pages={18--30},
+  year={2002},
+  publisher={Springer}
+}
+@inproceedings{hess2003efficient,
+  title={Efficient identity based signature schemes based on pairings},
+  author={Hess, Florian},
+  booktitle={Selected Areas in Cryptography},
+  pages={310--324},
+  year={2003},
+  organization={Springer}
+}
+@book{blake2005advances,
+  title={"Pairing", Advances in elliptic curve cryptography},
+  author={Blake, Ian F and Seroussi, Gadiel and Smart, Nigel P},
+  volume={317},
+  pages={183--213},
+  year={2005},
+  publisher={Cambridge University Press}
+}
+@inproceedings{scott2007efficient,
+  title={Efficient implementation of cryptographic pairings},
+  author={Scott, Mike},
+  booktitle={Online]. http://www. pairing-conference. org/2007/invited/Scott slide. pdf},
+  year={2007}
+}
+@article{freeman2010taxonomy,
+  title={A taxonomy of pairing-friendly elliptic curves},
+  author={Freeman, David and Scott, Michael and Teske, Edlyn},
+  journal={Journal of cryptology},
+  volume={23},
+  number={2},
+  pages={224--280},
+  year={2010},
+  publisher={Springer}
+}
+@article{erkin2013privacy,
+  title={Privacy-preserving data aggregation in smart metering systems: An overview},
+  author={Erkin, Zekeriya and Troncoso-Pastoriza, Juan Ram{\'o}n and Lagendijk, Reginald L and Perez-Gonzalez, Fernando},
+  journal={IEEE Signal Processing Magazine},
+  volume={30},
+  number={2},
+  pages={75--86},
+  year={2013},
+  publisher={IEEE}
+}
+@article{pinkas2002cryptographic,
+  title={Cryptographic techniques for privacy-preserving data mining},
+  author={Pinkas, Benny},
+  journal={ACM SIGKDD Explorations Newsletter},
+  volume={4},
+  number={2},
+  pages={12--19},
+  year={2002},
+  publisher={ACM}
+}
+@article{magkos2011cryptographic,
+  title={Cryptographic approaches for privacy preservation in location-based services: a survey},
+  author={Magkos, Emmanouil},
+  journal={International Journal of Information Technologies and Systems Approach (IJITSA)},
+  volume={4},
+  number={2},
+  pages={48--69},
+  year={2011},
+  publisher={IGI Global}
+}
+@inproceedings{paillier1999public,
+  title={Public-key cryptosystems based on composite degree residuosity classes},
+  author={Paillier, Pascal},
+  booktitle={Advances in cryptology--EUROCRYPT 1999},
+  pages={223--238},
+  year={1999},
+  organization={Springer}
+}
+@article{shamir1979share,
+  title={How to share a secret},
+  author={Shamir, Adi},
+  journal={Communications of the ACM},
+  volume={22},
+  number={11},
+  pages={612--613},
+  year={1979},
+  publisher={ACM}
+}
+@article{hu2012verifiable,
+  title={Verifiable multi-secret sharing based on LFSR sequences},
+  author={Hu, Chunqiang and Liao, Xiaofeng and Cheng, Xiuzhen},
+  journal={Theoretical Computer Science},
+  volume={445},
+  pages={52--62},
+  year={2012},
+  publisher={Elsevier}
+}
+@article{rottondi2013distributed,
+  title={Distributed privacy-preserving aggregation of metering data in smart grids},
+  author={Rottondi, Cristina and Verticale, Giacomo and Krauss, Christoph},
+  journal={IEEE Journal on Selected Areas in Communications},
+  volume={31},
+  number={7},
+  pages={1342--1354},
+  year={2013},
+  publisher={IEEE}
+}
+
+@article{paulet2014privacy,
+  title={Privacy-preserving and content-protecting location based queries},
+  author={Paulet, Russell and Kaosar, Md Golam and Yi, Xun and Bertino, Elisa},
+  journal={Knowledge and Data Engineering, IEEE Transactions on},
+  volume={26},
+  number={5},
+  pages={1200--1210},
+  year={2014},
+  publisher={IEEE}
+}
+
+@inproceedings{ghinita2008private,
+  title={Private queries in location based services: anonymizers are not necessary},
+  author={Ghinita, Gabriel and Kalnis, Panos and Khoshgozaran, Ali and Shahabi, Cyrus and Tan, Kian-Lee},
+  booktitle={Proceedings of the 2008 ACM SIGMOD international conference on Management of data},
+  pages={121--132},
+  year={2008},
+  organization={ACM}
+}
+
+@inproceedings{li2010secure,
+  title={Secure information aggregation for smart grids using homomorphic encryption},
+  author={Li, Fenjun and Luo, Bo and Liu, Peng},
+  booktitle={Smart Grid Communications (SmartGridComm), 2010 First IEEE International Conference on},
+  pages={327--332},
+  year={2010},
+  organization={IEEE}
+}
+@inproceedings{acs2011have,
+  title={I have a DREAM!(DiffeRentially privatE smArt Metering)},
+  author={Acs, Gergely and Castelluccia, Claude},
+  booktitle={Information Hiding},
+  pages={118--132},
+  year={2011},
+  organization={Springer}
+}
+@book{buttyan2007security,
+  title={Security and cooperation in wireless networks},
+  author={Buttyan, Levente and Hubaux, Jean-Pierre},
+  volume={188},
+  year={2007},
+  publisher={Cambridge University Press Cambridge}
+}
+@article{krumm2009survey,
+  title={A survey of computational location privacy},
+  author={Krumm, John},
+  journal={Personal and Ubiquitous Computing},
+  volume={13},
+  number={6},
+  pages={391--399},
+  year={2009},
+  publisher={Springer}
+}
+@inproceedings{decker2008location,
+  title={Location privacy-an overview},
+  author={Decker, Michael},
+  booktitle={Mobile Business, 2008. ICMB'08. 7th International Conference on},
+  pages={221--230},
+  year={2008},
+  organization={IEEE}
+}
+@article{wen2013parq,
+  title={PARQ: A privacy-preserving range query scheme over encrypted metering data for smart grid},
+  author={Wen, Mi and Lu, Rongxing and Zhang, Kuan and Lei, Jingsheng and Liang, Xiaohui and Shen, XUEMIN},
+  journal={IEEE Transactions on Emerging Topics in Computing},
+  volume={1},
+  number={1},
+  pages={178--191},
+  year={2013},
+  publisher={IEEE}
+}
+@article{li2013eppdr,
+  title={EPPDR: an efficient privacy-preserving demand response scheme with adaptive key evolution in smart grid},
+  author={Li, Hongwei and Lin, Xiaodong and Yang, Haomiao and Liang, Xiaohui and Lu, Rongxing and Shen, X},
+  journal = {IEEE Transactions on Parallel and Distributed Systems},
+  volume={25},
+  number={8},
+  pages={2053--2064},
+  year = {2014},
+  publisher={IEEE}
+}
+@article{rivest1978data,
+  title={On data banks and privacy homomorphisms},
+  author={Rivest, Ronald L and Adleman, Len and Dertouzos, Michael L},
+  journal={Foundations of secure computation},
+  volume={4},
+  number={11},
+  pages={169--180},
+  year={1978}
+}
+@inproceedings{gentry2009fully,
+  title={Fully homomorphic encryption using ideal lattices.},
+  author={Gentry, Craig},
+  booktitle={STOC},
+  volume={9},
+  pages={169--178},
+  year={2009}
+}
+@incollection{van2010fully,
+  title={Fully homomorphic encryption over the integers},
+  author={Van Dijk, Marten and Gentry, Craig and Halevi, Shai and Vaikuntanathan, Vinod},
+  booktitle={Advances in Cryptology--EUROCRYPT 2010},
+  pages={24--43},
+  year={2010},
+  publisher={Springer}
+}
+@incollection{smart2010fully,
+  title={Fully homomorphic encryption with relatively small key and ciphertext sizes},
+  author={Smart, Nigel P and Vercauteren, Frederik},
+  booktitle={Public Key Cryptography--PKC 2010},
+  pages={420--443},
+  year={2010},
+  publisher={Springer}
+}
+@incollection{brakerski2011fully,
+  title={Fully homomorphic encryption from ring--LWE and security for key dependent messages},
+  author={Brakerski, Zvika and Vaikuntanathan, Vinod},
+  booktitle={Advances in Cryptology--CRYPTO 2011},
+  pages={505--524},
+  year={2011},
+  publisher={Springer}
+}
+@inproceedings{gentry2011fully,
+  title={Fully homomorphic encryption without squashing using depth-3 arithmetic circuits},
+  author={Gentry, Craig and Halevi, Shai},
+  booktitle={Foundations of Computer Science (FOCS), 2011 IEEE 52nd Annual Symposium on},
+  pages={107--109},
+  year={2011},
+  organization={IEEE}
+}
+@article{brakerski2014efficient,
+  title={Efficient fully homomorphic encryption from (standard) LWE},
+  author={Brakerski, Zvika and Vaikuntanathan, Vinod},
+  journal={SIAM Journal on Computing},
+  volume={43},
+  number={2},
+  pages={831--871},
+  year={2014},
+  publisher={SIAM}
+}
+
+
+@article{hart1992nonintrusive,
+  title={Nonintrusive appliance load monitoring},
+  author={Hart, George William},
+  journal={Proceedings of the IEEE},
+  volume={80},
+  number={12},
+  pages={1870--1891},
+  year={1992},
+  publisher={IEEE}
+}
+@article{hart1989residential,
+  title={Residential energy monitoring and computerized surveillance via utility power flows},
+  author={Hart, George W},
+  journal={IEEE Technology and Society Magazine},
+  volume={8},
+  number={2},
+  pages={12--16},
+  year={1989},
+  publisher={IEEE}
+}
+@inproceedings{molina2010private,
+  title={Private memoirs of a smart meter},
+  author={Molina-Markham, Andr{\'e}s and Shenoy, Prashant and Fu, Kevin and Cecchet, Emmanuel and Irwin, David},
+  booktitle={Proceedings of the 2nd ACM workshop on embedded sensing systems for energy-efficiency in building},
+  pages={61--66},
+  year={2010},
+  organization={ACM}
+}
+@inproceedings{chia2012challenges,
+  title={Challenges and Opportunities in Infrastructure Support for Electric Vehicles and Smart Grid in a dense urban environment-Singapore},
+  author={Chia, MY-W and Krishnan, Sivanand and Zhou, Jianying},
+  booktitle={Electric Vehicle Conference (IEVC), 2012 IEEE International},
+  pages={1--6},
+  year={2012},
+  organization={IEEE}
+}
+@incollection{golle2009anonymity,
+  title={On the anonymity of home/work location pairs},
+  author={Golle, Philippe and Partridge, Kurt},
+  booktitle={Pervasive Computing},
+  pages={390--397},
+  year={2009},
+  publisher={Springer}
+}
+@article{hoh2006enhancing,
+  title={Enhancing security and privacy in traffic-monitoring systems},
+  author={Hoh, Baik and Gruteser, Marco and Xiong, Hui and Alrabady, Ansaf},
+  journal={IEEE Pervasive Computing},
+  volume={5},
+  number={4},
+  pages={38--46},
+  year={2006},
+  publisher={IEEE}
+}
+@article{liao2007learning,
+  title={Learning and inferring transportation routines},
+  author={Liao, Lin and Patterson, Donald J and Fox, Dieter and Kautz, Henry},
+  journal={Artificial Intelligence},
+  volume={171},
+  number={5},
+  pages={311--331},
+  year={2007},
+  publisher={Elsevier}
+}
+@incollection{liu2012enhancing,
+  title={Enhancing location privacy for electric vehicles (at the right time)},
+  author={Liu, Joseph K and Au, Man Ho and Susilo, Willy and Zhou, Jianying},
+  booktitle={Computer Security--ESORICS 2012},
+  pages={397--414},
+  year={2012},
+  publisher={Springer}
+}
+@article{au2014new,
+  title={A new payment system for enhancing location privacy of electric vehicles},
+  author={Au, M and Liu, J and Fang, Jun-bin and Jiang, Z and Susilo, Willy and Zhou, Jianying},
+  journal={IEEE Transactions on Vehicular Technology},
+  volume={63},
+  number={1},
+  pages={3--18},
+  year={2014},
+  publisher={IEEE}
+}
+@inproceedings{zhong2008toward,
+  title={Toward a distributed k-anonymity protocol for location privacy},
+  author={Zhong, Ge and Hengartner, Urs},
+  booktitle={Proceedings of the 7th ACM workshop on Privacy in the electronic society},
+  pages={33--38},
+  year={2008},
+  organization={ACM}
+}
+@inproceedings{zhong2009distributed,
+  title={A distributed k-anonymity protocol for location privacy},
+  author={Zhong, Ge and Hengartner, Urs},
+  booktitle={Pervasive Computing and Communications, 2009. PerCom 2009. IEEE International Conference on},
+  pages={1--10},
+  year={2009},
+  organization={IEEE}
+}
+@incollection{blake2004strong,
+  title={Strong conditional oblivious transfer and computing on intervals},
+  author={Blake, Ian F and Kolesnikov, Vladimir},
+  booktitle={Advances in Cryptology-ASIACRYPT 2004},
+  pages={515--529},
+  year={2004},
+  publisher={Springer}
+}
+@article{hu2013body,
+  title={Body area network security: A fuzzy attribute-based signcryption scheme},
+  author={Hu, Chunqiang and Zhang, Nan and Li, Hongjuan and Cheng, Xiuzhen and Liao, Xiaofeng},
+  journal={Selected Areas in Communications, IEEE Journal on},
+  volume={31},
+  number={9},
+  pages={37--46},
+  year={2013},
+  publisher={IEEE}
+}
+
+@inproceedings{varodayan2011smart,
+  title={Smart meter privacy using a rechargeable battery: Minimizing the rate of information leakage},
+  author={Varodayan, David and Khisti, Ashish},
+  booktitle={Acoustics, Speech and Signal Processing (ICASSP), 2011 IEEE International Conference on},
+  pages={1932--1935},
+  year={2011},
+  organization={IEEE}
+}
+
+@inproceedings{kalogridis2010privacy,
+  title={Privacy for smart meters: Towards undetectable appliance load signatures},
+  author={Kalogridis, Georgios and Efthymiou, Costas and Denic, Stojan Z and Lewis, Tim A and Cepeda, Rafael},
+  booktitle={Smart Grid Communications (SmartGridComm), 2010 First IEEE International Conference on},
+  pages={232--237},
+  year={2010},
+  organization={IEEE}
+}
+
+@inproceedings{Rottondi2012greencom,
+    author = {C. Rottondi and G. Mauri and G. Verticale},
+    title = {A data Pseudonymization Protocol for Smart Grids},
+    booktitle = {IEEE Online Conference on Green Communications (GreenCom)},
+    year = {2012},
+    pages = {68-73},
+    month = {September 25-28},
+}
+
+@inproceedings{Efthymiou2010smartgridcomm,
+  author = {C. Efthymiou and G. Kalogridis},
+  title = {Smart grid privacy via anonymization of smart metering data},
+  booktitle  = {First IEEE International Conference on Smart Grid Communications (SmartGridComm)},
+  year = {2010},
+  month = {October},
+  pages = {238-243},
+  }
+
+@incollection{ge2013preserving,
+  title={Preserving User Privacy in the Smart Grid by Hiding Appliance Load Characteristics},
+  author={Ge, Baosheng and Zhu, Wen-Tao},
+  booktitle={Cyberspace Safety and Security},
+  pages={67--80},
+  year={2013},
+  publisher={Springer}
+}
+@inproceedings{Jawurek2011acsac,
+  author = {M. Jawurek and M. Johns and K. Rieck},
+  title = {Smart metering depseudonymization},
+  booktitle = {Proceedings of the 27th Annual Computer Security Applications Conference},
+  year = {2011},
+  pages ={227-236}
+  }
+@inproceedings{jawurek2011plug,
+  title={Plug-in privacy for smart metering billing},
+  author={Jawurek, Marek and Johns, Martin and Kerschbaum, Florian},
+  booktitle={Privacy Enhancing Technologies},
+  pages={192--210},
+  year={2011},
+  organization={Springer}
+}
