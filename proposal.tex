@@ -214,7 +214,10 @@
 
    \newpage
       \section{Abstract}
-   xxx
+   The advent of smart devices, i.e. smartphones and smart home devices, have greatly revolutionized and modernize people's daily lives in every aspect. Yet, the security condition of the devices and their corresponding systems is concerning since traditional security measures fail to cope with them due to limitations of computation power and hardware/firmware heterogeneity. In this dissertation proposal, we present our initial research on studying the security and privacy of smartphones on OS-Level and side-channel level.
+   Firstly, we study the OS security of Android devices. In order to facilitate apps to collaborate to finish complex jobs, Android allows isolated apps to communicate through explicit interfaces. However, the communication mechanisms often give additional privilege to apps, which can be exploited by attackers. The Android Task Structure is a widely-used mechanism to facilitate apps' collaboration. Recent research has identified attacks to the mechanism, allowing attackers to spoof UIs in Android. In this work, we present an analysis of the security of the Android task structure. In particular, we analyze the system/app conditions that can cause the task mechanism to leak privilege. Furthermore, we identify new end-to-end attacks that enable attackers to {\em actively} interfere with victim apps to steal sensitive information. Based on our findings, we also develop a task interference checking app for exploits to the Android task structure.
+    Secondly, we study how the side-channel information publicly available in Android devices can result in severe privacy leakage on social networks. Owing to the various features provided by mobile devices, a user's online social activities are tightly tied to his phone, and are conveniently, sometimes unnecessarily, available to social networks. In this work, we propose a novel attack architecture to show that attackers can infer a user's social network identities behind a mobile device through new dimensions. Specifically, we first developed a correlation between a user's device system states and the social network events, which leverage multiple mechanisms such as learning-based memory regression model, to infer the possible accounts of the user in the social network app. Then we exploited the social network to social network correlation, via which we correlated information across different social networks, to identify the accounts of the target user. We implemented and evaluated these attacks on three popular social networks, and the results corroborate the effectiveness of our design.
+    Lastly, we plan to extend our research on studying the security and privacy of smart home devices and their corresponding smart home systems by proposing novel vulnerability-discovery measures, excavating new attack vectors and designing effective defense mechanisms.
    
       \newpage
 
@@ -503,13 +506,6 @@ permission to manipulate tasks. However, we assume AppM can be granted
 permissions for following-up behaviors, such as sending the retrieved
 information out or accessing local storage.
 
-\begin{figure*}[t]
-        \centering
-        \includegraphics[width=1\linewidth]{overall.pdf}
-        \caption{Approach Overview}
-        \label{fig:arch}
-\end{figure*}
-
 \subsubsection{Approach Overview} \label{sec:approachoverview}
 
 The goal of our work is to comprehensively analyze the Android task
@@ -537,6 +533,12 @@ permission.  At last, we design a task interference checking app to
 detect the task interference between users' important apps and other
 installed apps.
 
+\begin{figure*}[t]
+        \centering
+        \includegraphics[width=1\linewidth]{overall.pdf}
+        \caption{Approach Overview}
+        \label{fig:arch}
+\end{figure*}
 \subsection{Security Analysis of Android Task Structure}\label{sec:atmapproach}
 In this subsection, we introduce our approach. We focus on two aspects of
 the Android task mechanism. First, We analyze the conditions that
@@ -900,7 +902,7 @@ in Figure~\ref{fig:uiphishing}, it works in the following steps.
                 \includegraphics[width=\linewidth]{attack-phishing-1.pdf}
                 \caption{UI Phishing Attack}
         \end{subfigure}
-        \caption{UI Phishing.}
+        \caption{UI Phishing}
          \floatfoot{(a) When the user selects
           ''login with Facebook'' in Instagram, Instagram will launch
           the Facebook app. After the user inputs username, password
@@ -1017,7 +1019,7 @@ user system launches native Facebook App.
                 \includegraphics[width=\linewidth]{attack-mim-1.pdf}
                 \caption{Activity-in-the-Middle Attack}
         \end{subfigure}
-        \caption{Activity-in-the Middle Attack on SSO.}
+        \caption{Activity-in-the Middle Attack on SSO}
         \floatfoot{(a) When a
           user wants to login with Facebook in the Instagram,
           Instagram sends system its application ID with application
@@ -1158,7 +1160,7 @@ Figure~\ref{fig:gallery}(c)).
           \includegraphics[width=\linewidth]{4-3}
                 \caption{}
         \end{subfigure}
-         \caption{Gallery Stealing Attack.}
+         \caption{Gallery Stealing Attack}
          \floatfoot{First the user clicks the camera button highlighted in the first picture. Then the attacking app	kills the real Instagram and pops up its \texttt{Activity} asking for user permission, the text of permission dialog is overlaid by the fake text as shown in the second picture. Once user grants the permission, the app quickly sends all images as buffer to the server, meanwhile, it fools the user by showing a ``system'' warning dialog telling the user the system encounter an error.}
          \label{fig:gallery}
 \end{figure*}
@@ -1253,7 +1255,7 @@ get the image.
           \includegraphics[width=\linewidth]{5-3}
                 \caption{}
         \end{subfigure}
-         \caption{Screenshot Capturing Attack.}
+         \caption{Screenshot Capturing Attack}
          \floatfoot{First the user launches Facebook, then the attacking app launches a transparent \texttt{Activity} which quickly asks for taking screen shot, the notification dialog is again overlaid by fake text as shown in the first picture. Once the user clicks start now, the attacking app begins to take screen shots as well as sending the screen shots to back end server. (b) and (c) are two of the screen shots received by server which expose the password plaintext.}
          \vspace{-0.2cm}
          \label{fig:memory}
@@ -1549,7 +1551,7 @@ attacks by enforcing the Android Window Integrity (AWI).
    In this subsection, we present the threat model and the overview of our attack approach.
 
 \subsubsection{Threat Model}\label{sec:dssnthreat}
-We consider an attacker who can accomplish inference attacks through a malicious app installed on a victim's device with no special permission -- this malicious app only requests the \texttt{INTERNET} permission from Android to send the collected data to the attacker for analysis, which by default is automatically granted by the Android system without notifying the user. How to install a malicious app in a victim's device is out of the scope of this paper. Here are a few viable approaches: an attacker can trick a user to install a malicious app by simply disguising the app as a benign one and putting it on the Google Play Store since current automatic malware detection for Android is still not sufficiently reliable \cite{googleplaymalware}; alternatively, an attacker can secretly install a malicious app on a victim's device by exploiting a remote code execution (RCE) vulnerability such as CVE-2017-0561, which allows RCE on Wi-Fi SoC \cite{wifirce}. In this paper, we assume that a malicious app has already been installed on the victim's device. This malicious app can silently collect and send to the attacker certain system states that are publicly available.
+We consider an attacker who can accomplish inference attacks through a malicious app installed on a victim's device with no special permission -- this malicious app only requests the \texttt{INTERNET} permission from Android to send the collected data to the attacker for analysis, which by default is automatically granted by the Android system without notifying the user. How to install a malicious app in a victim's device is out of the scope of this work. Here are a few viable approaches: an attacker can trick a user to install a malicious app by simply disguising the app as a benign one and putting it on the Google Play Store since current automatic malware detection for Android is still not sufficiently reliable \cite{googleplaymalware}; alternatively, an attacker can secretly install a malicious app on a victim's device by exploiting a remote code execution (RCE) vulnerability such as CVE-2017-0561, which allows RCE on Wi-Fi SoC \cite{wifirce}. In this work, we assume that a malicious app has already been installed on the victim's device. This malicious app can silently collect and send to the attacker certain system states that are publicly available.
 
 \subsubsection{Approach Overview}\label{sec:dssnapproachoverview}
 The objective of our design is to associate an Android device (running social network apps to perform social activities such as posting a photo or a message) with the social network accounts (the accounts accessed by the device) based on the following publicly available information: (i) the system state information (see Section~\ref{sec:preliminaries}) collected by a malicious app installed in the victim Android device; and (ii) the social network events crawled from the social network databases. We consider three popular social networks: Twitter, Flickr, and Instagram, and exploit the tweeting events in Twitter and photo-posting events in Flickr and Instagram for our studies on device-identity association. 
@@ -1557,7 +1559,7 @@ The objective of our design is to associate an Android device (running social ne
 \begin{figure}[!htb]
   \centering
     \includegraphics[width=\textwidth]{overview.png}
-    \caption{Attack architecture}
+    \caption{Attack Architecture}
     \label{fig:overall}
 \end{figure}
 
@@ -1592,7 +1594,8 @@ As shown in Table~\ref{tbl:ds-sn-summary}, we exploited \emph{VSS}, \emph{RSS}, 
 
 \begin{figure}[!htb]
   \includegraphics[width=\textwidth]{swipe.pdf}
-  \caption{The variations of \emph{VSS} of the Twitter app in four different Android devices within approximately 2 minutes of swiping and tweeting.}
+  \caption{The Variations of \emph{VSS} of the Twitter App}
+  \floatfoot{The variations of \emph{VSS} of the Twitter App in four different Android devices within approximately 2 minutes of swiping and tweeting.}
   \label{fig:swipe}
 \end{figure}
 
@@ -1606,7 +1609,8 @@ To proceed, we take a look at the VSS changes of the three social networks (see 
 
 \begin{figure}[!htb]
   \includegraphics[width=\textwidth]{activity-memory.pdf}
-  \caption{The variations of \emph{VSS} of Twitter, Instagram, and Flickr when a tweet or a photo is posted. The red parts refer to the activity transitions of tweeting/photo-posting in the corresponding social network.}
+  \caption{The Variations of \emph{VSS} of Twitter, Instagram, and Flickr}
+  \floatfoot{The variations of \emph{VSS} of Twitter, Instagram, and Flickr when a tweet or a photo is posted. The red parts refer to the activity transitions of tweeting/photo-posting in the corresponding social network.}
   \label{fig:memory-activity}
 \end{figure}
 
@@ -1710,11 +1714,10 @@ Our SN-SN correlation attack is designed to assist the DS-SN attack since the la
 
 \begin{figure}[!htb]
   \includegraphics[width=\textwidth]{distribution3.pdf}
-  \caption{The number of users \emph{vs.} the time difference between two
+  \caption{Real-World Tweeting Situation}
+    \floatfoot{The number of users \emph{vs.} the time difference between two
     successive tweets. One can see that the majority of the Twitter
-    users tweeted twice between 20 days to 30 days. %; thus it is not always
-    %easy to retrieve multiple tweets from a single user.
-    }
+    users tweeted twice between 20 days to 30 days.}
   \label{fig:timediff}
 \end{figure}
 
@@ -2002,7 +2005,8 @@ As one can see from the above, username ($\omega_{3}$) plays an extremely import
 
 \begin{figure}[t]
   \includegraphics[width=\textwidth]{SN-SN-match.pdf}
-  \caption{The distribution of the matches of the fifth participant. The x-axis is the intervals of overall similarity scores while the y-axis is the number of matches.}
+  \caption{Distribution of the Matches}
+  \floatfoot{The distribution of the matches of the fifth participant. The x-axis is the intervals of overall similarity scores while the y-axis is the number of matches.}
   \label{fig:sn-sn-match}
 \end{figure}
 

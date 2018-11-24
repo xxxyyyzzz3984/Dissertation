@@ -1,5 +1,5 @@
 \contentsline {section}{\numberline {}Abstract}{iii}{section.1}
-\contentsline {section}{\hspace {1.5pt} List of Figures}{vi}{section*.2}
+\contentsline {section}{\hspace {1.5pt} List of Figures}{vii}{section*.2}
 \contentsline {section}{\numberline {}Introduction}{1}{section.2}
 \contentsline {subsection}{\numberline {1.1}Exploiting Android Task Mechanism}{2}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Device-Identity Association Attack Using Android Side-Channel Information}{4}{subsection.1.2}
@@ -37,6 +37,6 @@
 \contentsline {subsubsection}{\numberline {4.2.2}SN-SN Correlation Attack}{44}{subsubsection.4.2.2}
 \contentsline {subsection}{\numberline {4.3}Evaluation}{50}{subsection.4.3}
 \contentsline {subsubsection}{\numberline {4.3.1}Effectiveness of the DS-SN Correlation Attack}{51}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Performance of the SN-SN Correlation Attack}{55}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2}Performance of the SN-SN Correlation Attack}{56}{subsubsection.4.3.2}
 \contentsline {subsection}{\numberline {4.4}Related Works}{58}{subsection.4.4}
 \contentsline {section}{\numberline {}Conclusion and Future Work}{60}{section.5}
