@@ -9,11 +9,14 @@
 %\usepackage[subfigure]{tocloft}
 \usepackage{subcaption}
 \usepackage{tocstyle}
+\usepackage{mathtools}
+
 \renewcommand{\contentsname}{\centerline {\normalsize\bfseries Table of Contents}}
 \newtocstyle[standard][leaders]{mytocstyle}{\settocfeature[1]{entryhook}{\normalfont\bfseries}}
 \usepackage[capposition=top]{floatrow}
 \usepackage{listings}
 \usepackage{cite}
+\usepackage{esvect}
 \usepackage{footnote}
 \usetocstyle{mytocstyle}
 \usepackage{sectsty}
@@ -41,6 +44,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
 %\usepackage{algorithm}
 %\usepackage{algorithmic}
 \graphicspath{ {images/} }
@@ -61,6 +66,108 @@
 \newcommand{\Gthree}{\mathbb{G}_3}
 \newcommand{\Gt}{\mathbb{G}_T}
 \newcommand{\PPo}{Pairing}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclareMathOperator*{\argminA}{arg\,min} % Jan Hlavacek
+\DeclareMathOperator*{\argminB}{argmin}   % Jan Hlavacek
+\DeclareMathOperator*{\argminC}{\arg\min}   % rbp
+\DeclareMathOperator*{\argmax}{argmax} 
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\newtheorem{innercustomdfn}{Definition}
+\newenvironment{customdfn}[1]
+  {\renewcommand\theinnercustomdfn{#1}\innercustomdfn}
+  {\endinnercustomdfn}
+
+\lstdefinelanguage{JavaScript}{
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+    keywordstyle=\color{blue}\bfseries,
+    ndkeywords={class, export, boolean, throw, implements, import, this},
+    %ndkeywordstyle=\color{darkgray}\bfseries,
+    ndkeywordstyle=\color{green}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{purple}\ttfamily,
+    stringstyle=\color{blue}\ttfamily,
+    morestring=[s]{`}{'},
+%    morestring=[b]"
+}
+
+\lstset{
+    language=JavaScript,
+    backgroundcolor=\color{lightgray},
+    extendedchars=true,
+    basicstyle=\footnotesize\ttfamily,
+    %basicstyle=\footnotesize\sffamily,
+    showstringspaces=false,
+    showspaces=false,
+%    numbers=left,
+%    numberstyle=\footnotesize,
+%    numbersep=9pt,
+    tabsize=2,
+    breaklines=true,
+    showtabs=false,
+    captionpos=b
+    emph={= },
+    emphstyle=\color{green}
+}
+
+\lstset{
+    language=JavaScript,
+    backgroundcolor=\color{lightgray},
+    extendedchars=true,
+    basicstyle=\footnotesize\ttfamily,
+    %basicstyle=\footnotesize\sffamily,
+    showstringspaces=false,
+    showspaces=false,
+%    numbers=left,
+%    numberstyle=\footnotesize,
+%    numbersep=9pt,
+    tabsize=2,
+    breaklines=true,
+    showtabs=false,
+    captionpos=b
+    emph={= },
+    emphstyle=\color{green}
+}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
 
 \usepackage[colorlinks=true,linkcolor=black,citecolor=red,urlcolor=red,plainpages=false,pdfpagelabels=true, bookmarks=false]{hyperref}
 \begin{document}
@@ -375,8 +482,8 @@ ways:
    \newpage
    \begin{singlespace}
    \section{Privilege Leakage and Information Stealing through the Android Task Mechanism}
-   \label{sec:atmtitle}
    \end{singlespace}
+    \label{sec:atmtitle}
 
 
 
@@ -1434,14 +1541,502 @@ attacks by enforcing the Android Window Integrity (AWI).
 
    \newpage
    \begin{singlespace}
-   \section{xxx}\label{sec:dssnassociate}
+   \section{I Know Your Social Network Accounts: A Novel Attack Architecture for Device-Identity Association}
    \end{singlespace}
+   \label{sec:dssnassociate}
+   
+   \subsection{Threat Model and Approach Overview}\label{sec:dssnthreatapproach}
+   In this subsection, we present the threat model and the overview of our attack approach.
+
+\subsubsection{Threat Model}\label{sec:dssnthreat}
+We consider an attacker who can accomplish inference attacks through a malicious app installed on a victim's device with no special permission -- this malicious app only requests the \texttt{INTERNET} permission from Android to send the collected data to the attacker for analysis, which by default is automatically granted by the Android system without notifying the user. How to install a malicious app in a victim's device is out of the scope of this paper. Here are a few viable approaches: an attacker can trick a user to install a malicious app by simply disguising the app as a benign one and putting it on the Google Play Store since current automatic malware detection for Android is still not sufficiently reliable \cite{googleplaymalware}; alternatively, an attacker can secretly install a malicious app on a victim's device by exploiting a remote code execution (RCE) vulnerability such as CVE-2017-0561, which allows RCE on Wi-Fi SoC \cite{wifirce}. In this paper, we assume that a malicious app has already been installed on the victim's device. This malicious app can silently collect and send to the attacker certain system states that are publicly available.
+
+\subsubsection{Approach Overview}\label{sec:dssnapproachoverview}
+The objective of our design is to associate an Android device (running social network apps to perform social activities such as posting a photo or a message) with the social network accounts (the accounts accessed by the device) based on the following publicly available information: (i) the system state information (see Section~\ref{sec:preliminaries}) collected by a malicious app installed in the victim Android device; and (ii) the social network events crawled from the social network databases. We consider three popular social networks: Twitter, Flickr, and Instagram, and exploit the tweeting events in Twitter and photo-posting events in Flickr and Instagram for our studies on device-identity association. 
+
+\begin{figure}[!htb]
+  \centering
+    \includegraphics[width=\textwidth]{overview.png}
+    \caption{Attack architecture}
+    \label{fig:overall}
+\end{figure}
+
+Our attack architecture is shown in Figure~\ref{fig:overall}. It is composed of two attack vectors: \emph{device-social network correlation (DS-SN)} attack and \emph{social network-social network correlation (SN-SN)} attack. The objective of the DS-SN attack is to identify a list of candidate accounts that might have been accessed via the device for a target social network. We developed an approach to infer a user's social network events from his device system states. More specifically, we leveraged the system states collected by a zero-permission malicious app installed in the user's device to identify the events triggered by the social network app, e.g., the time to tweet and the size of the tweet in Twitter, or the time of posting a photo in Flickr/Instagram. By correlating such information with the public events in the target social network, one can identify a list of candidate accounts in the social network for the user who may have used the device to access his account. To uniquely identify the social network account accessed via the device, one can observe multiple social network events triggered by the device to shorten the candidate account list, which may take a long time if the user does not frequently access his account via the device. If the device is used to access multiple accounts of the same user belonging to different social networks, the attacker can employ the SN-SN attack that examines the profile similarity between two social network accounts from two different social networks to identify the most possible account for the user in each social network. More specifically, the attacker first obtains the candidate account lists for two (or more) social networks via the DS-SN attack, then calculate the profile similarity of two accounts, with one from each account list, and identify the pair of accounts with the highest similarity. Such a SN-SN attack can not only speedup the process of device-identity association attack, but also help identify two or more social network accounts accessed via the same device for the victim.
+
+\subsection{Design and Implementation of Our Attacks}\label{sec:dssnapproach}
+In this subsection, we detail our design of the two inference attacks: DS-SN attack and SN-SN attack.
+
+\begin{table}[!htb]
+\centering
+\caption{Summary of the DS-SN Attack}
+\label{tbl:ds-sn-summary}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|c|c|c|}
+\hline
+\hline
+                         & Inferred SN Events                                                            & \begin{tabular}[c]{@{}c@{}}Corresponding \\ Activity Transition\end{tabular} & \begin{tabular}[c]{@{}c@{}}Corresponding\\ System States\end{tabular}                                                                                          \\ \hline \hline
+\multirow{2}{*}{Twitter} & Tweeting Timestamp                                                         & \begin{tabular}[c]{@{}c@{}} \texttt{MainActivity}\\ $\Downarrow$\\ \texttt{ComposerActivity}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\emph{VSS} of Twitter\\ \texttt{tcp\_snd} of Twitter\\ \texttt{tcp\_rcv} of Twitter\end{tabular}                              \\ \cline{2-4} 
+                         & \begin{tabular}[c]{@{}c@{}}Number of Characters \\ of a Tweet\end{tabular} & N/A                                                                           & \begin{tabular}[c]{@{}c@{}}\texttt{utime} of Keyboard\\ \texttt{stime} of Keyboard\end{tabular}                                                            \\ \hline
+Instagram                & Photo-posting Timestamp                                                    &\begin{tabular}[c]{@{}c@{}} \texttt{MediaCaptureActivity I}\\ $\Downarrow$\\ \texttt{MediaCaptureActivity II} \end{tabular}      & \begin{tabular}[c]{@{}c@{}}\emph{VSS} of Instagram\\ \texttt{tcp\_snd} of Instagram\\ \texttt{tcp\_rcv} of Instagram\end{tabular}                        \\ \hline
+Flickr                   & Photo-posting Timestamp                                                    & \begin{tabular}[c]{@{}c@{}} \texttt{MainActivity}\\ $\Downarrow$\\ \texttt{FilterUploadActivity}   \end{tabular}    & \begin{tabular}[c]{@{}c@{}}\emph{VSS} of Flickr\\ \emph{RSS} of Media Process\\ \texttt{tcp\_snd} of Flickr\\ \texttt{tcp\_rcv} of Flickr\end{tabular} \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{DS-SN Correlation Attack}\label{sec:dssnattack}
+Our approach to attacking the DS-SN correlation is composed of 4 steps: 1) obtaining system states from a victim's device via a zero-permission malicious app, 2) inferring activity transitions in the device, 3) inferring the corresponding social network events triggered by the device, and 4) associating the victim's device with his social network account based on the inferred events triggered by the device and the publicly available events crawled from the target social network. We considered three popular social networks: Twitter, Flickr, and Instagram. Our purpose is to infer the tweeting time of and the number of characters in a tweet for Twitter, the posting time of a photo in Instagram, and the posting time of a photo in Flickr. This inference is based solely on the publicly available information: the Android system states collected by a zero-permission app and the tweeting/photo-posting events crawled from the social network databases. The device state information needed by the DS-SN attack as well as the inferred device activity transitions and social network events for the three social networks are presented in Table~\ref{tbl:ds-sn-summary}.
+
+\textbf{Obtaining System States.}
+
+As shown in Table~\ref{tbl:ds-sn-summary}, we exploited \emph{VSS}, \emph{RSS}, \texttt{utime}, \texttt{stime}, \texttt{tcp\_snd}, and \texttt{tcp\_rcv} for our DS-SN attack. There are multiple ways to obtain these system data in Android, as elaborated in Section~\ref{sec:preliminaries}. The most intuitive way is to make calls to the Android APIs. However, one has to retrieve the three types of data using different APIs, making this method less efficient. To overcome this problem, we first leveraged the ``\texttt{ps}'' command with Android Toolbox \cite{toolbox}, which can return the memory and CPU data in one call; then we directly read the system files \texttt{/proc/uid\_stat/pid/tcp\_snd} and  \texttt{/proc/uid\_stat/pid/tcp\_rcv} to retrieve the network data. 
+
+\begin{figure}[!htb]
+  \includegraphics[width=\textwidth]{swipe.pdf}
+  \caption{The variations of \emph{VSS} of the Twitter app in four different Android devices within approximately 2 minutes of swiping and tweeting.}
+  \label{fig:swipe}
+\end{figure}
+
+
+\textbf{Inference of Activity Transitions}
+
+Activity transition is one of the most critical states to infer private information from an app. Previous research done by Chen \emph{et al.} \cite{chen2014peeking} described an approach that can infer an app's activity transition using a Hidden Markov model (HMM) over the memory data and then further infer the current foreground UI/activity the user is landing on. We tested this approach in our Android devices but failed to make it work. A careful study indicates that this approach is quite sensitive to the quality of the memory data but social network apps when running constantly incur significant noises compared with the clean acctivity transitions considered in \cite{chen2014peeking}. Figure~\ref{fig:swipe} illustrates the variations of the \emph{VSS} of the Twitter app in four Android devices with different OSes when we performed swiping and tweeting for approximately two minutes. Note that people usually swipe when tweet; thus these two activities are commonly performed together. From this study one can conclude that social network apps incur noisy memory data in most Android OSes, and the HMM inference method would face challenges when distinguishing tweeting from swiping. Having noticed this fact, we propose our own approach to precisely infer the activity transitions with the noisy memory data.
+
+To proceed, we take a look at the VSS changes of the three social networks (see Figure~\ref{fig:memory-activity}) when only a posting event is performed - no other activities such as swiping and tapping is involved to remove noise. One can see from Figure \ref{fig:memory-activity} that the activity transition of tweeting (from \texttt{MainActivity} to \texttt{ComposerActivity}) takes 4 time intervals\footnote{Here we refer a time interval as the time span needed for the retrieval of one record of the system states, which can differ from device to device but normally it is within 0.5$\sim$0.6 seconds}; the one for photo-posting in Instagram (from (\texttt{MediaCaptureActivity I} to \texttt{MediaCaptureActivity II}) takes 12 time intervals; while the one for photo-posting in Flickr (from \texttt{MainActivity} to \texttt{FilterUploadActivity}) takes only one time interval. Thus obviously, it is hard to design a uniform approach that can work for all the three social networks. In this subsection, we propose a novel \emph{memory pattern regression} model that can infer the activity transitions based on the VSS variations for Twitter and Instagram, and employ the RSS of the system media process\footnote{We employed RSS for Instagram too but our memory pattern regression model performs better.} to infer the activity changes in Flickr. In the following, we first detail our novel memory pattern regression model. 
+
+
+\begin{figure}[!htb]
+  \includegraphics[width=\textwidth]{activity-memory.pdf}
+  \caption{The variations of \emph{VSS} of Twitter, Instagram, and Flickr when a tweet or a photo is posted. The red parts refer to the activity transitions of tweeting/photo-posting in the corresponding social network.}
+  \label{fig:memory-activity}
+\end{figure}
+
+
+{\noindent \bf Memory pattern regression.}
+Our memory pattern regression algorithm takes as input the training set $D=\{\mathbf{y}_j\}_{j=1\cdots d}$, which is the memory data tested $d$ times for a single activity transition with $\mathbf{y}_j = (y_{j_1}, y_{j_2}, \cdots, y_{j_{N_j}})$ being the \emph{VSS} vector of size $N_j$ obtained in the $j$-th experiment. We first need to find out the number $n$, which represents the number of time intervals in which a target activity transition, i.e., an activity transition of a tweeting in Twitter or a photo-posting in Instagram, takes place. In order to determine $n$, we first construct a sequence $\mathbf{\Delta y_j} = (\Delta y_{j_1},\cdots,\Delta y_{j_{N_j-1}})$, where $\Delta y_{j_i}=|y_{j_{i+1}}-y_{j_i}|$; %, and $\mathbf{\Delta y_j}$ has $N-1$ terms since each term of $\mathbf{\Delta y_j}$ is a pair of consecutive terms from $\Delta y_{j_i}$; 
+then we set up a threshold $\delta$, which can be determined experimentally, and let $n_j$ be the number of terms in $\mathbf{\Delta y_j}$ whose values are greater than $\delta$; finally %we let $n_j$ be the number of differences between the greatest index and the smallest index of the extracted terms, and
+we set $n=\ceil{\frac{\sum_{j=1}^{d} n_j}{d}}$.
+
+
+Having determined $n$, we proceed to extract the \emph{VSS} change pattern of a transition. Instead of directly using the raw data of \emph{VSS}, we use slopes of each pair of adjacent \emph{VSS} points since doing this can not only mitigate the noises of memory but also obtain the shape of the transition (i.e., pattern). In order to do so, we minimize a function
+$f:\mathbb{R}^{n+1}\longrightarrow \mathbb{R}^{n+1}$, which is represented as
+%
+\begin{equation} \label{eq:msef}
+f \leftarrow \argminA_f\{\frac{1}{d}\Sigma^d_{j=1}
+[\frac{1}{n}\Sigma^{n}_{i=1}(\Delta f(j_i)-\Delta y^\prime_{j_i})^2]\}
+\end{equation}
+where $\Delta f(j_i)=f(j_{i+1})-f(j_i)$ 
+is the slope between the point $j_{i+1}$ and $j_i$ since $j_{i+1} - j_i=1$, and 
+$\Delta y^\prime_{j_i}$ is the $i$th term in the consecutive interval of $\mathbf{\Delta y_j}$ with size $n$ that covers the maximum number of values greater than $\delta$.
+
+
+In order to learn the $f$ satisfying \eqref{eq:msef}, we employ a 5-layer feedforward neural network with $n$ neurons at each layer. In this deep neural network, each neuron in the input and output layers is connected to a neuron (one-to-one) in the adjacent hidden layers, but all the hidden layers are fully connected. Moreover, the input and output layers simply use the Hadamard product as the activation function while all other layers use the Sinusoid function for activation. 
+
+The neural network adopted in our approach was implemented based on the Google TensorFlow \cite{abadi2016tensorflow} deep learning framework with the Adam stochastic optimization \cite{kingma2014adam} that takes the right part of (\ref{eq:msef}) as a loss function. By minimizing the loss function, we can obtain $\mathbf{v_j}=( \Delta f(j_1),\Delta f(j_2),...,\Delta f(j_{n}))$ as the \emph{VSS} pattern, which is related to an activity transition with $n$ pieces of slopes. 
+
+Let $\mathbf{y}=(y_1,...,y_N)$, with $N>n$, be the \emph{VSS} sequence collected from a victim's device. The question here is: how can we tell whether the target activity transition happens in this sequence based on the pattern $\mathbf{v_j}$? Intuitively, directly determining whether the Euclidean distance  between them is smaller than a threshold $\sigma$, i.e., $\|\mathbf{v_j}-\Delta\mathbf{y}\|<\sigma$ with $\Delta\mathbf{y}$ being $n$  consecutive slops of $\mathbf{y}$, seems reasonable. However, the Euclidean distance is not applicable in our case since if a user constantly uses an app without quitting, the \emph{VSS} of the App would accumulate. Thus clearly, statically setting a threshold can result in a gradually larger error. Therefore, we developed a comparison method which fits our problem well. Instead of directly considering $\Delta\mathbf{y}$, we tolerate a little bit by considering a neighborhood of $\Delta\mathbf{y}$, denoted by $B_{r}(\Delta\mathbf{y})$, where $r$ is a small integer such that $n<r< N$. Specifically, for a \emph{VSS} value at $i$, we consider the previous and post $r$ slopes of this value, yielding $B_{r}(\Delta y_{i})=(\Delta y_{i-r},...,y_{i},...,\Delta y_{i+r})$ (totally $2r+1$ terms). After that, given a threshold $\sigma$, our comparison algorithm extracts each continuous segment of slopes with size $n$ from $B_{r}(\Delta\mathbf{y_j})$ and calculates the mean squared errors with $\mathbf{v_j}$, denoted as $mse_1,mse_2,...,mse_{2r+2-n}$ (totally $2r+2-n$ terms). Lastly, if $\max(|mse_1-mse_2|,|mse_2-mse_3|,...,|mse_{2r+2-n}-mse_{2r+2-n}|)<\sigma$, we perceive that the target activity transition occurs in $B_{r}(\Delta y_{i})$.
+
+For the activity transition inference of the photo-posting event in Flickr, we employed a different approach based on the following observation: when posting a photo in Flickr, a user needs to choose a picture from his album or to take a photo; in this case, the \emph{RSS} of the system media process, i.e., \texttt{android.process.media}, increases and the \emph{VSS} of Flickr increases. Therefore, using this information, one can infer that an activity transition of a photo-posting event occurs in Flickr. Note that even though Instagram is also a photo-based social network, this method does not apply to it because Instagram allows a user to post comments with a picture. Therefore, if directly using this method in Instagram, one may not be able to tell if a user posts a photo or just sends a comment.
+
+\textbf{Inference of Social Network Events}
+
+To infer the timestamp of a tweeting/photo-posting event, we need to check not only the corresponding activity transitions implied by the memory state changes but also the network states of the device: the existence of an activity transition alone does not mean that the event actually has happened - it is completed only after the tweet message or the photo is sent via the network. Therefore, we need to figure out whether \texttt{tcp\_snd} and \texttt{tcp\_rcv} increase after the detection of the activity transition\footnote{One can use only \texttt{tcp\_snd} for the event inference but our experiments indicate that both \texttt{tcp\_snd} and \texttt{tcp\_rcv} increase when an event occurs, which is reasonable as TCP connections involve two-way traffics.}. In other words, an attacker can infer when a tweeting/photo-posting event happens by combining activity transitions with the network \texttt{tcp\_snd} and \texttt{tcp\_rcv} information. 
+
+%\subsubsection{Inference of the Number of Characters in a Tweet Message}
+In Twitter, we can also infer the number of characters in a tweet message by the keyboard event. Note that after a tweet is posted, keyboard would disappear and \texttt{tcp\_snd} would increase. However, we cannot use \texttt{tcp\_snd} to precisely estimate the number of characters sent in a tweet due to the protocol overhead of TCP connections. In our approach, we resort to CPU usage information. We found that the system states of the Android keyboard process (\texttt{com.google.android.inputmethod.latin}) are tightly related to a user's typing actions. More specifically, when the keyboard is launched, the \emph{VSS} of the keyboard process increases drastically from a constant state; when a user types a keystroke, the \texttt{utime} and the \texttt{stime} of the keyboard process roughly increase by 1 clock tick. Thus we took the ceiling of the averaged increased clock ticks of \texttt{utime} and \texttt{stime} to estimate the number of characters in a tweet message. %Figure \ref{fig:utime-vtime} illustrates the changes of \texttt{utime} and \texttt{vtime} for a keyboard process. 
+
+\textbf{Associating Device with Social Network Accounts}
+
+After retrieving the targeted social network events based on the Android system states, i.e., the timestamps of the posts and the sizes of the tweets, we can repeatedly match this information with the public information of the target social network to obtain a gradually smaller list of potential social network accounts for the device. For example, from the device system states we inferred that our target victim tweeted twice in two different timestamps and estimated the sizes of these two tweets. Then we proceeded to crawl the Twitter database and filter out those who did not tweet in these two timestamps and whose tweet sizes do not match with our inferred tweet sizes. By this way we can get a reasonably small list of potential Twitter accounts that may be associated with the victim with a high probability. %Similarly, we can carry out the inference attack for Flickr and Instagram.
+
+
+\textbf{Crawling the Social Network Events}
+
+As mentioned earlier, we need the public information of the target social network to realize the DS-SN attack. More specifically, we need to crawl the tweets/posts occurring at a specific time within a social network. However, it is not trivial to retrieve the required data from the three social networks under our consideration. We have to overcome the following challenges.
+
+First, even though Twitter has a streaming API which provides an interface to facilitate the retrieval of the tweets for a given time period, this method does not work since the API tends to drop a large amount of unimportant data and it has a rate limit. Luckily, we found that Twitter offers a webpage called Twitter Advanced Search (TAS) via which we can retrieve a list of tweets that contain the queried keywords, locations, or user accounts, for a given time period.
+Since user accounts are what we want to
+retrieve, we cannot use accounts as a filter. Therefore, 
+we query with letters from ``a'' to ``z'' as the filtering keywords, 
+and the TAS server replies a list of tweets containing any letter from ``a'' to ``z''
+with very minimal data loss - the Twitter server fails to return some tweets only when it thinks that these tweets are duplicates or these tweets only contain non-English contents. Hence, we leverage this method by making
+queries through TAS with 26 letters and set the time period to be 1 minute.
+We wrote a program that sends a url in the following format:
+\begin{lstlisting}[basicstyle=\scriptsize]
+https://twitter.com/i/search/timeline?f=tweets&vertical=default&q= keyword%20since%3Astart_date%20until%3Aend_date&src=typd&include_available_features=1&include_entities=1&lang=en&max_position=TWEET-old_tweet_id-new_tweet_id-BD1UO2FFu9QAAAAAAAAETAAAAAcAAAASAAAA...A&reset_error_state=false
+\end{lstlisting}
+where \emph{new\_tweet\_id} is the tweet id of the very first tweet
+shown in the result, while \emph{old\_tweet\_id} is the id of the 
+last tweet received. Then TAS returns a JSON file containing 20 tweets
+for each query sorted by the posting times. Note that this method requires us to recurrently query until we retrieve all the tweets for our desired time period. We
+found that in average there are approximately 30,000 - 60,000 new
+tweets generated globally at every minute. 
+
+Flickr offers a similar search engine that does not require the inputs of keywords, locations, and so on. In other words, by merely feeding
+a time period to the Flickr search engine one can retrieve all the posts
+of that time period. Based on our observation, Flickr follows the following format to retrieve posts:
+\begin{lstlisting}
+https://api.flickr.com/services/rest?sort=relevance&parse_tags=1&content_type=7&extras=can_comment%2Ccount_comments%2Ccount_faves%2'Cdescription%2Cisfavorite%2Clicense%2Cmedia%2Cneeds_interstitial%2Cowner_name%2Cpath_alias%2Crealname%2Crotation%2Curl_c%2Curl_l%2Curl_m%2Curl_n%2Curl_q%2Curl_s%2Curl_sq%2Curl_t%2Curl_z&per_page=100&page=xx&lang=en-US&advanced=1&min_upload_date=start_time&max_upload_date=end_time&viewerNSID=xx&method=flickr.photos.search&'csrf=xx&api_key=xx6&format=json&hermes=1&'hermesClient=1&reqId=xx&nojsoncallback=1'
+\end{lstlisting}
+where \emph{start\_time} and \emph{end\_time} are Unix times. The
+server returns a JSON file containing 100 posts for each requested
+page number. Here a page number represents the index of the Flickr post pages, with each page containing 100 posts. For example, the third page (page number three) contains the 301st to the 400th posts following a descending posting time. We wrote a program that keeps on sending the url until all pages have been returned.
+
+In contrast, Instagram does not have any interface for
+returning posts based on time; instead, it provides an interface that
+returns posts based on locations, accounts, and hashtags. Therefore, we
+can only collect as many user accounts as possible for further scrutiny.
+Due to the nature of Instagram, almost every
+Instagram user follows at least one verified account (celebrity). Thus we
+collected all the followers of the official account of Instagram, Selena Gomez, and Taylor Swift, the top three most-followed accounts on
+Instagram. As a result, we obtained in total 390,592,786 users while the
+number of active Instagram users is about 500 million to 600
+million \cite{instdata}. To collect the followers of the three most-followed accounts, we wrote a program that sends a post data to the url \texttt{
+\url{https://www.instagram.com/query/}} with the format of
+\begin{lstlisting}[language=json,firstnumber=1, basicstyle=\scriptsize]
+"q": "ig_user(xxx)
+{ followed_by.after(end_cursor, step)
+{count,page_info
+{ end_cursor, has_next_page}, nodes {id, is_verified,
+followed_by_viewer, requested_by_viewer, full_name, profile_pic_url, username}
+}
+}"
+\end{lstlisting}
+where \emph{end\_cursor} indicates the cursor of the last retrieved user and \emph{step} indicates the number of users returned at each round.
+
+
+\subsubsection{SN-SN Correlation Attack}
+\label{sec:snsnattack}
+Our SN-SN correlation attack is designed to assist the DS-SN attack since the latter may not always be feasible (e.g., taking too long time) due to the infrequency of successive tweets/posts in a single social network by the target victim. To understand this challenge, we carried out a measurement study over 500,008 users randomly selected from the followers of 10 celebrities in Twitter to collect the time intervals between the most recent two successive tweets. As one can see from Figure~\ref{fig:timediff}, over half of these Twitter users tweeted again more than 20 days later after their last tweet. Therefore, if only exploiting the DS-SN correlation, an attacker may have to wait for a long time to collect enough data for a satisfying result. Nevertheless, a user may access different social networks with the same device at different times; thus exploiting the correlations of the accounts in different social networks may help speedup and enhance the accuracy of the device-identity association attack. In this subsection, we investigate the SN-SN correlation to identify the possible accounts in different social networks for the same user, which can help shorten the list of candidate accounts obtained from the DS-SN attack. Assume that an attacker has launched the DS-SN attack on a victim device for two social networks and obtained two lists of candidate accounts. Then the objective of our SN-SN attack is to identify the accounts that can match to the same user with high probability. This is done by the so-called \emph{profile similarity}, which is a weighted average of the similarities of five attributes:  \textit{location} ($s_1$), \textit{personal website link} ($s_2$), \textit{username} ($s_3$), \textit{biography} ($s_4$), and \textit{profile image} ($s_5$). A novel learning-based model is presented to calculate the weight for each attribute.  %Then we define an overall similarity which aggregates all these similarity metrics into a weighted representation. Lastly, we employ a learning-based method to find the weights for overall similarity to refine our results.
+
+\begin{figure}[!htb]
+  \includegraphics[width=\textwidth]{distribution3.pdf}
+  \caption{The number of users \emph{vs.} the time difference between two
+    successive tweets. One can see that the majority of the Twitter
+    users tweeted twice between 20 days to 30 days. %; thus it is not always
+    %easy to retrieve multiple tweets from a single user.
+    }
+  \label{fig:timediff}
+\end{figure}
+
+In the following we present the definitions of the five attribute similarities. For better elaboration, we use $u_1^{t_1}$ and $u_2^{t_2}$ to refer to the two accounts in social network $t_1$ and $t_2$, respectively. 
+
+\noindent \theoremstyle{definition}
+\begin{definition}[Location Similarity, $s_1$]
+Let $p_{1}^{t_1}$ and $p_{2}^{t_2}$ be the locations set by $u_{1}^{t_1}$ and $u_{2}^{t_2}$, respectively. The location similarity score $s_1$ is defined as
+\begin{equation}
+s_1(p_{1}^{t_1},p_{2}^{t_2})=
+\begin{cases}
+1 & if\ p_{1}^{t_1} \mbox{ and } p_{2}^{t_2} \mbox{ are the same},\\
+0 & otherwise.
+\end{cases}
+\end{equation}
+\label{def:loc}
+\end{definition}
+In the social networks we consider, the location in a user's profile follows the format of ``\textit{City, State/Province, Country}'' (a user is not mandatory to fill out all these three fields); a user can also upload the longitude and latitude of his location. In this study, we consider two locations to be the same if (1) cities are the same; or (2) states/provinces are the same; or (3) the Euclidean distance between two coordinates does not exceed 814 miles, which is the approximate diameter of the largest state, Alaska, in the US \cite{alaska}.
+
+\noindent \theoremstyle{definition}
+\begin{definition}[Personal Website Link Similarity, $s_2$]
+Let $p_{1}^{t_1}$ and $p_{2}^{t_2}$ be the personal website links set by $u_{1}^{t_1}$ and $u_{2}^{t_2}$, respectively. The personal website link similarity score $s_2$ is defined as
+\begin{equation}
+s_2(p_{1}^{t_1},p_{2}^{t_2})=
+\begin{cases}
+1 & if\ p_{1}^{t_1}=p_{2}^{t_2},\\
+0 & otherwise.
+\end{cases}
+\end{equation}
+\label{def:pw}
+\end{definition}
+%Here we consider if two personal websites are the same if the links are the same.
+
+\noindent \theoremstyle{definition}
+\begin{definition}[Username Similarity, $s_3$]
+Let $p_{1}^{t_1}$ and $p_{2}^{t_2}$ be the usernames of $u_{1}^{t_1}$ and $u_{2}^{t_2}$, respectively. The username similarity score $s_3$ is defined as
+\begin{equation}
+s_3(p_{1}^{t_1}, p_{2}^{t_2})=\frac{|lcs(p_{1}^{t_1},p_{2}^{t_2})|}{\max(|p_{1}^{t_1}|,|p_{2}^{t_2}|)}
+\end{equation}
+where $lcs(str_1,str_2)$ denotes the \emph{longest common substring} of strings $str_1$ and $str_2$.
+\label{def:user}
+\end{definition}
+
+\noindent According to the latent semantic analysis (LSA) in NLP \cite{landauer1998introduction}, we defined the biography similarity in the following manner.
+\noindent
+\begin{definition}[Biography Similarity, $s_4$]
+Let $p_{1}^{t_1}$ and $p_{2}^{t_2}$ be the biographies of $u_{1}^{t_1}$ and $u_{2}^{t_2}$, respectively, where $p_{1}^{t_1}$ contains $m_1$ unique words and $p_{2}^{t_2}$ contains $m_2$ unique words. The frequency vector $\vv{fq}(p_{1}^{t_1,4},p_{2}^{t_2})$ is defined as the number of times each word of $p_{1}^{t_1}$ appears in $p_{2}^{t_2}$, i.e., 
+
+$$\vv{fq}(p_{1}^{t_1},p_{2}^{t_2})=\left( 
+z_{1},
+z_{2},
+\cdots,
+z_{m_1}
+\right)^T$$
+with $z_i$ being the number of times the $i$th word of $p_{1}^{t_1}$ appearing in $p_{2}^{t_2}$.
+%
+Let $F=\vv{fq}(p_{1}^{t_1},p_{2}^{t_2})\cdot \vv{fq}(p_{1}^{t_1},p_{2}^{t_2})^{T}$.  We perform the SVD decomposition against $F$ and retrieve $F$'s singular value vector, which is denoted by $\delta=(\delta_1,\dots,\delta_{m_1})$. Then
+the biography similarity $s_4(p_{1}^{t_1},p_{2}^{t_2})$ is defined as
+ %
+\begin{equation}
+\begin{gathered}
+s_4(p_{1}^{t_1},p_{2}^{t_2})= \min(\frac{\left\Vert \varSigma\right\Vert _{F}}{\left|p_{1}^{t_1}\right|\left|p_{2}^{t_2}\right|},1)=\min(\frac{\sqrt{\sum_{i=1}^{m}\delta_{m_1}^{2}}}{\sqrt{m_1\cdot m_2}},1)
+\end{gathered}
+\end{equation}
+\label{def:bio}
+\end{definition}
+
+\noindent Lastly, due to the special nature of profile images, we consider a profile image with and without human faces separately. %separate the profile images into two types based on whether or not there are human faces in the images.
+\noindent
+\begin{definition}[Profile Image Similarity, $s_5$]
+Let $p_{1}^{t_1}$ and $p_{2}^{t_2}$ be the profile images of $u_{1}^{t_1}$ and $u_{2}^{t_2}$, respectively. The profile image similarity score $s_5$ is defined as:
+\begin{equation}
+s_5(p_{1}^{t_1}, p_{2}^{t_2})=\begin{cases}
+s^F_5(p_{1}^{t_1}, p_{2}^{t_2}), \hbox{both have faces};\\
+s^{\neg F}_5(p_{1}^{t_1}, p_{2}^{t_2}), \hbox{none has face};\\
+0, \hbox{otherwise}.
+\end{cases}
+\end{equation}
+\label{def:image}
+\end{definition}
+
+\noindent For the case when both profile images contain human faces, our approach compares the facial similarity in three steps: (1) \textit{face detection}, (2) \textit{face aligment}, and (3) \textit{face similarity comparison}. In the face dection step, we leverage the Haar Feature-based Cascade Classifier proposed by \cite{viola2001rapid}\cite{lienhart2002extended}; in the face aligment step, we leverage the Multitask Cascaded Convolutional Network proposed and implemented by Zhang \emph{et al.} \cite{zhang2016joint}; and finally, we come up with the face similarity definition motivated by the FaceNet proposed by Schroff \emph{et al.} \cite{schroff2015facenet}. Embedding \cite{schroff2015facenet} is a function $f_{emb}$ whose $L^2$ norm satisfies $\left\Vert f_{emb}(x)\right\Vert _{2}=1$. In our study, we define $f_{emb}$ as
+\begin{equation}
+f_{emb}(px_{i,j})=\frac{px_{i,j}}{\sqrt{\sum_{i} \sum_{j} px_{i,j}^{2}}}
+\end{equation}
+where $px_{i,j}$ is the pixel on the $i$-th row and $j$-th colum of an aligned face picture matrix and $d$ is the dimension of the matrix, which is usually two. We define the loss function for the profile images with faces as
+\begin{equation}
+loss_f=\underset{i,j}{\sum}\left[\left\Vert f_{emb}(px_{i,j}^{p_{1}^{t_1}})-f_{emb}(px_{i,j}^{p_{2}^{t_2}})\right\Vert _{2}^{2}\right]
+\end{equation}
+
+\noindent
+\begin{customdfn}{5.1}[Profile Image Similarity with Face, $s^{F}_5$]
+The face image similarity is defined as
+\begin{equation}
+s^F_5(p_{1}^{t_1}, p_{2}^{t_2})=\max(1-\sqrt{loss_f}, 0)
+\end{equation}
+\end{customdfn}
+
+\noindent For the case when both images do not have human faces, we leverage the traditional algorithm, the scale invariant feature transform (SIFT) \cite{lowe1999object}, used for object recognition in computer vision. Let $g(x)$ represent the
+number of SIFT features of picture $x$, and $m(x,y)$ be the number of matched features between picture $x$ and $y$ with Lowes's ratio test \cite{lowe2004distinctive}. 
+\begin{customdfn}{5.2}[Profile Image Similarity without Face, $s^{\neg F}_5$]
+\begin{equation}
+\begin{gathered}
+s^{\neg F}_5(p_{1}^{t_1}, p_{2}^{t_2}) = \frac{m(p_{1}^{t_1}, p_{2}^{t_2})}{\min(g(p_{1}^{t_1}),g(p_{2}^{t_2})}
+\end{gathered}
+\end{equation}
+\end{customdfn}
+
+Now we are ready to define our overall profile similarity:
+\theoremstyle{definition}
+\begin{definition}[Profile Similarity]
+Let $u_{1}^{t_1}\in SN_1$ and $u_{2}^{t_2}\in SN_2$, the profile similarity $S:SN_1\times SN_2\rightarrow [0,1]$ of two user accounts is defined as
+\begin{equation}
+S(u_{1}^{t_1},u_{2}^{t_2})=\sum_{k=1}^{5} w_k s_k(p_{1}^{t_1},p_{2}^{t_2})
+\label{def:overall}
+\end{equation}
+where %$p_{1}^{t_1}$ is the $k$-th profile attribute of account $u_{1}^{t_1}$ in the social network $SN_1$, $p_{2}^{t_2}$ is the $k$-th profile attribute of account $u_{2}^{t_2}$ in the social network $SN_2$, 
+$s_k(p_{1}^{t_1},p_{2}^{t_2})$ represents the $k$-th attribute similarity of the two user accounts and $w_k$ is the corresponding weight that captures the impact of $s_k$ on the overall profile similarity. 
+\end{definition}
+
+In the following we present a learning based model to calculate the weights in Definition~\ref{def:overall}. %, which play a crucial rule for an effective inference. 
+%Having specified all the definitions, we need to find the weights for the profile similarity, which are crucial for a correct inference. 
+Intuitively, the weights should be determined by maximizing the probability of correct matches and minimizing the probability of incorrect matches. %In order to do so, we employ a learning-based method. 
+Suppose we have a ground truth dataset which includes $n_{gt}$ users from $SN_{1}$ and $n_{gt}$ users from $SN_{2}$, with the $i$th user from $SN_{1}$ and the $i$th user from $SN_{2}$ are indeed the same person.
+%Suppose we have a ground truth dataset which includes $n_{gt}$ users collected from $SN_{1}=\{u_{1}^{1},u_{1}^{2},\cdots,u_{1}^{n_{gt}}\}$ and $n_{gt}$ users collected from $SN_{2}=\{u_{2}^{1},u_{2}^{2},\cdots,u_{2}^{n_{gt}}\}$ such that each pair of users with the same superscript is indeed the same person. %For example, $u_{1}^{i}$ and $u_{2}^{i}$ from social networks $SN_1$ and $SN_2$ are the same person. 
+Based on the profile similarity defined in Definition~\ref{def:overall}, we can get a matrix $\boldsymbol{S}$ over the pairwise profile similarity scores between $SN_{1}$ and $SN_{2}$.
+%
+\begin{equation}
+\mathbf{S}(SN_{1},SN_{2})= \left(\begin{array}{cccc}
+S(u_{1}^{1},u_{2}^{1}) & S(u_{1}^{1},u_{2}^{2}) & \ldots & S(u_{1}^{1},u_{2}^{n_{gt}})\\
+S(u_{1}^{2},u_{2}^{1}) & S(u_{1}^{2},u_{2}^{2}) & \ldots & S(u_{1}^{2},u_{2}^{n_{gt}})\\
+\vdots & \vdots & \ddots & \vdots\\
+S(u_{1}^{n_{gt}},u_{2}^{1}) & S(u_{1}^{n_{gt}},u_{2}^{2}) & \ldots & S(u_{1}^{n_{gt}},u_{2}^{n_{gt}})
+\end{array}\right)
+\end{equation}
+where each entry $S(u_{1}^{i}, u_{2}^{j})$ is the profile similarity score defined in Definition~\ref{def:overall}.
+
+In order to find the proper weights, instead of considering only the incorrect matches or correct matches, we came up with a novel loss function which takes into consideration both the correct matches and the incorrect matches, making it more efficient and effective. The loss function is defined as follows:
+%
+\begin{equation}\label{eq:loss}
+\begin{gathered}
+loss=l(w_{1},w_{2},\ldots,w_{k})= \\
+\left\langle \left[\left(\begin{array}{c}
+1\\
+1\\
+\vdots\\
+1
+\end{array}\right)_{n_{gt}\times1}-diag(\boldsymbol{S})+\frac{1}{n_{gt}-1}\left(\begin{array}{c}
+\underset{j,j\neq1}{\sum}S(u_{1}^{1},u_{2}^{j})\\
+\underset{j,j\neq2}{\sum}S(u_{1}^{2},u_{2}^{j})\\
+\vdots\\
+\underset{j,j\neq n_{gt}}{\sum}S(u_{1}^{n_{gt}},u_{2}^{j})
+\end{array}\right)\right]^{2}\right\rangle
+\end{gathered}
+\end{equation}
+where $\left\langle \cdot \right\rangle$ represents the expectation sign. The weight vector is determined by solving the following system of equations.
+\begin{equation}\label{eq:gradient}
+\nabla l=0\Longrightarrow\begin{cases}
+\frac{\partial l}{\partial w_{1}}=0\\
+\frac{\partial l}{\partial w_{2}}=0\\
+\vdots\\
+\frac{\partial l}{\partial w_{k}}=0
+\end{cases}
+\end{equation}
+In our approach, we solve the system of equations (\ref{eq:gradient}) by TensorFlow with the gradient descent optimization \cite{ruder2016overview}.
+
+\subsection{Evaluation}
+In this subsection, we report the evaluation results of our approach to demonstrate its effectiveness on the DS-SN attack within a single social network and the SN-SN attack across two social networks.
+
+According to the design elaborated in Section~\ref{sec:dssnapproach}, we implemented the following programs: a malicious app in Java with 3280 lines of code (LOC) for collecting the publicly available Android system state data, which deals with the first step of the DS-SN attack; a server code for activity transition inference and social network event inference with 1800 LOC in Python, which handles the second and third steps of the DS-SN attack; a program of 1595 LOC in Python to crawl the databases of Twitter, Instagram, and Flickr, and perform the device-account matching, which corresponds to the fourth step of the DS-SN attack; and finally, a program with 707 LOC in Python, which performs the SN-SN user account association analysis.
+
+In our experiments, we used five different Android devices: a Nexus 7 with Android version 6.0.1, a HTC One Sense 6 with Android version 5.0.2, a Blu R1 HD with Android version 6.0, a Huawei Honor 8 Lite with Android version 7.0, and a Samsung Galaxy S4 with Android version 4.2.2. In the server side, we used a Dell Inspiron 5559 Specs with Intel Core i7-6500U CPU @ 2.50GHz x 4 running OS Ubuntu 16.04 LTS to conduct the experiments. 
+
+\subsubsection{Effectiveness of the DS-SN Correlation Attack}
+We evaluated the effectiveness of our DS-SN attack by i) validating the memory regression learning model, ii) inferring the posting timestamps, iii) inferring the number of characters in a tweet, and iv) inferring the possible list of social network accounts associated with the victim device via multiple posting events.
+
+\textbf{Performance of the Memory Regression Model}
+
+As mentioned in Section~\ref{sec:dssnapproach}, we leveraged a 5-layer feedforward neural network to learn the patterns of activity transitions in Twitter and Instagram, i.e., from \texttt{MainActivity} to \texttt{ComposerActivity} in Twitter and from \texttt{MediaCaptureActivity I} to \\
+\texttt{MediaCaptureActivity II} in Instagram. We wrote an automatic program in Python using the Android debug bridge (\texttt{adb})~\cite{adb} with the UI Automator framework for the generation and collection of the training data and test data. We ran the automatic \texttt{adb} Python program in all five Android devices for collecting the training data. As a result, for each of the 5 Android devices, we collected 1,900 pieces of training data for Twitter and 2,340 pieces of training data for Instagram. Thus, in total we have 9,500 pieces of training data for Twitter and 11,700 pieces of training data for Instagram. Note that each piece of the training data contains only the target activity transition - no other noisy actions such as swiping. To determine $n$ as mentioned in Section~\ref{sec:dssnapproach}, we tried multiple different values for the threshold $\delta$ and found that the values around $1000$ work pretty well for both Twitter and Instagram; thus we set $\delta=1000$. Also, we set the cessation threshold for the mean squared error to be $10^{-6}$. As a result, the mean squared error for the learning process of the Twitter activity transition drops to below $10^{-6}$ after approximately 30 minutes and the one for the Instagram activity transition drops to below $10^{-6}$ after approximately 40 minutes, which are reasonably low for deep learning models.
+
+\begin{table*}[t]
+\centering
+\caption{Averaged Inference Results on the Posting Timestamps and the Number of Characters in Tweeter}
+\label{tbl:posttimeinf}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|l|c|c|c|}
+\hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}App \\ Name\end{tabular}} & \multicolumn{4}{c|}{Averaged Inference Results on the Posting Timestamps and the Number of Characters in Tweeter}                                                                                                                                                                                                                                                                                                                                                                                                  \\ \cline{2-5}
+                                                                     & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Types of \\ Random Noisy \\Actions Performed\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Accuracy of Inferrring\\ Posting Timestamps\end{tabular} & \begin{tabular}[c]{@{}c@{}}Average Difference of\\ Timestamps\\ (in seconds)\end{tabular} &  \begin{tabular}[c]{@{}c@{}}Accuracy of Inferring\\ Number of Characters\\ in Tweets\end{tabular}     \\ \hline
+Twitter                                                              & \begin{tabular}[c]{@{}l@{}}1. Swiping\\ 2. Tapping\\ 3. Commenting\\\end{tabular}       & 86.99\%                                                    & 16.35                                                                                                                                            & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}37.18\% ($\epsilon=0.05$)\\ 91.86\% ($\epsilon=0.15$)\\ 98.92\% ($\epsilon=0.3$)\end{tabular}}              \\ \hline
+Flickr                                                               & \begin{tabular}[c]{@{}l@{}}1. Swiping\\ 2. Tapping\\ 3. Commenting\\\end{tabular}  & 96.81\%                                                    & 15.05                                                                                                                                             & N/A                                                                                                  \\ \hline
+Instagram                                                            & \begin{tabular}[c]{@{}l@{}}1. Swiping\\ 2. Tapping\\ 3. Commenting\\\end{tabular}  & 96.73\%                                                    & 19.75                                                                                                                                             & N/A                                                                                                  \\ \hline
+\end{tabular}
+}
+\end{table*}
+
+\textbf{Inference of the Posting Timestamps}
+
+The automatic \texttt{adb} Python program performed 5,625 tests for all five Android devices, with each device performing 1,125 tests. Each test is for one target social network app and collects a block of data with 6 rows: \emph{VSS},  \texttt{tcp\_snd}, and \texttt{tcp\_rcv} for the social network app,  \texttt{utime} and \texttt{stime} for the keyboard process, and \emph{RSS} for the media process, and each row contains 600 values. Therefore, for each Android device, we conducted 375 tests for each target app. It took 5 to 6 minutes to perform one test, during which our automatic \texttt{adb} program controlled the target social network app to tweet with a random number of characters (Twitter) or to post a photo (Instagram and Flickr)), and recorded the system timestamps of the tweet/photo-post event (ground truth timestamps) for evaluation. The \texttt{adb} program also generated random noisy actions such as swiping, tapping, and commenting in the target apps to imitate human beings' actions on these apps during each block collection. %Then in some moments, our program controlled the target apps to tweet with a random number of characters (Twitter) or to post a photo (Instagram and Flickr), and recorded the system timestamp of the tweet/photo-post (ground truth timestamp) for evaluation.
+Meanwhile, our malicious app collected \emph{VSS}, \texttt{tcp\_snd}, and \texttt{tcp\_snd} for the three social network apps and the \emph{RSS} of Android media process as shown in Table~\ref{tbl:ds-sn-summary} for the inference attack. 
+
+We considered that a correct inference is made if the difference between the ground truth posting timestamp and our inferred posting timestamp is less than 30 seconds. 
+Table~\ref{tbl:posttimeinf} reports the averaged inference results of all Android devices. As one can see, the numbers of correct inferences of the posting timestamps for Twitter, Flickr, and Instagram are 86.99\%, 96.81\%, and 96.73\%, respectively. Table~\ref{tbl:eachdeviceinfer} shows the inference results of each Android device against the three target apps. As one can see, generally speaking, our inference of posting timestamps is most effective in Nexus 7 device, and least effective in HTC One Sense 6.
+
+Note that in our memory regression model we set $\sigma=10^5$, which was determined based on many trials. 
+
+\begin{table}[]
+\centering
+\caption{Inference Results on the Posting Timestamps for Each Device}
+\label{tbl:eachdeviceinfer}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multirow{2}{*}{Device Name} & \multicolumn{3}{c|}{App Name} \\ \cline{2-4} 
+                             & Twitter & Instagram & Flickr  \\ \hline
+Nexus 7                      & 90.67\% & 98.67\%   & 99.73\% \\ \hline
+HTC One Sense 6              & 82.93\% & 91.20\%   & 90.40\% \\ \hline
+Blu R1 HD                    & 91.47\% & 87.47\%   & 98.67\% \\ \hline
+Huawei Honor 8               & 84.27\% & 94.93\%   & 98.40\% \\ \hline
+Samsung Galaxy S4            & 90.93\% & 85.87\%   & 98.93\% \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table*}[!htb]
+\centering
+\caption{Attack Results on Volunteers.}
+\label{tbl:volunteers}
+\resizebox{1.2\columnwidth}{!}{
+\hspace{-27ex}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline \hline
+\multicolumn{13}{|c|}{Attack Results on Volunteers}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline \hline
+\multirow{2}{*}{\# of Timestamps} & \multicolumn{6}{c|}{\begin{tabular}[c]{@{}c@{}}Number of Potential \\ Twitter Identities\\ (Without Number-of-Character Filter)\end{tabular}} & \multicolumn{6}{c|}{\begin{tabular}[c]{@{}c@{}}Number of Potential \\ Twitter Identities\\ (With Number-of-Character Filter)\end{tabular}}                                                                                                                                                                                                                                                                                                                                                                                              \\ \cline{2-13} 
+                                  & Participant 1          & Participant 2          & Participant 3          & Participant 4          & Participant 5          & Average          & Participant 1                                                                        & Participant 2                                                                        & Participant 3                                                                        & Participant 4                                                                        & Participant 5                                                                        & Average                                                                              \\ \hline
+1                                 & 52,120                 & 61,810                 & 55,132                 & 51,205                 & 50,037                 & 54,060           & \begin{tabular}[c]{@{}c@{}}2,313 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}2,538 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}2,272 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}1,971 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}2,067 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}2,232 ($\epsilon=0.3$)\end{tabular} \\ \hline
+2                                 & 369                    & 403                    & 331                    & 324                    & 347                    & 354              & \begin{tabular}[c]{@{}c@{}}21 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}19 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}22 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}12 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}10 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}16 ($\epsilon=0.3$)\end{tabular}       \\ \hline
+3                                 & 52                     & 61                     & 71                     & 43                     & 57                     & 56               & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}2 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
+4                                 & 11                     & 8                      & 13                     & 9                      & 7                      & 9                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$) \end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
+5                                 & 4                      & 3                      & 5                      & 4                      & 3                      & 3                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
+6                                 & 3                      & 2                      & 2                      & 1                      & 1                      & 1                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$))\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
+7                                 & 3                      & 2                      & 1                      & 1                      & 1                      & 1                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
+8                                 & 1                      & 2                      & 1                      & 1                      & 1                      & 1                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
+9                                 & 1                      & 1                      & 1                      & 1                      & 1                      & 1                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
+\end{tabular}
+}
+\end{table*}
+
+\textbf{Inference of the Number of Characters in a Tweet}
+
+To evaluate the inference accuracy on the number of characters in a tweet through CPU \texttt{utime} and \texttt{stime} of the Keyboard process, we denote the actual number of characters of a tweet by $N_{act}$, the inferred number by $N_{inf}$, and set an error parameter $\epsilon$ such that our inference is considered a success if the error percentage is less than $\epsilon$, i.e., $\frac{|N_{act}-N_{inf}|}{N_{act}}\le\epsilon$. 
+In order to evaluate the accuracy of our inference attacks, we randomly sampled 5,000 tweets from those of the 500,008 Twitter users collected in Section~\ref{sec:dssnapproach}, and re-tweeted these 5,000 tweets using our Android devices. By doing so, we can guarantee that the distribution of the number of characters of our posted tweets follows the one in real-world.
+The average number of characters of these 5,000 tweets was 189. The results are reported in Table~\ref{tbl:posttimeinf}, which indicate that if we set $\epsilon$ to be 0.05, the possibility of correct inference is 37.18\%; if $\epsilon$ is set to 0.15, the possibility of correct inference is 91.86\%; while if $\epsilon$ is set to 0.3, the possibility increases to 98.92\%. %Table~\ref{tbl:posttimeinf} shows the detailed results. 
+
+\textbf{Associating Device with Social Network Accounts}
+
+We used Twitter to illustrate the performance of associating the victim device with a list of candidate social network accounts. In this evaluation, we conducted two studies, with one on the Twitter celebrities and one on five volunteers. Note that the study on Twitter celebrities cannot identify any device that is associated with a social network account because we do not install our malicious app in any legitimate user in Twitter; nevertheless, the tweeting activities of celebrities can facilitate us to figure out how many people simultaneously tweet at two or more timestamps, which provides a perfect justification to explain why we can correlate the tweeting activities at different timestamps to identify the user account associated with a victim device.
+
+For the study on celebrities, we collected tweets from 5 active Twitter celebrities, with 10 tweets for each at different timestamps, from November 2016 to February 2017, to get the data at 50 different timestamps. Each celebrity has at least 20 million followers. We considered celebrities as our study subjects because they not only use real identities, but also are active on Twitter. The results are reported in Table~\ref{tbl:celeb-eval}, which indicate that the average number of Twitter users who tweeted at one timestamp is 52,016, at the same two timestamps is 359, at the same three timestamps is 61, and at the same four timestamps is 6. These results are interesting as one can see that the number of users who tweeted simultaneously at multiple timestamps drops significantly as the number of considered timestamps increases. 
+
+\begin{table}[t]
+\centering
+\caption{Attack Results on Celebrities.}
+\label{tbl:celeb-eval}
+\small
+\begin{tabular}{|c|c|}
+\hline \hline
+\multicolumn{2}{|c|}{Attack Results on Celebrities}                                              \\ \hline \hline
+\# of Timestamps & \begin{tabular}[c]{@{}c@{}}Average Number of \\ Potential Twitter Identities\end{tabular} \\ \hline
+1                & 52,016                                                                                    \\ \hline
+2                & 359                                                                                       \\ \hline
+3                & 61                                                                                        \\ \hline
+4                & 6                                                                                         \\ \hline
+\end{tabular}
+\end{table}
+
+Besides using celebrities as testing subjects mentioned above, we also recruited five volunteers to participate in our evaluation process. Each participant used one of our five Android devices to tweet 10 times at 10 different timestamps with his/her own Twitter account. Each tweet contained a random number of characters. The detailed results are shown in Table~\ref{tbl:volunteers}. If we do not apply the number of tweeted characters as a filter, we found that in average there are 54,060 users who tweeted at one timestamp as the volunteers did. Then the number goes to 354 at two same timestamps, 56 at three same timestamps, 9 at four same timestamps, 3 at five same timestamps, and 1 at six same timestamps. These numbers indicate that an attacker needs to conduct the inference attack for an average of six times in order to associate the Twitter account of one of our voluteers with his/her device without applying the number of characters as a filter. If we apply this filter, as one can see from the results, an attacker only needs to conduct the inference attack for an average of three times to successfully associate one volunteer with his/her Twitter account. 
+
+\subsubsection{Performance of the SN-SN Correlation Attack}
+As one can see from the results shown above, an attacker needs to infer at least three timestamps on average to correlate a user's social network account with his/her device with the estimated number of characters as a filer. Without applying this filter, on average at least 6 timestamps need to be inferred. To speed up this process, SN-SN correlation attack can be launched. In this subsection, we evaluate the performance of the SN-SN correlation attack.
+
+Since Instagram does not provide an interface via which we can retrieve posts at any given timestamp, we considered the other two social networks: Twitter and Flickr. To proceed, we need to first derive the weight for each attribute in order to calculate the profile similarity. For this purpose we need ground truth data to train our learning model proposed in Section~\ref{sec:snsnattack}. We manually checked the tweets of a large amount of Twitter users and filtered out those who do not explicitly provide their Flickr links in one of their tweets. Finally, we obtained 20 pairs of Twitter and Flickr users we were certain that each pair actually refers to the same person. Then we applied these data to minimize the loss function in equation \eqref{eq:loss}. Finally, we obtained the following weights when the loss function reaches its stationary minimum of 0.108886: $\omega_{1}=0.509717$, $\omega_{2}=0.194603$, $\omega_{3}=0.51427$, $\omega_{4}=0.171117$ and $\omega_{5}=0.30354$. Lastly, we normalized these weights by setting $\omega_{i}^*=\frac{\omega_{i}}{|\sum_{i=1}^{5}\omega_i|}$, and obtained $\omega_{1}^*=0.301029$, $\omega_{2}^*=0.114929$, $\omega_{3}^*=0.303718$, $\omega_{4}^*=0.101058$, and $\omega_{5}^*=0.179265$.
+
+As one can see from the above, username ($\omega_{3}$) plays an extremely important role in determining whether two users from two different social networks are actually the same person, followed by location ($\omega_{1}$).  The least important factor is biography ($\omega_{4}$), which indicates that people tend to write differently for different social networks.
+
+\begin{figure}[t]
+  \includegraphics[width=\textwidth]{SN-SN-match.pdf}
+  \caption{The distribution of the matches of the fifth participant. The x-axis is the intervals of overall similarity scores while the y-axis is the number of matches.}
+  \label{fig:sn-sn-match}
+\end{figure}
+
+Next we analyzed the Twitter-Flickr matching performance. We asked each of the five volunteers to send a post in Flickr with his/her Flickr account after he/she finished the 10 tweeting experiments mentioned above. Then we correlated Flickr with Twitter by considering only the first timestamp of the Twitter data of all the participants. % shown in table~\ref{tbl:volunteers} by applying an number-of-character filter of $\epsilon=0.3$. 
+Next we crawled all the posts in Flickr at the five timestamps corresponding to those at which our five participants sent posts. As a result, we found that there were totally 611 Flickr users who also posted at the same timestamp at which the first participant posted. The numbers of Flickr users who posted at the same time as the second, third, fourth, and fifth participant were 533, 421, 498, and 506, respectively. Therefore, for the first participant, we analyzed a similarity matrix $\boldsymbol{S}_{p_1}$ defined in Section~\ref{sec:dssnapproach} with 1,413,243 entries ($2,313\times 611$). Similarly, the numbers of entries in the similarity matrices for the second, third, fourth, and fifth participant were 1,352,754 ($2,538\times 533$), 956,521 ($2,272\times 421$), 945,204 ($1,898\times 498$), and 1,112,188 ($2,198\times 506$), respectively. Ideally, the majority of the entries in these five matrices should contain very small values,  i.e., close to zero; while the entries for the  correct matches contain big values, i.e., close to one.
+
+After we evaluated the five matrices with the trained weights obtained above, the similarity matrix of the first participant shows that 1,332,575 entries (94.29\%) are below 0.1; only 3 pairs whose similarity scores are greater than 0.5; and only 1 pair whose similarity score is greater than 0.65, which is the correct matching, i.e., the Twitter account and the Flickr account of the first participant. Similarly, our results showed that over 90\% of all the entries of the similarity matrices of the other four participants are below 0.1; and the correct matches corresponds to the  pairs with the highest scores. Among the results of all the five participants, the highest overall similarity score is the one for the fifth participant, which is 0.84. Figure~\ref{fig:sn-sn-match} illustrates the detailed distribution of the matches of the fifth participant as an example.
+These results not only indicate that both our definitions of the attribute similarities and the weights work well in real cases, but also imply that our SN-SN correlation attack is effective in facilitating the DS-SN attack to speed up the device-identity association attack.
+
+\subsection{Related Works}
+\label{sec:related}
+
+In this subsection, we summarize the most related work from two aspects: side-channel attacks in mobile systems and privacy attacks in social networks.
+
+\noindent\textbf{Side-channel Attacks in Mobile Systems}. Side-channel attacks in mobile systems have been causing more and more concerns in recent years. Chen \emph{et al.} \cite{chen2014peeking} managed to infer the UI state and deploy multiple attacks based on the side-channel information such as memory, CPU, and network statistical data stealthily obtained by a zero-permission malicious app residing in the victim's smartphone. Li \emph{et al.} \cite{li2016csi} proposed a keystroke inference attack targeting mobile devices by performing the principal component analysis (PCA) on the channel state information that could be affected by the finger motions through a public WiFi hotspot. 
+Zhou \emph{et al.} \cite{zhou2013identity} exploited the side-channel information of Android devices to infer a user's private information, e.g., rough location, health condition, investment, and driving route. Yang \emph{et al.}  \cite{yang2016inferring} presented an approach to discover which website a user is browsing by analyzing the USB power while the smartphone is charging. Song \emph{et al.} \cite{song2016my} managed to crack a 3D printer by reconstructing the physical prints and their corresponding G-code through scrutinizing acoustic and magnetic information obtained from Android built-in sensors. Gruss \emph{et al.} \cite{gruss2016prefetch} exploited the prefetch instructions to defeat address space layout randomization (ASLR), which is a technique to make the memory address unpredictable for an attacker to launch code-reuse attacks such as return-oriented programming (ROP). Van \emph{et al.} \cite{van2016drammer} took a step further to attack hardware by launching a row hammer attack and using timing inference to make the row hammer attack deterministic compared to prior attacks which can only succeed on a probabilistic sense. Li \emph{et al.} \cite{li2016side} proposed a side-channel attack to infer the basic living activities by analyzing the changes of the traffic sizes of encrypted video streams in smart home surveillance.
+Yang \emph{et al.} \cite{yang2018study} identified and systematically analyzed a new security issue in HTML5-based hybrid mobile applications, which is termed the Origin Stripping Vulnerability (OSV), and proposed an OSV detection mechanism, namely OSV-Hunter, which leverages the \texttt{postMessage} API to defend against OSV from the root. 
+Zhang \emph{et al.} \cite{zhang2018empirical} conducted an empirical study on the problem of cross-principal manipulation (XPM) of web resources, and designed a toll named XPMChecker to automatically detect XPM. An analysis generated by XPMChecker reveals that nearly 49.2\% apps from Google Play were affected by the XPM issue \cite{zhang2018empirical}.
+Side-channel information is now an essential ingredient of the mobile system security.
+
+%\noindent\textbf{Security and Privacy of Smart Device}. The security and privacy of smart devices are causing more and more concerns. %The most relevant works are aforementioned as our motivating examples. 
+%Zhou \emph{et al.} \cite{zhou2013identity} managed to exploit the side-channel information of Android devices in order to infer the user's private information, e.g., rough location, health condition, investment, and driving route. Chen \emph{et al.} \cite{chen2014peeking} leveraged a Hidden Markov Model (HMM) to infer which landing \texttt{Activity}/UI a user currently resides and managed to implement serious attacks such as UI phishing and camera peeking, which could potentially result in devastating consequences. Besides these two works, side-channel based inference attacks remain a hot topic in recent years. Yang \emph{et al.}  \cite{yang2016inferring} managed to discover which website a user is browsing through analyzing the USB power while the smartphone is charging. Song \emph{et al.} \cite{song2016my} managed to crack the 3D printer by reconstructing the physical prints and their corresponding G-code through scrutinizing acoustic and magnetic information which can be obtained from Android built-in sensors. Gruss \emph{et al.} \cite{gruss2016prefetch} exploited the prefetch instructions to defeat address space layout randomization (ASLR), which is the technique to make the memory address unpredictable for an attacker to launch code-reuse attacks such as return-oriented programming (ROP). Van \emph{et al.} \cite{van2016drammer} even took a step forward to attack the hardware by launching row hammer attack and using timing inference to make the row hammer attack deterministic compared to prior attacks which can only succeed on a probabilistic sense. This attack results in rooting an Android device without exploiting any software vulnerability. Timing attack is also a serious threat to user privacy. Stone \emph{et al.} \cite{stone2013pixel} systematically analyzed web browser based timing attack such as CSS shader with WebGL and managed to sniff user browsing history and to steal pixels. Jia \emph{et al.} \cite{jia2015know} managed to accurately infer the exact residential location of a user by exploiting browser cache queries. % performing timing attack which exploits browser cache queries.
+
+\noindent\textbf{Social Network Privacy}. Studies showed that privacy of social networks can be breached in multiple ways. Backes \emph{et al.} \cite{backes2017identity} proposed a novel link prediction inference attack between any pair of individuals in social networks based on their mobility profiles. Wondracek \emph{et al.} \cite{wondracek2010practical} demonstrated that it is possible to de-anonymize a user on a social network through his membership in specific social network groups by exploiting the browser cache in order to detect whether a user has visited certain URLs of a group. Nilizadeh \emph{et al.} \cite{nilizadeh2014community} proposed a community-based large scale de-anonymization attack using structural similarity. Ji \emph{et al.} \cite{Ji2015OnYS} presented the seed quantification requirements for perfect de-anonymizability and partial de-anonymizability of real-world social networks, which consolidate the de-anonymization at theory level. Srivatsa \emph{et al.} \cite{srivatsa2012deanonymizing}, on the other hand, leveraged mobility traces with social networks as side-channel information to uncover users' real identities. Lai \emph{et al.} \cite{lai2015anonymizing} exploited a user's interest group information to de-anonymize the users on social networks. Existing studies % not only focused on uncovering identities for social network users but also tended to reveal hidden attributes for social network users. 
+also tended to reveal hidden attributes for social network users. Chaabane \emph{et al.} \cite{chaabane2012you} exploited a user's interest to explore hidden attributes of a user, e.g., age, gender, and so on. Mei \emph{et al.} \cite{Mei2018TNSE} reported an inference attack framework that integrates and modifies the existing state-of-the-art convolutional neural network models to infer a user's age. Gong \emph{et al.} \cite{gong2016you} proposed a new type of inference against user's hidden attributes such as location, occupation, and interest by analyzing both his social friending and behavioral records. 
+Hassan \emph{et al.} \cite{hassan2018analysis} analyzed the privacy threats in fitness-tracking social networks and developed an attack against Endpoint Privacy Zones (EPZs) to extract a user's sensitive locations. They also presented an EPZ fuzzing technique based on geo-indistinguishability to mitigate a user's privacy leak through fitness-tracking social networks.
+Many of these attacks mainly de-anonymize users based on their social relationships in a large dataset, while our approach can precisely identify the social network accounts of a target user behind a device based on the device's side-channel information, the public social network events, and the profile similarity of the user's accounts in different social networks.
+
 
 %==========================================================================================================================
 \section{Conclusion and Future Work}\label{sec:conclusion}
+In this proposal, we mainly studied the security of Android smartphones from the perspective of system design flaw and from the perspective of side-channel information exploit. More specifically, we study the design flaw of Android Task Mechanism resulting in privilege leakage, and the public side-channel system states which leads to uncover of a user's social network identities. 
 
-xxx
-
+Our future research focuses on studying security and privacy for other smart devices and their corresponding systems, especially smart home devices and smart home systems. We plan to excavate the security vulnerabilities and privacy concerns of current most popular smart home devices and smart home systems, and develop new attack vectors. Afterward, we plan to design defense mechanisms to guarantee the safety and privacy of these smart home devices and systems. 
 
         \newpage
    \bibliographystyle{abbrv}

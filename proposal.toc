@@ -1,5 +1,5 @@
 \contentsline {section}{\numberline {}Abstract}{iii}{section.1}
-\contentsline {section}{\hspace {1.5pt} List of Figures}{v}{section*.2}
+\contentsline {section}{\hspace {1.5pt} List of Figures}{vi}{section*.2}
 \contentsline {section}{\numberline {}Introduction}{1}{section.2}
 \contentsline {subsection}{\numberline {1.1}Exploiting Android Task Mechanism}{2}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Device-Identity Association Attack Using Android Side-Channel Information}{4}{subsection.1.2}
@@ -28,5 +28,15 @@
 \contentsline {subsubsection}{\numberline {3.5.1}Task Interference Checking}{27}{subsubsection.3.5.1}
 \contentsline {subsubsection}{\numberline {3.5.2}Design Suggestions}{30}{subsubsection.3.5.2}
 \contentsline {subsection}{\numberline {3.6}Related Works}{30}{subsection.3.6}
-\contentsline {section}{\numberline {}xxx}{33}{section.4}
-\contentsline {section}{\numberline {}Conclusion and Future Work}{33}{section.5}
+\contentsline {section}{\numberline {}I Know Your Social Network Accounts: A Novel Attack Architecture for Device-Identity Association}{33}{section.4}
+\contentsline {subsection}{\numberline {4.1}Threat Model and Approach Overview}{33}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Threat Model}{33}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Approach Overview}{33}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Design and Implementation of Our Attacks}{35}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}DS-SN Correlation Attack}{36}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}SN-SN Correlation Attack}{44}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Evaluation}{50}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Effectiveness of the DS-SN Correlation Attack}{51}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Performance of the SN-SN Correlation Attack}{55}{subsubsection.4.3.2}
+\contentsline {subsection}{\numberline {4.4}Related Works}{58}{subsection.4.4}
+\contentsline {section}{\numberline {}Conclusion and Future Work}{60}{section.5}
