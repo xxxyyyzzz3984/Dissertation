@@ -185,7 +185,7 @@
        The Faculty of\\The School of Engineering and Applied Science\\ of The George
        Washington University\\ in partial satisfaction of the requirements\\ for the degree
        of Doctor of Philosophy\\[\baselineskip]
-       xxx, 2018\\[\baselineskip]
+       December 11, 2018\\[\baselineskip]
        Dissertation directed by\\[\baselineskip]
        Xiuzhen Cheng\\Professor of Computer Science
    \end{center}
@@ -206,17 +206,22 @@
    \hfill\begin{minipage}{5in}
    {Xiuzhen Cheng, Professor of Computer Science, Dissertation
        Director}\\[\baselineskip]
+  {Hyeong-Ah Choi, Professor of Computer Engineering, Committee Member}\\[\baselineskip]
+  {Arkady Yerukhimovich, Assistant Professor of Computer Science, Committee Member}\\[\baselineskip]
    {Xiang Chen, Assistant Professor of Computer Engineering, Committee Member}\\[\baselineskip]
-   {Timothy Wood, Associate Professor of Computer Science, Committee Member}\\[\baselineskip]
-   {Arkady Yerukhimovich, Assistant Professor of Computer Science, Committee Member}\\[\baselineskip]
+
+   
    
    \end{minipage}
 
    \newpage
       \section{Abstract}
    The advent of smart devices, i.e. smartphones and smart home devices, have greatly revolutionized and modernize people's daily lives in every aspect. Yet, the security condition of the devices and their corresponding systems is concerning since traditional security measures fail to cope with them due to limitations of computation power and hardware/firmware heterogeneity. In this dissertation proposal, we present our initial research on studying the security and privacy of smartphones on OS-Level and side-channel level.
+   
    Firstly, we study the OS security of Android devices. In order to facilitate apps to collaborate to finish complex jobs, Android allows isolated apps to communicate through explicit interfaces. However, the communication mechanisms often give additional privilege to apps, which can be exploited by attackers. The Android Task Structure is a widely-used mechanism to facilitate apps' collaboration. Recent research has identified attacks to the mechanism, allowing attackers to spoof UIs in Android. In this work, we present an analysis of the security of the Android task structure. In particular, we analyze the system/app conditions that can cause the task mechanism to leak privilege. Furthermore, we identify new end-to-end attacks that enable attackers to {\em actively} interfere with victim apps to steal sensitive information. Based on our findings, we also develop a task interference checking app for exploits to the Android task structure.
+   
     Secondly, we study how the side-channel information publicly available in Android devices can result in severe privacy leakage on social networks. Owing to the various features provided by mobile devices, a user's online social activities are tightly tied to his phone, and are conveniently, sometimes unnecessarily, available to social networks. In this work, we propose a novel attack architecture to show that attackers can infer a user's social network identities behind a mobile device through new dimensions. Specifically, we first developed a correlation between a user's device system states and the social network events, which leverage multiple mechanisms such as learning-based memory regression model, to infer the possible accounts of the user in the social network app. Then we exploited the social network to social network correlation, via which we correlated information across different social networks, to identify the accounts of the target user. We implemented and evaluated these attacks on three popular social networks, and the results corroborate the effectiveness of our design.
+    
     Lastly, we plan to extend our research on studying the security and privacy of smart home devices and their corresponding smart home systems by proposing novel vulnerability-discovery measures, excavating new attack vectors and designing effective defense mechanisms.
    
       \newpage
@@ -232,6 +237,14 @@
    \addcontentsline{toc}{section}{\hspace{1.5pt} List of Figures}
    \begin{center}
        \listoffigures
+   \end{center}
+   \newpage
+   
+   \cleardoublepage
+   \phantomsection \label{listoftbl}
+   \addcontentsline{toc}{section}{\hspace{1.5pt} List of Tables}
+   \begin{center}
+       \listoftables
    \end{center}
    \newpage
 
@@ -492,7 +505,7 @@ ways:
 
 %===============================================================================
 
-\subsection{Threate Model and Approach Overview} \label{sec:threatandapproach}
+\subsection{Threat Model and Approach Overview} \label{sec:threatandapproach}
 
 In this subsection, we present the threat model and the overview of our attack approach.
 
@@ -610,7 +623,8 @@ the \texttt{SINGLE\_TOP} flag in our Table~\ref{tbl:taskinterference}.
 \begin{table*}
 \scriptsize
 \centering
-\caption{Task Interference Table. We assume AppB is running with the
+\caption{Task Interference Table}
+  \floatfoot{We assume AppB is running with the
   task ``TaskB.'' In the events, the operation A$\rightarrow$B stands
   for A launches B. In the resulting state's status, F stands for
   execution in foreground; B stands for execution in background; X
@@ -1543,7 +1557,7 @@ attacks by enforcing the Android Window Integrity (AWI).
 
    \newpage
    \begin{singlespace}
-   \section{I Know Your Social Network Accounts: A Novel Attack Architecture for Device-Identity Association}
+   \section{A Novel Attack Architecture for Device-Identity Association based on Android Side-Channels}
    \end{singlespace}
    \label{sec:dssnassociate}
    

@@ -1,5 +1,6 @@
 \contentsline {section}{\numberline {}Abstract}{iii}{section.1}
-\contentsline {section}{\hspace {1.5pt} List of Figures}{vi}{section*.2}
+\contentsline {section}{\hspace {1.5pt} List of Figures}{vii}{section*.2}
+\contentsline {section}{\hspace {1.5pt} List of Tables}{viii}{section*.4}
 \contentsline {section}{\numberline {}Introduction}{1}{section.2}
 \contentsline {subsection}{\numberline {1.1}Exploiting Android Task Mechanism}{2}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Device-Identity Association Attack Using Android Side-Channel Information}{4}{subsection.1.2}
@@ -10,7 +11,7 @@
 \contentsline {subsubsection}{\numberline {2.2.2}CPU Usage}{9}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Network}{9}{subsubsection.2.2.3}
 \contentsline {section}{\numberline {}Privilege Leakage and Information Stealing through the Android Task Mechanism}{10}{section.3}
-\contentsline {subsection}{\numberline {3.1}Threate Model and Approach Overview}{10}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.1}Threat Model and Approach Overview}{10}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Threat Model}{10}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}Approach Overview}{10}{subsubsection.3.1.2}
 \contentsline {subsection}{\numberline {3.2}Security Analysis of Android Task Structure}{11}{subsection.3.2}
@@ -28,7 +29,7 @@
 \contentsline {subsubsection}{\numberline {3.5.1}Task Interference Checking}{27}{subsubsection.3.5.1}
 \contentsline {subsubsection}{\numberline {3.5.2}Design Suggestions}{30}{subsubsection.3.5.2}
 \contentsline {subsection}{\numberline {3.6}Related Works}{30}{subsection.3.6}
-\contentsline {section}{\numberline {}I Know Your Social Network Accounts: A Novel Attack Architecture for Device-Identity Association}{33}{section.4}
+\contentsline {section}{\numberline {}A Novel Attack Architecture for Device-Identity Association based on Android Side-Channels}{33}{section.4}
 \contentsline {subsection}{\numberline {4.1}Threat Model and Approach Overview}{33}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Threat Model}{33}{subsubsection.4.1.1}
 \contentsline {subsubsection}{\numberline {4.1.2}Approach Overview}{33}{subsubsection.4.1.2}
