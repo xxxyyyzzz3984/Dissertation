@@ -172,7 +172,7 @@
 \usepackage[colorlinks=true,linkcolor=black,citecolor=red,urlcolor=red,plainpages=false,pdfpagelabels=true, bookmarks=false]{hyperref}
 \begin{document}
    \author{{\normalsize Yinhao Xiao}}
-   \title{\Large{\bf Security and Privacy of Smart Devices} \\ \large Dissertation Proposal}
+   \title{\Large{\bf Security and Privacy of Smart Devices} \\ \large Dissertation}
    \date{}
    \maketitle
    \thispagestyle{empty}
@@ -181,7 +181,7 @@
        M.A. in Mathematics,\\ May 2014, The George Washington University \\
        M.S. in Computer Science,\\ Dec 2015, The George Washington University \\[\baselineskip]
        
-       A Dissertation Proposal submitted to\\
+       A Dissertation submitted to\\
        The Faculty of\\The School of Engineering and Applied Science\\ of The George
        Washington University\\ in partial satisfaction of the requirements\\ for the degree
        of Doctor of Philosophy\\[\baselineskip]
@@ -198,10 +198,10 @@
    \newpage
    \doublespacing
    \begin{center}
-   {\Large{\bf Security and Privacy of Smart Devices}\\ \large Dissertation Proposal}\\[\baselineskip]
+   {\Large{\bf Security and Privacy of Smart Devices}\\ \large Dissertation}\\[\baselineskip]
    {\normalsize Yinhao Xiao}
    \end{center}
-   \noindent Dissertation Proposal Committee:\\
+   \noindent Dissertation Committee:\\
 
    \hfill\begin{minipage}{5in}
    {Xiuzhen Cheng, Professor of Computer Science, Dissertation
@@ -216,13 +216,15 @@
 
    \newpage
       \section{Abstract}
-   The advent of smart devices, i.e. smartphones and smart home devices, have greatly revolutionized and modernize people's daily lives in every aspect. Yet, the security condition of the devices and their corresponding systems is concerning since traditional security measures fail to cope with them due to limitations of computation power and hardware/firmware heterogeneity. In this dissertation proposal, we present our initial research on studying the security and privacy of smartphones on OS-Level and side-channel level.
+   The advent of smart devices, i.e. smartphones and smart home devices, have greatly revolutionized and modernize people's daily lives in every aspect. Yet, the security condition of the devices and their corresponding systems is concerning since traditional security measures fail to cope with them due to limitations of computation power and hardware/firmware heterogeneity. In this dissertation, we present our initial research on studying the security and privacy of smartphones on OS-Level and side-channel level.
    
    Firstly, we study the OS security of Android devices. In order to facilitate apps to collaborate to finish complex jobs, Android allows isolated apps to communicate through explicit interfaces. However, the communication mechanisms often give additional privilege to apps, which can be exploited by attackers. The Android Task Structure is a widely-used mechanism to facilitate apps' collaboration. Recent research has identified attacks to the mechanism, allowing attackers to spoof UIs in Android. In this work, we present an analysis of the security of the Android task structure. In particular, we analyze the system/app conditions that can cause the task mechanism to leak privilege. Furthermore, we identify new end-to-end attacks that enable attackers to {\em actively} interfere with victim apps to steal sensitive information. Based on our findings, we also develop a task interference checking app for exploits to the Android task structure.
    
     Secondly, we study how the side-channel information publicly available in Android devices can result in severe privacy leakage on social networks. Owing to the various features provided by mobile devices, a user's online social activities are tightly tied to his phone, and are conveniently, sometimes unnecessarily, available to social networks. In this work, we propose a novel attack architecture to show that attackers can infer a user's social network identities behind a mobile device through new dimensions. Specifically, we first developed a correlation between a user's device system states and the social network events, which leverage multiple mechanisms such as learning-based memory regression model, to infer the possible accounts of the user in the social network app. Then we exploited the social network to social network correlation, via which we correlated information across different social networks, to identify the accounts of the target user. We implemented and evaluated these attacks on three popular social networks, and the results corroborate the effectiveness of our design.
     
-    Lastly, we plan to extend our research on studying the security and privacy of smart home devices and their corresponding smart home systems by proposing novel vulnerability-discovery measures, excavating new attack vectors and designing effective defense mechanisms.
+    Thirdly, we explore the defense mechanisms on strengthening the smart home systems. Smart home systems have become more and more prevailing in recent years. On one hand, they greatly convenience our everyday lives; on the other hand, they suffer from the two notorious security problems, namely the open-port problem and the overprivilege problem, making their security situations extremely worrying and uncheerful. In this work, we proposed a novel credential-less authentication framework, CLAF, to effectively defend against the attacks resulted from these two security problems without the need for sensitive credentials. We further detailed an implementation of CLAF based on the side channels that are publicly available in Android smartphones serving as controllers of smart home systems and presented its workflow in protecting against various attacks caused by the open-port and overprivilege problems. Finally, we tested our CLAF implementation on a real-world smart home system and considered four threat models that cover basically all practical attacks, including Mirai and its variants. We also considered the effectiveness of our CLAF implementation on the SmartApps of the Samsung SmartThings platform, which suffers from the open-port and overprivilege problems. The evaluation results indicate that our CLAF realization can successfully defend against over 90\% attack trials with an average latency less than 1 second.
+    
+    Lastly, we plan to extend our current research on studying the security and privacy of smart home devices and their corresponding smart home systems by proposing novel vulnerability-discovery measures, excavating new attack vectors and designing effective defense mechanisms.
    
       \newpage
 
@@ -268,7 +270,7 @@ With the presence of the prevailing performance with respect to market sharing, 
 300,000 IoT smart devices in the first 20 hours~\cite{antonakakis2018mirai}.
 \end{itemize}
 
-Even though defending smart devices against malicious exploits and attacks is urgent and critical, securing them is more challenging than securing traditional computers not only because they are computationally limited to empower high-end firewalls, but are highly heterogeneous both on the hardware level and firmware level. Having observed the situation,  we mainly focus on identifying vulnerabilities, inventing attacks, and developing corresponding defensive mechanisms for smart devices. In this proposal, we specifically target the security of smartphones and their corresponding systems. In the following contexts, we focus on two main directions of studying the security and privacy of smartphones, i.e., from the perspective of system design flaw and from the perspective of side-channel information exploit. For the system design flaw, we mainly present an OS-Level logic flaw existing in Android Task Mechanism that results in severe privilege leakage, through which we implemented four proof-of-concept attacks. Lastly, we developed an efficient scanner to help users to avoid the attacks. For the side-channel information exploit, we mainly present a novel attack vector which effectively associates the user's identity in social networks with the smartphone device using Android side-channel information. 
+Even though defending smart devices against malicious exploits and attacks is urgent and critical, securing them is more challenging than securing traditional computers not only because they are computationally limited to empower high-end firewalls, but are highly heterogeneous both on the hardware level and firmware level. Having observed the situation,  we mainly focus on identifying vulnerabilities, inventing attacks, and developing corresponding defensive mechanisms for smart devices. In this dissertation, we specifically target the security of smartphones and their corresponding systems. In the following contexts, we focus on two main directions of studying the security and privacy of smartphones, i.e., from the perspective of system design flaw and from the perspective of side-channel information exploit. For the system design flaw, we mainly present an OS-Level logic flaw existing in Android Task Mechanism that results in severe privilege leakage, through which we implemented four proof-of-concept attacks. Lastly, we developed an efficient scanner to help users to avoid the attacks. For the side-channel information exploit, we mainly present a novel attack vector which effectively associates the user's identity in social networks with the smartphone device using Android side-channel information. 
 
 \subsection{Exploiting Android Task Mechanism}
 The Android system's security is based on several layers of security
@@ -332,6 +334,17 @@ In order to accomplish this goal, we proposed a novel attack architecture with t
 
 The details of this work is presented in Section~\ref{sec:dssnassociate}. 
 
+\subsection{Strengthening Security for Smart Home Systems}
+Smart home systems, also known as home automation systems, represent a class of the most prevailing applications of the Internet of Things (IoT) in the physical world. They have significantly revolutionized the lifestyles of human beings from every aspect. The emerging market for smart home systems and devices has been growing rapidly. According to a recent statistical study, the revenue of the global smart home market has reached 31.4 billion US dollars by the year of 2018 and is projected to reach 53.45 US dollars by the year 2022~\cite{smarthomemarket}. 
+
+Even though the market for smart home systems has been prospering in recent years, their security condition is not cheerful. Current designs of smart home systems suffer from two major security problems, namely the \emph{open-port} problem and the \emph{overprivilege} problem. The open-port problem refers to that some smart home devices open certain TCP/UDP ports allowing any entity who has the Internet access, besides the authorized users, to directly communicate with them through the open ports. For examples, we observed that the Google Home Speaker opens port 8008 which accepts multiple commands such as \emph{scan available ambient Wi-Fi access points} and \emph{return the scan results unconditionally} without any credential, and that the smart switches produced by Wemo, one of the best-selling smart home brands on Amazon~\cite{bestselling}, open port 49153 which allows anyone to turn on/off the devices with no verification at all. Such an open-port problem is also the root cause of the wide prevalence of Mirai and its variants~\cite{antonakakis2017understanding}, which infected more than 65,000 devices within the first 20 hours of its first occurrence in 2016. The overprivilege problem refers to that a smart home app intentionally acquires excessive privileges or is passively assigned unnecessary privileges, which can allow a malicious app to perform operations against the user's will. For example, an overprivileged app that is only intended to control a smart light is granted the privilege of being able to unlock a user's door lock. 
+
+These two security problems are the direct consequences of the design philosophies of IoT: pervasive connections and light-weight protocols; thus it is almost impossible to completely solve them in the foreseeable future, even though researchers have been making progresses to mitigate them. Nevertheless, the seriousness and impact broadness of these two security problems are huge, as demonstrated by our case studies reported in Section~\ref{sec:preliminaries}. Unfortunately, traditional credential-based mechanisms that have been successfully adopted by computer and Internet systems cannot be directly applied in smart home systems since they require the smart home devices to more or less store a user's credentials, i.e., the user's account information. However, such a measure can impose new security threats since smart home devices are computationally weak at both hardware and software levels leaving the devices more vulnerable to attacks. The possibility of compromising a smart home device is way easier than compromising a powerful backend server such as Amazon EC2, exposing users to higher risks of credential leakages.
+
+In this study, we provide a mechanism that does not require any credential, to defend against the two security problems. Note that we do not target mitigating the two problems as they are rooted from the fundamental designs of the IoT devices and systems; instead, we aim to design a mechanism that can provide a \emph{cage} to confine the bad consequences caused by the two problems to the best/maximum extent: even though the port of a device is open and/or its app is overprivileged, the device or its app cannot do anything bad within the cage. Based on this consideration, we propose CLAF, a novel Credential-Less Authentication Framework serving as a defense wall to effectively control the access to the open ports of smart home devices and restrict the access rights of the overprivileged smart home apps. CLAF consists of three main components: (1) an evidence provider which collects \textit{evidence} proving that an operation is indeed performed by an authorized smart home app; (2) an operation handler which filters or passes an incoming operation based on a list of user-defined \textit{policies}; and (3) a policy server located on a secure backend system to store the \textit{policies} that clearly specify \emph{who can do what by how}. 
+We further compare CLAF with the two recently proposed patching-based mechanisms to defend against the overprivilege problem in smart home systems, namely ContexIoT~\cite{jia2017contexiot} and SmartAuth~\cite{tian2017smartauth}, and claim that CLAF not only can provide the same protection against the overprivilege problem but also can inhibit attack cases these two mechanisms fail to defend. While CLAF is a general framework which allows a group of solutions, we provide an implementation with the evidence provider running on a user's smartphone as a mobile app without the need of rooting nor requesting for any sensitive permissions, the operation handler running on the user's gateway to provide maximized protection effect, and the policy server running on the Samsung SmartThings platform that supports a large number of smart home devices. Our solution does not need any patching to pre-programmed codes by the smart home manufacturers. We evaluate our framework and solution based on two sets of experimental environments: (1) a real-world typical smart home system with most of the popular smart home devices configured, considering four threat models that basically cover all practical attacks as well as the most notorious IoT-specific Mirai and its variants as attack vectors, and (2) 137 and 68  SmartApps on the Samsung SmartThings platform to respectively study the open-port problem and the overprivilege problem. For both experimental environments, our CLAF implementation can defend against all attack trials with more than 90\% success rates. The average latency produced by adopting our solution is less than \emph{1} second. 
+
+The details of this work is presented in Section~\ref{sec:claf}. 
 
    \newpage
       \begin{singlespace}
@@ -493,6 +506,16 @@ ways:
   received for an app.
 \end{itemize}
 
+\subsection{Preliminary Study of the Security Conditions on Smart Home Systems}
+In this subsection, we present two case studies to demonstrate the impact broadness of the open-port problem, summarize the prior research results to show the severity of the overprivilege problem.
+
+We noticed that in order for a smart home device to accept a command without verification, the device must have an open port accepting messages and this open port does not verify whether or not the message is from an authorized source. Having identified these two features, we built a static and automatic binary analyzer based on the Angr framework~\cite{shoshitaishvili2016state}\cite{stephens2016driller}\cite{shoshitaishvili2015firmalice}, which parses the control-flow graph (CFG) of a given firmware and conducts breadth-first search (BFS) over the CFG to check if system calls to \texttt{socket}, \texttt{bind}, \texttt{listen}, \texttt{accept}, and \texttt{recv/read} exist in a descending order since they are the determining factors to tell whether the given firmware opens a port. Then our analyzer tracks if there are conditional jumps in the contents retrieved from \texttt{recv/read} over sensitive terms such as ``password'', ``token'', ``authorization'', etc, to check if the firmware has an authentication mechanism. We collected 2,905 embedded firmwares by crawling from the firmware databases of popular smart home brands such as Xiaomi, DLINK, TP-LINK, and Wemo, as well as from the database collected by Costin \emph{et al.}~\cite{costin2014large}. Each firmware is associated with \emph{one type} of device. Then we fed these firmwares to our analyzer. Our results indicate that in total 1,541 (53.03\%) firmwares suffer from the open-port problem, i.e., having ports publicly open to accept operations without authentication. Note that whether these ports are open-to-LAN or open-to-public is determined by the ways according to which these devices are configured for network connection: if a device is assigned with a public IP, the ports of the device are open-to-public; if it is configured under a LAN, the ports are open-to-LAN. 
+
+We also studied the publicly accessible devices from the database collected by Shodan, the world's first and largest search engine for Internet-connected devices, via the Shodan API~\cite{matherly2009shodan}. We examined the latest Shodan database~\cite{shodannews}, which was updated on June 15, 2017, and found that at least 16,568,788 devices are publicly accessible through the Internet. By further restricting the devices to smart home systems, we observed that at least 731,331 smart home devices can be accessed through the Internet, which means that each of these devices has a public IP address and has at least one port widely open to the public. Among all these smart home devices, the most affected type is camera, with 350,516 (47.93\%) devices being publicly accessible, followed by smart switches, with the number being 135,261 (18.50\%). We also found that the total number of ports 80, 8080, 8081, 10000, and 49153 accounts for 51\% of all the open ports. Since the open ports require no authentication or verification to be accessed, the numbers mentioned above imply that many devices can be easily taken control by a remote attacker who only needs to send a control command through the Internet. This explains why the most notorious IoT viruses, Mirai and its variants, can quickly infect a large number of devices after their first occurrences. Note that the devices under this study are all open-to-public.
+
+The overprivilege problem has been attracting much attention in smart home systems in recent years. According to the study by Fernandes \emph{et al.}~\cite{fernandes2016security}, 55\% of the 521 SmartApps on the Samsung SmartThings platform were significantly overprivileged. After Samsung removed the reported overprivileged SmartApps, 16.7\% of the remaining ones still have the overprivilege issue.  Researchers also found that the Amazon Echo has a design flaw which results in an overprivilege issue that allows an app to secretly record a user's speech~\cite{amazonoverprivilege}. Google Home Speaker has a similar overprivilege issue, via which a malicious app can eavesdrop a user's speech~\cite{googleoverprivilege}. Smartphones play an important role in smart home systems; nevertheless, it was reported that over one-third of the smartphone apps in the Android system are overprivileged \cite{felt2011android}. 
+
+One can see from the above studies that the two security problems have a broad impact on the current smart home systems and can significantly threaten the users' security and privacy. As a matter of fact, the most famous DDoS attack on IoT, the Mirai Botnet, which exploits the open-port problem, is still committing atrocities to infect massive amount of IoT devices connected to the Internet nowadays.
 
 
    \newpage
@@ -2050,9 +2073,396 @@ Hassan \emph{et al.} \cite{hassan2018analysis} analyzed the privacy threats in f
 Many of these attacks mainly de-anonymize users based on their social relationships in a large dataset, while our approach can precisely identify the social network accounts of a target user behind a device based on the device's side-channel information, the public social network events, and the profile similarity of the user's accounts in different social networks.
 
 
+   \newpage
+   \begin{singlespace}
+   \section{CLAF: A Credential-Less Authentication Framework for Smart Home Systems}
+   \end{singlespace}
+   \label{sec:claf}
+   
+\subsection{Threat Models}
+Considering the two security problems, we formulate the following four threat models that basically cover all kinds of practical attacks an adversary can launch against a smart home system. In Section~\ref{subsec:claf-eval}, we detail the implementation of at least one attack for each threat model, to demonstrate how our proposed CLAF framework can protect the smart home systems from being severely affected by the two security problem. 
+
+\begin{itemize}
+\item An attacker penetrates a victim's LAN and controls the smart home system within the LAN. 
+For example, the attacker can penetrate a victim's LAN by creating a malicious website and control a user's smart home devices without using any malicious payload~\cite{jia2018traffic}. 
+
+\item An attacker spoofs itself as a trusted source, i.e., a smart home app or a smart home server. For example, the attacker can spoof the IP address of a legitimate user's smart home app.  
+IP spoofing is a mature and practical tool that has been widely adopted by attackers in industry~\cite{tanase2003ip}. 
+
+\item An attacker compromises a victim's smartphone at a shallow level. For example, the victim can be lured to install a malicious app that runs on his smartphone to control his smart home devices. Obviously, this threat model can be exploited by overprivileged apps to carry out various attacks. 
+360 security lab and MWR lab respectively demonstrated that it is feasible to covertly install a malicious app on iPhone 7 and Samsung Galaxy S8 by luring a user to visit a malicious website~\cite{pwn2own2017}. 
+
+\item An attacker compromises a victim's smartphone at a deeper level. For example, the attacker can lure the victim to connect his smartphone to the attacker's malicious equipment via USB. %since USB access is always granted with higher permission such as 
+
+\end{itemize}
+
+Note that we do not consider the case in which an attacker physically trespasses a victim's home or physically accesses the victim's devices; nor do we consider the case where an attacker is able to compromise any user's device to the kernel level such as rooting the user's smartphone or gain the system privilege of any device, since compromising a device to the kernel level requires a great amount of effort and it also makes all security measures meaningless.
+
+\subsection{Approach Overview}
+\label{subsec:claf-approach}
+In this section, we first describe a general smart home system model under our consideration. Then we present CLAF, a Credential-Less Authentication Framework, to protect the smart home systems from being affected by the unavoidable open-port and overprivilege problems. Finally, we detail the design of CLAF, give examples to demonstrate how CLAF plays its role, and compare CLAF with the two recently proposed mechanisms defending against the overprivilege problem of smart home systems. 
+
+\subsubsection{A General Smart Home System Model}
+A typical smart home system contains smart home devices, a router, a central hub (optional), one or more smartphones serving as controllers, smart home apps running on the smartphones, and smart home servers.  %is the most important device for handling all the network traffics, 
+The router handles all network traffics, and all operations eventually need to go through it in order to reach the target smart home devices. The devices supporting Wi-Fi are directly connected to the router. The central hub, if available, serves as a gateway through which smart home devices that do not have the Wi-Fi interface are connected to the router. Smart home apps provide interfaces for the users to generate and send operations, e.g., turning on/off lights and locking the door. Each smart home device has a corresponding app running on the smartphone controllers through which a user or the smartphones can conveniently interact with the device. All operations controlling the physical smart home devices must be issued by the apps running on the smartphones.  The apps hosted by the smartphones act jointly based on the states of the home measured by the deployed smart devices to realize home automation. For example, the room temperature measured by a smart thermostat can trigger an AV app to turn on the air conditioning system when the temperature is higher than $80^\circ$F at daytime. Note that how to realize home automation based on the sensing data is out of the scope of this paper as we mainly focus on preventive measures against the two challenging security problems. The operations can either be sent to the smart home servers which then forward them to the router, or be sent to the router directly. The router delivers the operations to the directly connected target smart home devices, or via the central hub which converts the incoming traffic based on the specific outgoing communication interface such as Zigbee or Bluetooth to reach the target device. The overall system architecture is shown in Figure~\ref{fig:system}. A few popular smart home systems such as Samsung~\cite{samsungsmarthome}\footnote{The Samsung smart home system can also employ the SmartThings server working as controller to host all smart device apps but here we consider the Samsung system that adopts smartphones as controllers to host all smart device apps.} and Xiaomi~\cite{xiaomismarthome} adopt this architecture with a central hub while others such as systems of Amazon Alexa, Google Home, Wink, Caster, TP-LINK, and Belkin support the architecture without a central hub~\cite{bestselling}.
+
+
+\begin{figure}[!htb]
+        \centering
+        \includegraphics[scale=0.3]{system.png}
+        \caption{A general smart home system model.}
+        \label{fig:system}
+\end{figure}
+
+
+
+
+\subsubsection{The CLAF Framework} \label{sec:CLAF:Framework}
+
+We propose CLAF, a Credential-Less Authentication Framework, aiming at providing a cage to regulate the activities of an overprivileged app and control the access to a device with ports open to the public. CLAF satisfies the following design objectives:
+\begin{itemize}
+\item with CLAF, an overprivileged app should not be able to perform any operation it is not supposed/allowed to;
+\item with CLAF, an open port should not be able to accept any operation given by an unauthorized user/device;
+\item with CLAF, no modification or patching to the firmware/hardware of the current smart home devices is needed;
+\item CLAF should be light-weight, extensible, and flexible for versatile smart home configurations. 
+\end{itemize}
+
+CLAF contains three major components: \emph{an evidence provider}, \emph{an operation handler}, and \emph{a policy server}. The operation handler maintains a policy cache storing a copy of the policies maintained by the policy server. An \textit{evidence} provides a credential-less proof of an operation which is an action launched to control or access a smart home device; and a \textit{policy} serves as a permission manager indicating whether an operation from a certain smart home app should be permitted. They are formally defined as follows.
+
+\begin{definition}[\textit{Evidence}]\label{def:evidence}
+An \textit{evidence} $e$ of an operation $op$ is a 4-tuple $e=(id, op, h, t)$, where $id$ is the identity of the smart home app who launches the operation $op$; $h$ indicates how the $op$ is launched, e.g., whether user interaction is involved; and $t$ is the time when the $op$ is launched. It answers the question of ``\textit{who did what at when by how}''. For example, an evidence \emph{(smart door app, opening the door, human interaction, current time)} indicates that a door-open command is just issued by the user via the smart door lock/unlock app. 
+\end{definition}
+
+\begin{definition}[\textit{Policy}]\label{def:policy}
+A \textit{policy} $p$ is a 3-tuple $p =(id, op, h)$, where $id$ is the identity of the smart home app who launches the operation $op$ and $h$ indicates how the $op$ is launched. It answers the question of ``\emph{who can do what by how}''. For example, a policy \emph{(smart coffee machine app, making coffee, human interaction)} indicates that the smart coffee machine can make a cup of coffee when a command is issued by a human being via the corresponding app; an operation of opening the window  issued by the coffee machine app will be blocked as there exists no such a policy in the policy cache/server.
+\end{definition}
+
+An \textit{evidence} can be collected and then forwarded to the operation handler to prove that the operation is a legitimate one. It serves as a wall to prevent the operations issued by outsiders that exploit the open-ports from being passed to the smart home system: no evidence can be sent to the operation handler if the operation is not issued by a legitimate app hosted by the smartphone controller.
+A \textit{policy} must be user-defined and pre-stored in the policy server. These \textit{policies} may be updated under three situations: (1) when a new device is added into the system; (2) when a firmware of a device is updated; and (3) a legitimate user wishes to modify them (e.g., adding or removing operations supported by an app). Such a flexible user-defined policy mechanism can successfully prevent the operations issued by overprivileged apps. Note that we require certain operations such as \emph{opening the garage door} or \emph{turning on the oven} should only be launched by human beings pushing a button through the corresponding app as they may bring higher security risks, while others such as \emph{turning on the air conditioning system when the room temperature is above $80^\circ$F} can be automatically issued by a smart AV app (without human interaction). 
+%\emph{opening the windows when the room temperature is above $80^\circ$F} can be automatically issued by a smart window app at daytime while human interaction must be involved at bedtime. 
+
+Considering the general smart home system architecture presented in Figure~\ref{fig:system}, one can see that it is reasonable for the evidence provider to be operated on the user's smartphone for collecting and sending \textit{evidences} to the operation handler, the operation handler to be operated on the router in charge of passing and filtering operations based on the \textit{policies}, and the policy server to be operated on a secure cloud server (smart home server) storing the user-defined \textit{policies} and synchronizing them with the policy cache residing in the operation handler when the \textit{policies} are updated. All operations are generated by the apps in the smartphone, and the smartphone learns the home states based on the data collected by the smart devices, based on which to trigger the corresponding apps to act. We assume that the communications between the evidence provider and the operation handler, and all communications involving the policy server, are secure and tamper-resistant. This can be simply realized by applying SSL/TLS and certificate verification, as the smartphone, router, and server hosting the three CLAF components possess sufficiently strong computational capabilities.  We further assume that the smartphone, router, and server are (loosely) time-synchronized. 
+
+Intuitively one can ask the evidence provider to collect evidence and send it to the operation handler when the operation is launched by a device app. However, this needs to make modifications to the device app such that it can trigger the evidence provider to collect evidence when an operation is launched, which is not practical when the app is not an open source one. This leaves us a tedious way to overcome the challenge: one can ask the evidence provider to continuously collect  and analyze evidence, and send it to the operation handler when an operation is detected from the evidence. This approach may work but it places a heavy burden on the smartphone controller. Alternatively, one can ask the operation handler to send a request to the evidence provider whenever an operation is received, which is lightweight and practical as smart home operations that command the smart devices are not frequent. In our implementation, we take the second approach, which requires the operation handler to communicate with the evidence provider asking for an evidence when an operation is received. 
+
+If a fresh \textit{evidence} is available, whether obtained with the operation or requested independently, the operation handler checks the evidence content ($id$, $op$, $h$) against the user-defined policies stored in the policy cache, and let the operation proceed only if there exists a policy entry with perfectly matched $id$, $op$, and $h$. If no evidence is received for an operation within a small time interval, the operation is blocked. 
+
+\begin{figure*}[!htb]
+        \centering
+        \includegraphics[scale=0.25]{examples.png}
+        \caption{Three examples.}
+        \label{fig:examples}
+\end{figure*}
+
+\subsubsection{Examples} \label{sec:examples}
+
+In this subsection we employ three examples shown in Figure~\ref{fig:examples} to demonstrate how CLAF handles a legitimate operation, an operation launched by an overprivileged app, and an operation issued by an outside attacker through an open-port. 
+
+The first example illustrates how CLAF handles a legitimate operation. In this case, the smart home app is a benign light-control app running in the user's smartphone, which is designed to control the smart light; and the evidence provider provides an evidence showing whether the user indeed uses the smart home app to turn on the light. When the user presses the ON button in the smart home app, the light-control app sends an operation $op_{j_1}$ (turning on the light) to the smart home server, which then forwards it to the operation handler. The evidence provider sends an \textit{evidence} $e_{j_1}$ corresponding to $op_{j_1}$ to the operational handler. After receiving the operation and the evidence, the operation handler first checks if the evidence is fresh; if yes, it extracts the light-control app id $id_{j_1}$, $op_{j_1}$, and $h_{j_1}$ from  $e_{j_1}$, and then compares them with the entries in the policy cache for a perfect match: if there exists a policy $p_{i_1}=(id^{p}_{i_1}, op^{p}_{i_1}, h^{p}_{i_1})$ in the policy cache such that $id_{j_1}=id^{p}_{i_1}$,  $op_{j_1}=op^{p}_{i_1}$, and $h_{j_1}=h^{p}_{i_1}$, $op_{j_1}$ is allowed to pass. By this way, the legitimate user can turn on the smart light without any problem.
+
+The second example illustrates how CLAF handles a command from an overprivileged app. In this case, a malicious smart home app running in the user's smartphone, which was originally designed to control the user's coffee machine, attempts to open the smart switch connected to the user's garage door. Similar to the process for the legitimate operation mentioned above, the operation handler receives an operation $op_{j_2}$ (turning on the garage door switch) from the malicious smart coffee machine app and an \textit{evidence} $e_{j_2}$ associated with $op_{j_2}$ from the evidence provider. But the operation handler fails to find a perfect match in the policy cache as there is no policy allowing the coffee machine app to turn on the garage door switch. % that $p_{i_2}=(id^{r}_{i_2}, op^{r}_{i_2},h^{r}_{i_2})$ such that $id_{j_2}=c^{r}_{i_2}$ but $op_{j_2}\neq op^{r}_{i_2}$ and $h_{j_2} \neq h^{r}_{i_2}$ since the coffee app should only control the coffee machine. 
+Therefore,  the operation handler denies $op_{j_2}$. By this way, an overprivileged malicious smart coffee machine app cannot turn on the garage door switch.
+
+The third example illustrates how CLAF handles an operation launched from an open-port. In this case, a remote attacker penetrates the victim's subnet and tries to send a malicious payload $op_{j_3}$, e.g., scanning shell, to a vulnerable smart home device by exploiting an open port, say the popularly exploited port 22 by Mirai and its variants,  of the device. As the evidence provider does not send any evidence corresponding to $op_{j_3}$, the operation handler can simply drop $op_{j_3}$.
+
+
+
+\subsubsection{Comparison with Other Defense Mechanisms.}
+In this subsection, we compare CLAF with the two recently proposed IoT-specific access control mechanisms proposed to defend against the overprivilege problem: ContexIoT by Jia \emph{et al.}~\cite{jia2017contexiot} and SmartAuth by Tian \emph{et al.}~\cite{tian2017smartauth}. 
+
+%\subsubsection{Comparison with ContexIoT}
+ContexIoT is a context-based permission control scheme for appified IoT platforms. It makes a decision based on the past context of the user when an operation is detected. ContexIoT targets malicious apps or legitimate ones with overprivileged access rights, and can effectively filter out the unforeseen operations according to the previous operation decisions, by patching the app with security-specific logic to gather context info and separately consider the security sensitive behaviors. For example, as mentioned in~\cite{jia2017contexiot}, ContexIoT can successfully prevent a malicious app from opening the window when the user is sleeping, by letting the operation of turning on the window go through if the room temperature is above  $100^\circ$F while blocking if sleep mode is on. Nevertheless, ContexIoT needs time to build history, and it cannot prevent commands from compromised devices. For instance, when the room temperature is only $75^\circ$F, a compromised thermostat reports a temperature of $100^\circ$F, which triggers the smart window app to open the windows as past operations allow this app to open the windows at such a high temperature. Such an attack is completely doable; in fact, a similar attack happened recently in a casino where hackers managed to steal the casino's data by hacking into a thermostat in the fish tank~\cite{casinothero}. This attack would never happen in a smart home system protected by CLAF since compromising the thermostat requires the attacker to penetrate the smart home system with an operation containing a malicious payload, which can be prevented as illustrated by the third example presented in Section~\ref{subsec:claf-approach}. %The whole process is shown as Figure~\ref{fig:countercontexiot}.
+
+
+SmartAuth matches a SmartApp's codes and its literal description based on natural language processing (NLP) to identify dishonest apps whose description does not match its real functionality. It contains a policy enforcer that needs to patch the app with discrepancies in order to regulate the activities of overprivileged and/or dishonest apps. An example given by~\cite{tian2017smartauth} indicates that SmartAuth can successfully prevent a  dishonest coffee-after-shower app from doing more (e.g., secretly opening the user's door) than making a cup of coffee for the user when the humidity in the bathroom is above a threshold (the user is taking a shower). Nevertheless, SmartAuth may fail if an attacker compromises a victim's smartphone through techniques such as \textit{ADB}, under which case the attacker can launch a legitimate smart lock app to unlock a user's door by simulating fake tapping/swiping events, as the operation is indeed from a legitimate smart lock app whose description and functionality do match, i.e., controlling door lock. Compromising a smartphone via \textit{ADB} is feasible, as we have done in our attack implementation in Section~\ref{subsec:claf-eval}. CLAF can effectively inhibit such an attack as the evidence provider in the user's smartphone cannot detect real human interaction while user-defined \textit{policies} require that real human interaction must exist for sensitive operations such as opening the door lock. %The whole process is shown as Figure~\ref{fig:countersmartauth}.
+
+Note that both ContexIoT and SmartAuth are patching-based mechanisms targeting apps such as those on the Samsung SmartThings platform that are open source and open to modifications. However, patching-based mechanisms have little effect on a real-world smart home system in which the corresponding smart home apps (running on the smartphones) are compiled into binaries (either Mach-O for iOS or DEX for Android) and digitally signed with certificates whose private keys are known only to the authorized developers to resist code-tampering attacks. 
+CLAF, on the other hand, does not make any modification to the device apps while providing at least the same protection as ContexIoT and SmartAuth do in countering the overprivilege problem; thus it has a broader application domain that covers especially the closed-source smart home systems. Moreover, CLAF can defend smart home systems from outsider attacks such as Mirai and its variants that exploit the popular open ports, which is missing by both ContexIoT and SmartAuth.
+
+\subsection{Implementation}
+\label{subsec:claf-impl}
+In this subsection, we present one realization of our CLAF framework. %The basic idea is to leverage the publicly available side-channel information from a user's smartphone controller as the credential-less \textit{evidence}. %This smartphone is the controller of the smart home system that hosts all smart device apps. % via which to control the smart home system. %In the following contexts, we detail the implementations of our solution to CLAF.
+%
+%The reasons we leverage side-channel information 
+As mentioned in Section~\ref{subsec:claf-approach}, the three components of CLAF, namely the evidence provider, the operation handler, and the policy server, are operated respectively on the users' Android smartphone, the router of the smart home system, and the secure cloud server. Upon receiving an operation, the operation handler sends an evidence request carrying the necessary information to the evidence handler, which replies with the evidence in return; then the operation handler makes the decision of passing or filtering the operation based on the user-defined policies. In the following subsections, we detail the implementation of these three components.
+
+\subsubsection{Implementation of the Evidence Provider}
+In our implementation, the evidence provider needs to collect the publicly-available side-channel information from the smart home apps as the credential-less \textit{evidence}. We choose side-channel information as evidence to realize CLAF for two reasons. First, the smart home apps running on the smartphones are unmodifiable under our consideration, and therefore we are not able to directly obtain information from the target apps by changing their codes. Second, the sandbox design of Android isolates each app in an individual process so that other apps cannot dynamically inject codes into its memory to obtain information.  Even though adopting hooking frameworks such as Xposed~\cite{xposed} and Frida~\cite{frida} to capture the activities of the target smart home apps as the \textit{evidence} may be more straightforward and more stable, such a mechanism requires either root permission or installing the target apps on a specific virtual environment, imposing a huge technical burden or even more insecurity on the user side. %Therefore, we choose to circumvent the problem by employing side-channels. Even though one can adopt injection frameworks such as Frida or XPosed, both require rooting the user’s smartphone, making the process tedious and even more insecure for the user. 
+Therefore, we decide to employ a method that does not require modification of the app codes nor the root access of the smartphone. Using the publicly available side-channel information turns out to be our best option.
+
+Note that this implementation only requests the general \texttt{INTERNET} permission from the Android system for the sake of transmitting data and requires almost zero effort from the user except launching the evidence provider app (in fact, this app can be automatically lanuched when the smart home controller app is on). %adopting side-channel based mechanisms.
+
+\textbf{Harvesting Side-Channel Information:} 
+Our goal of collecting side-channel information is to prove that an \textit{operation} towards a smart home device is indeed issued by the corresponding authorized smart home app, and that whether the \textit{operation}  is a result of human interaction. After a careful scrutiny and a few tests, we found that it suffices to harvest memory and network trace data of the target smart home app, as well as the accelerometer and the light sensor data. The reason we need the memory and network trace data of the smart home app is because we observed that when a smart home app is running, and if an operation is sent out through the Internet, the memory and the network traces change significantly, which indicates that memory and network traces are factors that are strongly correlated with the smart home app activities and thus can be used to prove whether an operation is indeed from an authorized smart home app. More specifically, we harvested the \texttt{virtual set size} (\texttt{VSS}) and \texttt{tcp\_snd}, which respectively record the virtual memory size of the target app and the amount of TCP bytes sent by the target app, and can be directly accessed through \texttt{/proc/pid/statm} and \texttt{/proc/uid\_stat/pid/tcp\_snd}, respectively, without any permission. The reason we collected the accelerometer and light sensor data is because we noticed that when a person interacts with the smartphone, these two pieces of information change significantly, which means that they are highly correlated to human interactions. Particularly, we retrieved the Z-direction data of the accelerometer and the ambient light sensor data of the smartphone by registering a callback function with \texttt{SensorEventListener}, which requires no permission.
+
+\textbf{Generating Evidence:} 
+Upon receiving an operation $op$ at time $t$, the operation handler sends an evidence request to the smartphone controller carrying $op$, the ID $app\_id$ (\texttt{uid} in Android) of the app who has launched the $op$, and $t$. Note that since we do not modify the device-specific apps hosted by the smartphone, $app\_id$ cannot be extracted from the received operation message by the operation handler; thus we simply assume that the $app\_id$ is the one for the device targeted by $op$. %, as long as the $op$ message is sent by the legitimate smartphone or the smart home server.
+Upon receiving an evidence request from the operation handler, the evidence provider needs to provide the \textit{evidence} showing whether the $op$ is indeed from an authorized smart home app and whether it is the result of human interaction. For this purpose we wrote an %smartphone-based 
+evidence provider app that offers the following three pieces of information for a given  time period during which $op$ occurs: (1) whether the smart home app has run; (2) whether the smart home app has launched  $op$, and (3) whether $op$ is a result of human interaction. Particularly, we consider the time period to be $n$ seconds before $t$. %, the time at which the operation $op$ was received by the operation handler. 
+The pseudo-code of \textit{evidence} generation is reported in {\bf Algorithm~\ref{alg:genevid}}.
+
+\begin{algorithm}[!htb]
+\caption{\textit{Evidence} Generation.}% The overall algorithm for generating \textit{evidence}.}
+\label{alg:genevid}
+\begin{algorithmic}[1]
+\Procedure{GenEvid}{$app\_id,op,t$}
+\State $has\_run = false$
+\State $has\_sent=false$
+\State $has\_interact=false$
+%\If {$app\_id\neq$ ``unknown''}
+\State $vss\_data$ = GetVSS($app\_id$, $t-n$, $t$)
+\State $tcp\_data$ = GetTcpSnd($app\_id$, $t-n$, $t$)
+\State $acmt\_data$ = GetAcmt($t-n$, $t$)
+\State $lght\_data$ = GetLght($t-n$, $t$)
+\State $has\_run,has\_sent$ = AnalyzeAppStates($vss\_data$, $tcp\_data$)
+\State $has\_interact$ = AnalyzeInteract($acmt\_data$, $lght\_data$)
+%\EndIf
+\State $h=(has\_run,has\_sent,has\_interact)$
+\State $e=(app\_id,op, h, t)$
+%\State SendEvidence($e$)
+\State return $e$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+As shown in {\bf Algorithm~\ref{alg:genevid}}, the evidence provider takes as inputs $op$, $app\_id$, and $t$, which are extracted from the evidence request made by the operation handler. 
+%Upon receiving an $op$ at time $t$, the operation handler sends an evidence request to the smartphone controller carrying $op$, $app\_id$, and $t$. Since we do not modify the device-specific apps hosted by the smartphone, $app\_id$ cannot be extracted from the received $op$ message by the operation handler; thus we simply assume that the $app\_id$ is the one for the device targeted by $op$, as long as the $op$ message is sent by the legitimate smartphone or the smart home server. % identifying $app\_id$ in the operation handler, there is no direct way of telling exactly which app launches the operation since we do not root the user's smartphone. We first check if the IP address of the operation is the one of the legitimate smartphone or the smart home server. If it is not, we denote the $app\_id$ as ``unknown''. If yes, then we assume the  $app\_id$ to the the app  associated with the smart home device which the operation targets. 
+%For example, if the operation is opening the light, and the IP address of this operation is the smartphone, then we let the $app\_id$ to be the ID of light-control app. 
+%After receiving an evidence request,
+The evidence provider first initializes the evidence boolean variables  (lines 2-4), then retrieves the target app's \texttt{VSS} data and \texttt{tcp\_snd}, as well as the system's accelerometer and light sensor data for the time duration from $t-n$ to $t$ (lines 5-8). Next the evidence provider feeds these four pieces of side-channel data to the functions \texttt{AnalyzeAppStates()} and \texttt{AnalyzeInteract()}, which return the boolean values indicating whether the target app has run, whether it has sent an \textit{operation}, and whether human interaction has happened (lines 9-10). Afterwards, the evidence provider constructs and returns the \textit{evidence} associated with this operation $op$ based on Definition 1, where $h$ consists of the three boolean values generated by the two functions \texttt{AnalyzeAppStates()} and \texttt{AnalyzeInteract()} (lines 11-13). %Finally, the evidence provider pushes the \textit{evidence} to the operation handler (line 14).
+
+\textbf{Analysis on the App States:} 
+In a typical smart home system, if a user wants to launch an operation through the smart home app, the smart home app would send out a series of TCP packets containing the operation to the target smart home device or to the smart home server. In this process, two requirements need to be satisfied in order to tell if an operation does come from the smart home app: (1) the smart home app has actually run, and (2) the smart home app has actually sent out TCP packets. Correspondingly, \texttt{VSS} and \texttt{tcp\_snd} change in the designated period of time. Note that a third party app such as our evidence provider is not allowed to monitor the real TCP traffic of another app due to the sandbox design of the modern operating systems unless it acquires the root permission or installs a proxy server on the user's smartphone. Nevertheless, these two methods not only are tedious but also pose additional security threats for a user; thus we choose to analyze the publicly available \texttt{tcp\_snd}, which is secure and lightweight.
+Based on the above discussion, we present our algorithm for analyzing the app states in {\bf Algorithm~\ref{alg:alzapp}}.
+
+\begin{algorithm}[!htb]
+\caption{Analyzing App States: Analyze if the target app has run or if it has sent out TCP traffics.}\label{alg:alzapp}
+\begin{algorithmic}[1]
+\Procedure{AnalyzeAppStates}{$vss\_data$, $tcp\_data$}
+\State $has\_run = false$
+\State $has\_sent = false$
+\If {$vss\_data \neq \emptyset$ AND $tcp\_data \neq \emptyset$}
+\State $min\_vss = \min(vss\_data)$
+\State $max\_vss = \max(vss\_data)$
+\State $min\_tcp = \min(tcp\_data)$
+\State $max\_tcp = \max(tcp\_data)$
+\If{$max\_vss-min\_vss \geq \delta_{1}$}
+\State $has\_run = true$
+\EndIf
+\If{$max\_tcp-min\_tcp \geq \delta_{2}$}
+\State $has\_sent = true$
+\EndIf
+\EndIf
+\Return $has\_run$, $has\_sent$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+As shown in {\bf Algorithm~\ref{alg:alzapp}}, the evidence provider first initializes two boolean variables and checks if the input $vss\_data$ is empty since in Android $vss\_data$ is empty if the target app is not launched (lines 2-4). Note that $tcp\_data$ in $\backslash$\texttt{proc} cannot be empty whether or not an app is running as it accumulates all the TCP traffic data. If there exists non-zero $vss\_data$, the evidence provider first calculates the minimum and maximum values of $vss\_data$ and $tcp\_data$ and then takes the differences between them (lines 5-8). If the difference between the maximum value and the minimum value of $vss\_data$ is greater than or equal to a predetermined threshold $\delta_1$, this guarantees that the smart home app is actively running on the foreground other than passively sitting in the background (lines 9-10). Similarly, if the difference between the maximum value and the minimum value of $tcp\_data$ is greater than or equal to a predetermined threshold $\delta_2$, it proves that the smart home app indeed sends a series of TCP packets (lines 11-12).
+
+\textbf{Inference of Human Interactions:} 
+Our algorithm for inferring the human interaction is based on changes in the accelerometer and light sensor data. When a user is using a smartphone, all interactions can be categorized into two types: tapping and swiping. Based on our observation, whenever tapping or swiping happens, the accelerometer data at the Z-direction, i.e., the direction at which the gravitational acceleration points,  changes drastically. This is because when a person taps or swipes on the screen, he imposes a force on the smartphone at the gravitational direction. According to the Newton's Second Law, the acceleration on the Z-direction would increase under this situation. We also observed that the light sensor data has a slightly abrupt change whenever tapping or swiping occurs. This is because a sudden movement of the smartphone incurs a difference in light absorption of the light sensor. However, even though we noticed that changes in this side-channel data can reflect whether or not human interactions exist, pure numerical analysis cannot handle the job effectively because sensor data always contain heavy noises. Therefore, we adopted five typical machine learning models, namely support vector machine (SVM), decision tree (DT), multilayer perceptron (MLP), random forest (RF), and  Adaptive Boosting (AdaBoost), for inferring whether a human interaction has occurred based on the given sensor data. Each of the models outputs a binary prediction, 0 or 1, representing a human interaction has not or has occurred, respectively. We further took the majority vote ensemble of the five machine learning models to reduce the effect of biases and overfitting. Note that the adopted machine learning models have high computational overhead at the training phase; therefore, we trained the models offline and employed them to make real-time predictions. The pseudocodes for the human interaction inference are presented in {\bf Algorithm~\ref{alg:infint}}.
+
+%Based on the discussions mentioned above, we present our algorithm for inferring whether or not human interactions exist in {\bf Algorithm~\ref{alg:infint}}.
+
+\begin{algorithm}[!htb]
+\caption{Inferring Human Interactions: infer if a human interaction has occured.}\label{alg:infint}
+\begin{algorithmic}[1]
+\Procedure{AnalyzeInteract}{$acmt\_data$, $lght\_data$}
+\State $m_l=lght\_data.len$
+\For{$i=1\ to\ m_l-1$}
+\State $lght\_data[i]=lght\_data[i+1]-lght\_data[i]$
+\EndFor
+\State $lght\_data[m_l]=\emptyset$
+\State $z\_data=acmt\_data.z$
+\State $z\_data=FFT(z\_data)$
+\State $x = concat(z\_data,lght\_data)$
+\State $svm\_y$ = svm\_predict($x$)
+\State $dt\_y$ = dt\_predict($x$)
+\State $mlp\_y$ = mlp\_predict($x$)
+\State $rf\_y$ = dt\_predict($x$)
+\State $ada\_y$ = adaboost\_predict($x$)
+\State $y=svm\_y+dt\_y+mlp\_y+rf\_y+ada\_y$
+\If{$y\geq3$}
+
+\Return true
+\Else
+
+\Return false
+\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+As shown in {\bf Algorithm~\ref{alg:infint}}, the evidence provider first alters the light sensor data by subtracting from each value its successor value (lines 2-4). The reason for doing this is to eliminate the influence of the brightness level of the ambient environment because the lighting level is highly sensitive to the ambient environment and thus directly using the original light data for analysis could result in an incorrect prediction. Therefore, we employ the difference data that is less affected by the environment. Next the evidence provider retrieves the Z-direction accelerometer data and processes it with the Fast Fourier Transform (FFT) shown as follows:
+\begin{equation}
+Z_k = \sum_{j=0}^{m_{z}-1}z_{j}e^{-i2\pi kj/m_{z}},\ \ k=0,\cdots,m_{z}-1,
+\end{equation}
+where $m_{z}$ is the number of total elements in the Z-direction accelerometer data, $z_j$ is the $j-th$ element of the original Z-direction accelerometer data, and $Z_k$ is the $k-th$ element of the Fourier transformed data (lines 5-7). Finally, the evidence provider concatenates the Fourier transformed Z data and the modified light data as a vector of new data, feeds it to the five machine learning models, and makes a final decision based on the majority vote (lines 8-16). 
+
+
+\subsubsection{Implementation of the Operation Handler}
+Based on our previous description of the operation handler, one can see that its main task is to allow or deny an operation. Therefore, the core function of the operation handler is to process the passing traffics. Our implementation of the operation handler runs on the gateway of the user's home router.
+
+%\subsubsection{Relaying Traffics}
+Processing a traffic at the operation handler is actually a combination of intercepting the traffic %filtering the traffic, re-creating it, 
+and then filtering or forwarding it to the designated party. %Re-creating a traffic is trivial to realize as one only needs to reproduce a copy of the filtered traffic. However, 
+Filtering a traffic is non-trivial even though the operation handler runs on the router since the router does not have a direct way for dropping network packets. We managed to circumvent this problem by first activating the \texttt{iptable} and adding a rule at the \texttt{PREROUTING}, a chain where packets enter before a routing decision is made, to redirect any traffic that goes into the smart home devices to a designated port on the router~\cite{purdy2004linux}. However, the \texttt{iptable} alone is not sufficient to filter the traffics since Linux kernel only allows \texttt{iptable} to manipulate the packets whose source or destination IP address is that of the router itself. One may resolve this issue by revising the kernel codes and re-compile them on the user's router kernel. Nevertheless, it is not realistic in practice to re-program the users' routers. We managed to overcome this problem by exploiting ARP spoofing, a technique that targets the data link layer and can bind an IP address with our designated MAC address, to successfully convince the router that our operation handler has the IP address which in fact belongs to the target smart home device. In other words, by combining \texttt{iptable} and ARP spoofing, we managed to realize the ability of filtering arbitrary traffics. 
+
+There still exists a subtle issue we need to handle, i.e., how to process the encrypted traffics. Even though many smart home systems do not encrypt network traffics within the LAN based on our observation, some do use SSL/TLS encryption. Thus we further implemented a rule based on which the \texttt{iptable} can direct all the encrypted traffics to a designated port where we conduct a man-in-the-middle (MITM) key exchange hijack to force the encryption/decryption to use our certificate.  MITM key exchange hijack, though is regarded as an attack, is completely doable, and in fact is widely used in many areas besides creating threats. For example, it is reported that Iranian government uses this technique to monitor its citizens for the contents they searched in Google, which are well protected with HTTPS~\cite{iranmitm}. There are also many off-the-shelf products such as mitmproxy and SSLsplit that employ this technique and have been extensively adopted in industry~\cite{mitmproducts}. While in our implementation, we used a similar logic by creating a python program with no more than 200 lines of codes combined with \texttt{iptable}. It is shown in Section~\ref{subsec:claf-eval} that all HTTPS traffics of the 137 SmartApps can be successfully intercepted and decrypted by our implementation without any obstacle. Finally, the operation handler decides whether to drop or to pass a traffic based on the \textit{policies} synchronized with the policy server.
+
+\subsubsection{Implementation of the Policy Server}
+The policy server is capable of synchronizing \textit{policies} with those in the policy cache of the operation handler and accepting \textit{policy} updates. To synchronize the \textit{policies}, the policy server needs to push a list of \textit{policies} to the operation handler whenever its maintained \textit{policies} are updated. As mentioned in Section~\ref{subsec:claf-approach}, \textit{policies} need to be updated (1) when a new device enters the system; (2) when a firmware is updated; and (3) when a user decides to modify the \textit{policies} based on his will. Since our \textit{policies} are user-defined, the user needs to manually update the \textit{policies} whenever one of the three situations mentioned above happens. 
+
+We implemented our policy server on the Samsung SmartThings platform with the RESTful API as a web service SmartApp~\cite{smartthings}. We chose SmartThings as the platform to implement the policy server for two major reasons: i) it is the largest programming platform for smart home systems and supports most of the smart home products available on the market; ii) it is a cloud-based platform using HTTPS and access tokens for security maintenance thus a user can safely manage the \textit{policies} list by adding or deleting entries. Note that the policy server can also be implemented on other smart home platforms such as Google Actions~\cite{googleaction} and Amazon Skills~\cite{amazonskill}. But since these platforms are not as popular as SmartThings, and they are not convenient as Google Actions requires users to possess Google Assistant while Amazon Skills needs Alexa Speaker to interact with the platforms, we chose to implement our policy server on the SmartThings platform.
+
+\subsection{Evaluation}
+\label{subsec:claf-eval}
+In this section, we report the evaluation results of our realization of CLAF. We first describe the experimental environments and the corresponding attack settings under our consideration. Then we evaluate the accuracies of {\bf Algorithm~\ref{alg:alzapp}} and {\bf Algorithm~\ref{alg:infint}}, and the effectiveness of our approach in countering various attacks. Finally we present the performance overhead of our approach in terms of running times. Note that we do not compare our approach with SmartAuth and ContexIoT since they are both offline patching-based mechanisms while our CLAF realization does not need to make any modification to the smart home device firmwares.
+
+\subsubsection{Experimental Setup}
+%In this subsection, we describe the environments of the three experiments: a typical real-world smart home system that employs a smartphone as a controller hosting all the smart device apps, an environment that supports the SmartApps on the Samsung SmartThings platform, and an environment that  Mirai and its variants.
+In this subsection, we first describe a real-world smart home system to test the effectiveness of our CLAF realization in countering the four attacks presented in Subsection~\ref{sec:preliminaries} as well as Mirai and its variants. Since ContexIoT and SmartAuth both target the SmartApps on the Samsung SmartThings platform in defending against the overprivilege problem, we  conducted experiments to demonstrate how our CLAF realization can protect SmartApps from both the open-port and the overprivilege attacks. 
+
+%\subsubsection{Settings of the Experiments based on Real-World Smart Home Systems}
+\textbf{A Real-World Smart Home System.} 
+We set up a typical real-world smart home system containing the following seven popular smart home devices: a Google Home Speaker, a WeMo Mini Smart Plug, a Belkin Insight Smart Plug with Energy Monitoring, a Tuya Smart Switch, a TP-LINK Smart Light Bulb, a TP-LINK Smart Switch, and an Apple Home Pod. Besides these seven full-fledged devices, we also included two Raspberry Pis, denoted by A and B, for simulating more general IoT devices. Note that it is a common practice to use a Raspberry Pi to simulate a smart home device since most IoT devices use ARM processors and a Raspberry Pi is a tiny programmable module that adopts the ARM instruction set. In our setting, Raspberry Pi A is employed as a regular smart home device while Raspberry Pi B is used as a compromised one. %device to be explained in the later context. 
+We further employed two Android devices for our evaluations: an Amazon BLU R2 smartphone and a Google Nexus 7. The configuration of this experimental smart home system is illustrated in Figure~\ref{fig:smarthomesys}. 
+
+We summarized the specifications of the smart device operations under our consideration in Table~\ref{tbl:oplist}. Note that even though a smart home device can have many operations, we chose the most important and sensitive one for each of the seven smart home devices.
+
+We also tested our approach against the most rampant IoT-specific botnet virus, the Mirai and its variants, with this real-world smart home system. Since both Mirai and its variants target specific open ports and vulnerabilities that our selected real-world smart home devices do not have, we used Raspberry Pi A to open the designated vulnerable ports and simulated the functions targeted by Mirai and its variants.
+
+\begin{table*}[!htb]
+\centering
+\caption{Summarized List of Operation Specifications.}
+\label{tbl:oplist}
+\resizebox{2\columnwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+                                                                & \begin{tabular}[c]{@{}c@{}}Google Home\\ Speaker\end{tabular}                              & \begin{tabular}[c]{@{}c@{}}WeMo Mini\\ Smart Plug\end{tabular} & \begin{tabular}[c]{@{}c@{}}Belkin Insight\\ Smart Plug\end{tabular}                   & \begin{tabular}[c]{@{}c@{}}Tuya Smart\\ Switch\end{tabular} & \begin{tabular}[c]{@{}c@{}}TP-LINK Smart\\ Light Bulb\end{tabular} & \begin{tabular}[c]{@{}c@{}}TP-LINK\\ Smart Switch\end{tabular} & \begin{tabular}[c]{@{}c@{}}Apple Home\\ Pod\end{tabular} \\ \hline \hline
+\begin{tabular}[c]{@{}c@{}}Operation Specific\\ Term\end{tabular} & \texttt{scan\_wifi}                                                                      & \texttt{SetBinaryState}                                      & \texttt{GetInsightParams}                                                           &      \texttt{switch}                                                       & \texttt{transition\_light\_state}                                & \texttt{set\_relay\_state}                                   &      \texttt{pair-setup}                                                                                      \\ \hline
+\begin{tabular}[c]{@{}c@{}}Operation\\ Description\end{tabular} & \begin{tabular}[c]{@{}c@{}}Scan and return \\ a list of\\ amibient Wi-Fi AP\end{tabular} & Turn on or off                                                 & \begin{tabular}[c]{@{}c@{}}Get a user's\\ electricity\\ consumption data\end{tabular} &                                                            Turn on or off & Turn on or off                                                     & Turn on or off                                                 &                                         \begin{tabular}[c]{@{}c@{}}Pair up with\\ device for airplay\end{tabular}
+ \\ \hline
+Open Port                                                       & 8008                                                                                       & 49153                                                          & 49153                                                                                 &  6668                                                           & 9999                                                               & 9999                                                           &                                                         7000 \\ \hline
+SSL/TLS Encrypted                                               & No                                                                                         & No                                                             & No                                                                                    & No                                                            & No                                                                 & No                                                             &                                                         No \\ \hline
+\end{tabular}
+}
+\end{table*}
+
+
+\begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.5\textwidth]{smarthomesys.png}
+        \caption{The configuration of our experimental smart home system. The two smartphones are the controllers on which the smart home apps running, and Raspberry Pi B serves as a compromised device (attacking source) in our experiment.}
+        \label{fig:smarthomesys}
+\end{figure}
+
+\textbf{Experiments on SmartApps.} 
+Besides setting up the real-world smart home system, we also manually collected 553 SmartApps from the official development community of the Samsung SmartThings platform~\cite{smartthingscommunity}, and conducted evaluations on our CLAF realization to defend SmartApps against attacks exploiting the open-port and overprivilege problems.
+
+\begin{itemize}
+
+\item \textbf{Defending Against the Open-Port Attacks.} 
+To evaluate the defense of our CLAF realization against the attacks  exploiting the open-port problem, we selected 137 of the 553 SmartApps which involve data communications, i.e., containing \texttt{mappings} or \texttt{path} in their Groovy codes. Then we wrote an automatic program to parse the operations in these apps and fed the apps to the Samsung SmartThings IDE simulator for testing purpose. Note that in this environment, the traffics are all encrypted with HTTPS; therefore, we leveraged the MITM traffic hijacking technique as we mentioned in Section~\ref{subsec:claf-impl} to decrypt the ciphertexts. We found that all the HTTPS traffics of the 137 apps can be decrypted without any obstacle.
+
+\item \textbf{Defending Against the Overprivilege Attacks.} 
+To evaluate the defense of our CLAF realization against the attacks exploiting the overprivilege problem, we manually identified 58 potentially overprivileged SmartApps from the 553 collected ones. The principle we used to figure out an overprivileged SmartApp is to match its description with the real permissions it requests in its codes. The \texttt{description} tag is located  in the block of \texttt{definition} and the real permission request is located in the \texttt{preferences} block under the \texttt{section} tag with the format shown as follows:
+\begin{lstlisting}
+section("section notes") {
+    input "sensor_alias", 
+    "capability.sensortype" }
+\end{lstlisting}
+where the term \texttt{capability.sensortype} indicates the type of the sensor the SmartApp uses. Obviously, by matching the \texttt{capability.sensortype} and the \texttt{description} one can manually uncover potential overprivileged SmartApps. One example of an uncovered overprivileged SmartApp has a description saying that the SmartApp changes the Smart Hues to different colors based on different weather forecasts; but the SmartApp accesses a user's motion sensor by declaring \texttt{capability.motionSensor}. In this case, we consider the SmartApp overprivileged. Besides these 58 overprivileged SmartApps we uncovered, we also used 10 overprivileged SmartApps created by Jia \emph{et al.}~\cite{jia2017contexiot}. Therefore, we have in total 68 overprivileged SmartApps for our experiments.
+%\subsubsection{Setting of the Experiments based on Mirai and Its Variants}
+%We also testified our approach against the most rampant IoT-Specific botnet virus, the Mirai, and its variants. Since both Mirai and its variants target specific open ports and vulnerabilities that our selected real-world smart home devices do not have, we used Raspberry Pi A to open the designated vulnerable ports and simulated the functions targeted by Mirai and its variants target.
+\end{itemize}
+
+\subsubsection{Settings of the Attacks}
+%Based on our threat models, an attacker can implement various attacks.  
+In this subsection, we first detail our implemented attacks for the experimental environments based on the four threat models presented in Section~\ref{sec:preliminaries}; then we present the attacks on SmartApps of the Samsung SmartThings platform.
+
+\textbf{Attacks on the Real-World Smart Home System.} 
+Our attacks against the real-world smart home devices can be categorized into two types, attacks on full-fledged smart home devices and attacks based on Mirai and its variants.
+
+\begin{itemize}
+
+\item \textbf{Attacks on Full-Fledged Smart Home Devices.}
+We constructed and fully implemented four attacks based on the four threat models for our real-world smart home devices, with one attack for each threat model. We let each attack launch the seven operations detailed in table~\ref{tbl:oplist} to the corresponding target devices in our smart home system. To construct an attack based on the first threat model, the attacker must penetrate the victim's subnet from the external network. In order to realize this, we drafted a malicious program in which we created a reverse shell directed to our attacking machine (a PC running on Ubuntu 16.04) based on the \texttt{ARM} instructions. Then we ran the malicious program on the Raspberry Pi B in our smart home system. Next we commanded the Raspberry Pi B to create and send arbitrary operations. For the second threat model, we first penetrated the subnet as we did for the first threat model; then we tampered the IP of the Raspberry Pi B and made it the IP of the victim's smartphone by altering the IP segment, located in the network layer header, of the Raspberry Pi B. We leveraged \texttt{hping3} 
+%, a network penetration tool, 
+to accomplish this IP spoofing attack~\cite{hping3}. For the third threat model, we created a malicious Android app that \emph{only} requires the \texttt{INTERNET} permission to send out operations. This malicious app, which could be an overprivileged one, also launches benign target smart home apps as camouflages while sending malicious operations using the \texttt{startActivity} API call. Our implementation of the last threat model exploits the Android \texttt{ADB} through USB. We assume that the victim's smartphone is plugged into our compromised device (Raspberry Pi B) in this case for power charging, and the attacker would secretly launch the target smart home apps through \texttt{adb} \texttt{shell} and trigger the operations on the apps by simulating the designated inputs e.g., tapping and swiping through the \texttt{input tap} and \texttt{input swipe} commands, respectively.
+
+\item \textbf{Attacks based on Mirai and Its Variants.}
+Mirai and its variants are powerful malwares that are, in fact, affiliated with the description of the first and second threat models. Mirai has many variants; we chose the two most infamous ones, namely Satori~\cite{miraiwiki} and IoT\_reaper~\cite{iotreaper}, for constructing our attacks. Since Mirai and its variants do not have the functions to compromise a smartphone, and also because many of the malicious payloads such as the buffer overflow ones would never appear in a smartphone environment, there is no need to create attacks based on the third and the fourth threat models. For Mirai, we managed to download its source codes on the Github. Note that Mirai includes many tedious codes that are not relevant with attacking any IoT device such as arbitrarily launching DDoS to some infrastructures' servers; thus we amended the codes to restrict Mirai only to attack our designated smart home device (Raspberry Pi A). On the other hand, since the source codes of Satori and IoT\_reaper are not available online, we recreated simulated attacks based on their binaries. Satori exploits two CVE vulnerabilities and IoT\_reaper exploits eight CVE vulnerabilities known so far. Finally, we collected all the malicious payloads these three viruses use and simulated two attacks for each virus based on the first and the second threat models. Note that for these attacks, Raspberry Pi B serves as the attacking source while Raspberry Pi A works as the attacking target.
+
+\end{itemize}
+
+\textbf{Attacks on SmartApps of the Samsung SmartThings Platform.} 
+We consider two types of attacks on the SmartApps of the Samsung Smartthings platform, namely open-port attacks and overprivilege attacks.
+\begin{itemize}
+
+\item \textbf{Open-Port Attacks.}  We created two attacks based on the first and second threat models to evaluate our approach for defending the 137 SmartApps against the open-port attacks. The corresponding attack implementations are very similar to those mentioned above for the real-world smart home system. Note that since there is no actual smartphone apps corresponding to the SmartApps run in the Samsung SmartThings server, it is not feasible to create attacks based on the third and fourth threat models; thus we let function \texttt{AnalyzeAppStates} always return true for our evaluation purpose. The operations in each SmartApp are defined in the \texttt{mapping} section of the codes with the format of \texttt{path(/operation)}. Our attacks automatically extract the designated operation according to the format and dynamically construct payloads.
+
+\item \textbf{Overprivilege Attacks.} Since we do not have the physical smart sensors targeted by the SmartApps, we used Raspberry Pi A to emulate 22 different types of sensors including motion sensor, contact sensor, switch, presence sensor, humidity sensor, and so on, for testing purpose. Then we adopted the 68 overprivileged SmartApps locally in a simple simulator we wrote with Python which parses the requested sensors and their corresponding operations, and sents the operations, e.g., turning on switch, to the Raspberry Pi A. These overprivilege attacks are based on the third threat model since the overprivileged SmartApps are considered as malicious ones. Because our evaluation was running on an emulated environment, we considered the return values of \texttt{AnalyzeAppStates} and \texttt{AnaylyzeInteract} to be true.
+
+\end{itemize}
+
+\subsubsection{Accuracies of the Main Algorithms}
+To evaluate our algorithm {\bf Algorithm~\ref{alg:genevid}}, we set $n=3$, which indicates that we retrieve the side-channel data 3 seconds before the time when an operation is received by the operation handler as mentioned in Section~\ref{subsec:claf-impl}. Note that we tried other values of $n$ and found that $n=3$ yields satisfiable results. Also note that even though both \texttt{VSS} and \texttt{tcp\_snd} have high values most of the time based on our observations, we considered the possibility that a user may clear the cache data of his smartphone from time to time; thus we set both $\delta_1$ and $\delta_2$ in {\bf Algorithm~\ref{alg:alzapp}} to a relatively small value, 100 in our case, to ensure robustness.
+
+\textbf{Accuracy of Analyzing the App States.} 
+To analyze the accuracy of the function \texttt{AnalyzeAppStates} of {\bf Algorithm~\ref{alg:alzapp}}, we wrote an automated program based on \texttt{ADB} that launches the seven target smart home apps as well as the corresponding operations shown in Table~\ref{tbl:oplist}, and an additional testing smart home app for Raspberry Pi. For each smart home app, we collected 4,000 pieces of \texttt{VSS} and \texttt{tcp\_snd} data lasted for 3 seconds for both Android smartphone devices (2,000 pieces of data for each device). In each of these 4,000 data pieces, 2,000 were collected at the times when the target app was not actively running and the other 2,000 were at the times when the target app was actively running and sent a target \textit{operation}. Therefore, we collected in total 32,000 pieces of \texttt{VSS} and \texttt{tcp\_snd} data (for eight devices). Then we fed these 32,000 pieces of data into  {\bf Algorithm~\ref{alg:alzapp}} and compared the output results with the ground truth. We achieved an overall accuracy of 99.58\% (31,866 out of 32,000 are accurately analyzed), with no false positives and a 0.84\% false negative rate (134 out of 16,000). The detailed results for each smart home app are illustrated in Figure~\ref{fig:appstate}. As one can see, our algorithm for analyzing the app states is highly accurate.
+
+\begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.5\textwidth]{appstate.png}
+        \caption{The numbers and percentages of correctly analyzed app states by our algorithm.}
+        \label{fig:appstate}
+\end{figure}
+
+\textbf{Accuracy of Inferring Human Interactions.} 
+Since our algorithm for inferring human interactions detailed in Section~\ref{subsec:claf-impl}, i.e., {\bf Algorithm~\ref{alg:infint}}, relies heavily on machine learning, we need to collect ground truth data for training and testing in order to build the learning models. In order to do so, we wrote a training app that randomly generates an event asking a volunteer to tap or swipe somewhere on the smartphone screen and constantly collecting the accelerometer and light sensor data, with each collection lasting for 3 seconds. We then recruited 13 volunteers to interact with our written training app on the two Android devices for data collection. The volunteers were asked to perform tapping or swiping randomly on the screen approximately once every 6 seconds so that we can have roughly half of the data containing human interactions. Finally, we collected 12,630 pieces of accelerometer and light sensor data, among which 6,541 (51.79\%) of them were collected while the volunteers were interacting with our app and the other 6,089 (48.21\%) were collected while the volunteers were not interacting with our app. 
+
+Next, we conducted cross-validation by randomly separating the 12,630 data into ten folds, with each containing 1,263 pieces of data; then we used nine folds for training and the left-over fold for testing. We repeated the cross-validation process for 100 times and the averaged accuracy of these testings is 91.21\%.
+
+Besides the evaluation based on cross-validation, we asked 3 volunteers to actually interact with the real smart home apps and launched the corresponding operations as listed in Table~\ref{tbl:oplist}. We collected the accelerometer and light sensor data at the same time, with each piece of data corresponding to 3 seconds. We obtained 4,128 pieces of data in total, among which 2,012 (48.74\%) were collected while the volunteers were actually interacting with the apps and triggering the target operations, and the other 2,116 pieces of data (51.26\%) were collected otherwise. Then we trained our ensembled machine learning model with all the 12,630 pieces of data obtained above and fed the 4,128 pieces of data for testing. Our model achieves an accuracy of 89.34\% (3,688 out of 4,128), with 4.77\% false positive rate (101 out of 2,116) and 16.8\% false negative rate (339 out of 2,012).
+
+\subsubsection{Effectiveness in Defending Against Attacks}
+In this subsection, we evaluate the effectiveness of our approach to protect our experimental real-world smart home system as well as the SmartApps of the Samsung SmartThings platform against the attacks presented in Section~.
+
+\textbf{Experiments on the Real-World Smart Home System.} 
+We launched each of the four attacks for each of the devices in the smart home system for 100 times. We also interacted with each smart home app and sent the corresponding operations for 100 times. Therefore, we conducted in total 3,500 trials among which 2,800 ($4\times 7\times 100$) are attack ones and 700 are legitimate ones. The results indicate that our approach successfully defended against 98.68\% of the attack trials (2,763 out of 2,800) and recognized 90.14\% of the legitimate ones (631 out of 700). Since roughly 10\% of the legitimate operations were classified as unauthorized ones, we added an additional step by implementing a UI activity in the user's smartphone, which allows a user to manually accept or deny an \textit{operation} if it is recognized as unauthorized by our approach.
+
+We also reconstructed Mirai, Satori, and IoT\_reaper based on the first and the second threat models and obtained 6 attacks in total. Then we launched each of the 6 attacks for 100 times yielding in total 600 attack trials. The results indicate that our approach successfully blocks all of the attack trials. Note that since the \textit{policies} would never allow an operation with malicious payloads, any attack from the future variants of Mirai can also be easily obstructed.
+
+\textbf{Experiments based on SmartApps.} 
+As mentioned earlier, we also used SmartApps to evaluate our CLAF realization against the open-port and overprivilege attacks. For the open-port problem, we created two attacks for each SmartApp based on the first and second threat models as mentioned above. Then we launched each attack for 20 times and obtained in total 5,480 trials ($137\times 2 \times 20$). The results reveal that our approach successfully defended against 96.99\% of all the attack trials (5,315 out of 5,480). For the overprivilege problem, we launched 68 overprivileged SmartApps one by one to get 68 attacks in total. The results indicate that our solution can defend against all overprivilege attacks since the \textit{policies} prohibit all overprivileged behaviors of the SmartApps. 
+
+\subsubsection{Overhead Evaluation}
+Computational overhead is one of the most important factors affecting user experiences and preferences, especially for smart home devices that are resource-constrained but are expected to respond to an operation instantly. Therefore, overhead evaluation is an indispensable process. In this subsection, we report the running time of our CLAF implementation. Note that we need to consider the attacks independently as different attacks involve different calculation tasks.
+
+\textbf{Attacks on the Real Smart Home System.} 
+We collected the running times of the 3,500 trials conducted for the evaluation of the effectiveness of defending against the four attacks in the real-world smart home system, and observed that the average time for the 700 trials is 0.2198 seconds for the first attack, 0.1505 seconds for the second attack, 0.1658 seconds for the third attack, and  0.4982 seconds for the fourth attack. The average overhead in time is 0.5213 seconds for the 700 legitimate human interaction trials. Figure~\ref{fig:overhead} reports the largest overhead of adopting our CLAF implementation for each smart home device recorded in all the trials. 
+
+\begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.5\textwidth]{overhead.png}
+        \caption{The largest overhead in time for each smart home device.}
+        \label{fig:overhead}
+\end{figure}
+
+Similarly, we collected the running times of the 600 attack trials to analyze the overheads of Mirai and its variants. As a result, the average overheads for Mirai, Satori, and IoT\_reaper are 0.4851 seconds, 0.4312 seconds, and 0.5201 seconds, respectively.
+
+\textbf{Attacks on SmartApps.} 
+For the open-port attacks, we collected the running times of the 5,480 trials and found that the average overheads for the first and second attack are 0.838 seconds and 0.801 seconds, respectively. For the overprivilege attacks, the average running time of defending against the 68 attacks are 0.7332 seconds. The reason of the higher averaged processing times for the experiments on SmartApps compared to those for the real-world smart home system lies in that SSL/TLS encryption/decryption and MITM hijacking need longer processing times, which are involved in the analysis on SmartApps.
+
+As one can see from the results, our CLAF implementation imposes a low overhead of less than 1 second in average. 
+
+
 %==========================================================================================================================
 \section{Conclusion and Future Work}\label{sec:conclusion}
-In this proposal, we mainly studied the security of Android smartphones from the perspective of system design flaw and from the perspective of side-channel information exploit. More specifically, we study the design flaw of Android Task Mechanism resulting in privilege leakage, and the public side-channel system states which leads to uncover of a user's social network identities. 
+In this dissertation, we mainly studied the security of Android smartphones from the perspective of system design flaw and from the perspective of side-channel information exploit. More specifically, we study the design flaw of Android Task Mechanism resulting in privilege leakage, and the public side-channel system states which leads to uncover of a user's social network identities. 
 
 Our future research focuses on studying security and privacy for other smart devices and their corresponding systems, especially smart home devices and smart home systems. We plan to excavate the security vulnerabilities and privacy concerns of current most popular smart home devices and smart home systems, and develop new attack vectors. Afterward, we plan to design defense mechanisms to guarantee the safety and privacy of these smart home devices and systems. 
 
