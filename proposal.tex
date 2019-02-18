@@ -25,12 +25,9 @@
 \usepackage{enumitem}
 \renewcommand{\thesection}{}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
-\usepackage{algorithmicx}
 \usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{algpascal}
-\usepackage{algc}
-\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 \usepackage{times}
 \usepackage{latexsym}
 \usepackage{graphicx}
@@ -2338,7 +2335,7 @@ We also tested our approach against the most rampant IoT-specific botnet virus, 
 \centering
 \caption{Summarized List of Operation Specifications.}
 \label{tbl:oplist}
-\resizebox{2\columnwidth}{!}{%
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
                                                                 & \begin{tabular}[c]{@{}c@{}}Google Home\\ Speaker\end{tabular}                              & \begin{tabular}[c]{@{}c@{}}WeMo Mini\\ Smart Plug\end{tabular} & \begin{tabular}[c]{@{}c@{}}Belkin Insight\\ Smart Plug\end{tabular}                   & \begin{tabular}[c]{@{}c@{}}Tuya Smart\\ Switch\end{tabular} & \begin{tabular}[c]{@{}c@{}}TP-LINK Smart\\ Light Bulb\end{tabular} & \begin{tabular}[c]{@{}c@{}}TP-LINK\\ Smart Switch\end{tabular} & \begin{tabular}[c]{@{}c@{}}Apple Home\\ Pod\end{tabular} \\ \hline \hline
@@ -2414,12 +2411,12 @@ To evaluate our algorithm {\bf Algorithm~\ref{alg:genevid}}, we set $n=3$, which
 \textbf{Accuracy of Analyzing the App States.} 
 To analyze the accuracy of the function \texttt{AnalyzeAppStates} of {\bf Algorithm~\ref{alg:alzapp}}, we wrote an automated program based on \texttt{ADB} that launches the seven target smart home apps as well as the corresponding operations shown in Table~\ref{tbl:oplist}, and an additional testing smart home app for Raspberry Pi. For each smart home app, we collected 4,000 pieces of \texttt{VSS} and \texttt{tcp\_snd} data lasted for 3 seconds for both Android smartphone devices (2,000 pieces of data for each device). In each of these 4,000 data pieces, 2,000 were collected at the times when the target app was not actively running and the other 2,000 were at the times when the target app was actively running and sent a target \textit{operation}. Therefore, we collected in total 32,000 pieces of \texttt{VSS} and \texttt{tcp\_snd} data (for eight devices). Then we fed these 32,000 pieces of data into  {\bf Algorithm~\ref{alg:alzapp}} and compared the output results with the ground truth. We achieved an overall accuracy of 99.58\% (31,866 out of 32,000 are accurately analyzed), with no false positives and a 0.84\% false negative rate (134 out of 16,000). The detailed results for each smart home app are illustrated in Figure~\ref{fig:appstate}. As one can see, our algorithm for analyzing the app states is highly accurate.
 
-\begin{figure}[!htb]
+\begin{figure*}[!htb]
         \centering
-        \includegraphics[width=0.5\textwidth]{appstate.png}
+        \includegraphics[width=0.9\textwidth]{appstate.png}
         \caption{The numbers and percentages of correctly analyzed app states by our algorithm.}
         \label{fig:appstate}
-\end{figure}
+\end{figure*}
 
 \textbf{Accuracy of Inferring Human Interactions.} 
 Since our algorithm for inferring human interactions detailed in Section~\ref{subsec:claf-impl}, i.e., {\bf Algorithm~\ref{alg:infint}}, relies heavily on machine learning, we need to collect ground truth data for training and testing in order to build the learning models. In order to do so, we wrote a training app that randomly generates an event asking a volunteer to tap or swipe somewhere on the smartphone screen and constantly collecting the accelerometer and light sensor data, with each collection lasting for 3 seconds. We then recruited 13 volunteers to interact with our written training app on the two Android devices for data collection. The volunteers were asked to perform tapping or swiping randomly on the screen approximately once every 6 seconds so that we can have roughly half of the data containing human interactions. Finally, we collected 12,630 pieces of accelerometer and light sensor data, among which 6,541 (51.79\%) of them were collected while the volunteers were interacting with our app and the other 6,089 (48.21\%) were collected while the volunteers were not interacting with our app. 
@@ -2445,12 +2442,12 @@ Computational overhead is one of the most important factors affecting user exper
 \textbf{Attacks on the Real Smart Home System.} 
 We collected the running times of the 3,500 trials conducted for the evaluation of the effectiveness of defending against the four attacks in the real-world smart home system, and observed that the average time for the 700 trials is 0.2198 seconds for the first attack, 0.1505 seconds for the second attack, 0.1658 seconds for the third attack, and  0.4982 seconds for the fourth attack. The average overhead in time is 0.5213 seconds for the 700 legitimate human interaction trials. Figure~\ref{fig:overhead} reports the largest overhead of adopting our CLAF implementation for each smart home device recorded in all the trials. 
 
-\begin{figure}[!htb]
+\begin{figure*}[!htb]
         \centering
-        \includegraphics[width=0.5\textwidth]{overhead.png}
+        \includegraphics[width=0.9\textwidth]{overhead.png}
         \caption{The largest overhead in time for each smart home device.}
         \label{fig:overhead}
-\end{figure}
+\end{figure*}
 
 Similarly, we collected the running times of the 600 attack trials to analyze the overheads of Mirai and its variants. As a result, the average overheads for Mirai, Satori, and IoT\_reaper are 0.4851 seconds, 0.4312 seconds, and 0.5201 seconds, respectively.
 
