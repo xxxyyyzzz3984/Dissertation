@@ -12,6 +12,6 @@
 \contentsline {figure}{\numberline {12}{\ignorespaces Distribution of the Matches\relax }}{63}{figure.caption.28}
 \contentsline {figure}{\numberline {13}{\ignorespaces A general smart home system model.\relax }}{69}{figure.caption.29}
 \contentsline {figure}{\numberline {14}{\ignorespaces Three examples.\relax }}{73}{figure.caption.30}
-\contentsline {figure}{\numberline {15}{\ignorespaces The configuration of our experimental smart home system. The two smartphones are the controllers on which the smart home apps running, and Raspberry Pi B serves as a compromised device (attacking source) in our experiment.\relax }}{87}{figure.caption.35}
+\contentsline {figure}{\numberline {15}{\ignorespaces The configuration of our experimental smart home system.\relax }}{87}{figure.caption.35}
 \contentsline {figure}{\numberline {16}{\ignorespaces The numbers and percentages of correctly analyzed app states by our algorithm.\relax }}{92}{figure.caption.36}
 \contentsline {figure}{\numberline {17}{\ignorespaces The largest overhead in time for each smart home device.\relax }}{95}{figure.caption.37}
