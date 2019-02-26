@@ -1,4 +1,4 @@
-PAPERNAME=proposal
+PAPERNAME=thesis
 TEXFILES =  *.tex *.bib
 
 $(PAPERNAME).pdf : $(TEXFILES)

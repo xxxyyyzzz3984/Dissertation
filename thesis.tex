@@ -181,7 +181,7 @@
        The Faculty of\\The School of Engineering and Applied Science\\ of The George
        Washington University\\ in partial satisfaction of the requirements\\ for the degree
        of Doctor of Philosophy\\[\baselineskip]
-       December 11, 2018\\[\baselineskip]
+       March 8, 2018\\[\baselineskip]
        Dissertation directed by\\[\baselineskip]
        Xiuzhen Cheng\\Professor of Computer Science
    \end{center}
@@ -212,9 +212,9 @@
 
    \newpage
       \section{Abstract}
-   The advent of smart devices, i.e. smartphones and smart home devices, have greatly revolutionized and modernize people's daily lives in every aspect. Yet, the security condition of the devices and their corresponding systems is concerning since traditional security measures fail to cope with them due to limitations of computation power and hardware/firmware heterogeneity. In this dissertation, we present our research on studying the security and privacy issues of smartphones and of smart home devices.
+   The advent of smart devices, i.e., smartphones and smart home devices, has greatly revolutionized and modernize people's daily lives in every aspect. Yet, the security condition of the devices and their corresponding systems is concerning since traditional security measures fail to cope with them due to limitations of computation power and hardware/firmware heterogeneity. In this dissertation, we present our research on studying the security and privacy issues of smartphones and of smart home devices.
    
-   Firstly, we study the OS security of Android devices. In order to facilitate apps to collaborate to finish complex jobs, Android allows isolated apps to communicate through explicit interfaces. However, the communication mechanisms often give additional privilege to apps, which can be exploited by attackers. The Android Task Structure is a widely-used mechanism to facilitate apps' collaboration. Recent research has identified attacks to the mechanism, allowing attackers to spoof UIs in Android. In this work, we present an analysis of the security of the Android task structure. In particular, we analyze the system/app conditions that can cause the task mechanism to leak privilege. Furthermore, we identify new end-to-end attacks that enable attackers to {\em actively} interfere with victim apps to steal sensitive information. Based on our findings, we also develop a task interference checking app for exploits to the Android task structure.
+   Firstly, we study the OS security of Android devices. In order to facilitate apps to collaborate to finish complex jobs, Android allows isolated apps to communicate through explicit interfaces. However, the communication mechanisms often give additional privilege to apps, which can be exploited by attackers. The Android Task Structure is a widely-used mechanism to facilitate apps' collaboration. Recent research has identified attacks to the mechanism, allowing attackers to spoof UIs in Android. In this work, we present an analysis of the security of the Android task structure. In particular, we analyze the system/app conditions that can cause the task mechanism to leak privilege. Furthermore, we identify new end-to-end attacks that enable attackers to {\em actively} interfere with victim apps to steal sensitive information. Based on our findings, we also develop a task interference checking app for exploits of the Android task structure.
    
     Secondly, we study how the side-channel information publicly available in Android devices can result in severe privacy leakage on social networks. Owing to the various features provided by mobile devices, a user's online social activities are tightly tied to his phone, and are conveniently, sometimes unnecessarily, available to social networks. In this work, we propose a novel attack architecture to show that attackers can infer a user's social network identities behind a mobile device through new dimensions. Specifically, we first developed a correlation between a user's device system states and the social network events, which leverage multiple mechanisms such as learning-based memory regression model, to infer the possible accounts of the user in the social network app. Then we exploited the social network to social network correlation, via which we correlated information across different social networks, to identify the accounts of the target user. We implemented and evaluated these attacks on three popular social networks, and the results corroborate the effectiveness of our design.
     
@@ -265,7 +265,7 @@ With the presence of the prevailing performance with respect to market sharing, 
 300,000 IoT smart devices in the first 20 hours~\cite{antonakakis2018mirai}.
 \end{itemize}
 
-Even though defending smart devices against malicious exploits and attacks is urgent and critical, securing them is more challenging than securing traditional computers not only because they are computationally limited to empower high-end firewalls, but are highly heterogeneous both on the hardware level and firmware level. Having observed the situation,  we mainly focus on identifying vulnerabilities, inventing attacks, and developing corresponding defensive mechanisms for smart devices. In this dissertation, we specifically target the security of smartphones and their corresponding systems. In the following contexts, we focus on two main directions of studying the security and privacy of smartphones, i.e., from the perspective of system design flaw and from the perspective of side-channel information exploit. For the system design flaw, we mainly present an OS-Level logic flaw existing in Android Task Mechanism that results in severe privilege leakage, through which we implemented four proof-of-concept attacks. Lastly, we developed an efficient scanner to help users to avoid the attacks. For the side-channel information exploit, we mainly present a novel attack vector which effectively associates the user's identity in social networks with the smartphone device using Android side-channel information. In addition, we also identify the security and privacy issues existing in a most typical smart home environment. We then propose a novel security framework for securing the smart home system from being affected by the most prevailing attacks in the real world.
+Even though defending smart devices against malicious exploits and attacks is urgent and critical, securing them is more challenging than securing traditional computers not only because they are computationally limited to empower high-end firewalls, but are highly heterogeneous both on the hardware level and firmware level. Having observed the situation,  we mainly focus on identifying vulnerabilities, inventing attacks, and developing corresponding defensive mechanisms for smart devices. In this dissertation, we specifically target the security of smartphones and their corresponding systems. In the following contexts, we focus on two main directions of studying the security and privacy of smartphones, i.e., from the perspective of system design flaw and from the perspective of side-channel information exploit. For the system design flaw, we mainly present an OS level logic flaw existing in Android Task Mechanism that results in severe privilege leakage, through which we implemented four proof-of-concept attacks. Lastly, we developed an efficient scanner to help users to avoid the attacks. For the side-channel information exploit, we mainly present a novel attack vector which effectively associates the user's identity in social networks with the smartphone device using Android side-channel information. In addition, we also identify the security and privacy issues existing in a most typical smart home environment. We then propose a novel security framework for securing the smart home system from being affected by the most prevailing attacks in the real world.
 
 \subsection{Exploiting Android Task Mechanism}
 The Android system's security is based on several layers of security
@@ -1976,7 +1976,7 @@ Samsung Galaxy S4            & 90.93\% & 85.87\%   & 98.93\% \\ \hline
 
 \begin{table*}[!htb]
 \centering
-\caption{Attack Results on Volunteers.}
+\caption{Attack Results on Volunteers}
 \label{tbl:volunteers}
 \resizebox{1.2\columnwidth}{!}{
 \hspace{-27ex}
@@ -2012,7 +2012,7 @@ For the study on celebrities, we collected tweets from 5 active Twitter celebrit
 
 \begin{table}[t]
 \centering
-\caption{Attack Results on Celebrities.}
+\caption{Attack Results on Celebrities}
 \label{tbl:celeb-eval}
 \small
 \begin{tabular}{|c|c|}
@@ -2105,7 +2105,7 @@ The router handles all network traffics, and all operations eventually need to g
 \begin{figure}[!htb]
         \centering
         \includegraphics[scale=0.3]{system.png}
-        \caption{A general smart home system model.}
+        \caption{A general Smart Home System Model}
         \label{fig:system}
 \end{figure}
 
@@ -2331,7 +2331,7 @@ We also tested our approach against the most rampant IoT-specific botnet virus, 
 
 \begin{table*}[!htb]
 \centering
-\caption{Summarized List of Operation Specifications.}
+\caption{Summarized List of Operation Specifications}
 \label{tbl:oplist}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -2479,5 +2479,5 @@ Our future research will focus more on studying security and privacy for other s
 
         \newpage
    \bibliographystyle{abbrv}
-   \bibliography{proposal}
+   \bibliography{thesis}
 \end{document} 
