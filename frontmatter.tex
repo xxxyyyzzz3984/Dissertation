@@ -1,0 +1,214 @@
+% !TEX root = ../thesis-sample.tex
+
+% --------- FRONT MATTER PAGES ---------------------
+% Title of the thesis
+\title{Security and Privacy of Smart Devices}
+
+% Author name
+\author{Yinhao Xiao}
+
+% Previous degrees
+\bsdepartment{Applied Mathematics}
+\bsschool{Guangdong University of Technology}
+\bsgrad{May 2012}
+
+\msdepartment{Mathematics}
+\msschool{The George Washington University}
+\msgrad{May 2014}
+
+\msdepartment{Computer Science}
+\msschool{The George Washington University}
+\msgrad{Dec 2015}
+
+\showmsdegree % you can show or hide the MS degree line 
+% \hidemsdegree
+
+% PhD degree commands
+% Committee
+\showcommitteepage % hide this page if you're doing a MS thesis
+%\hidecommitteepage 
+\committee{ %
+Xiuzhen Cheng, Professor of Computer Science,\\ 
+Dissertation Director\\ % remember to add a space between committee members
+
+Hyeong-Ah Choi, Professor of Computer Science, \\
+Committee Member
+
+Arkady Yerukhimovich, Assistant Professor of Computer Science, \\
+Committee Member
+
+Xiang Chen, Assistant Professor of Computer Engineering, \\
+Committee Member
+}
+
+% Chair must be entered separately for formatting reasons.
+\chair{Xiuzhen Cheng}
+\chairtitle{Professor of Computer Science}
+% Department
+\department{Computer Science}
+
+\phdgrad{May 19, 2019}
+\defensedate{March 8, 2019}
+% Year of completion for copyright page and perhaps other places
+\year=2019
+
+% Copyright page
+%\copyrightholder{Someone else}
+
+% Dedication
+\dedication{ %
+I dedicate my dissertation work to my family and many friends. A special
+feeling of gratitude to my loving parents, Zhilian Xiao and Liuyan Xiao whose
+words of encouragement and push for tenacity ring in my ears.
+
+ I also dedicate this dissertation to my dear academic advisor, Xiuzhen Cheng who has dedicated a significant portion of her time
+ guiding my research direction, inspiring my thoughts and ideas, and revising my academic papers.
+
+ Finally, I dedicate this work and give special thanks to my laboratory group members and friends who assisted me on accomplishing this 
+ dissertation. 
+}
+
+% Acknowledgments
+\acknowledgments{
+    I wish to thank my committee members who were more than generous with
+their expertise and precious time. A special thanks to Prof. Xiuzhen Cheng, my
+dissertation director for her countless hours of reflecting, reading, encouraging,
+and most of all patience throughout the entire process. Thank you Prof. Hyeong-Ah Choi, Prof. Arkady Yerukhimovich, and Prof. Xiang Chen for agreeing to serve on my committee.
+
+ I would like to acknowledge and thank my school division for allowing me to
+conduct my research and providing any assistance requested. Special thanks goes
+to the members of staff development and computer science department for their
+continued support.
+
+ Finally I would like to thank the beginning teachers, mentor-teachers and
+administrators in our school division that assisted me with this project. Their
+excitement and willingness to provide feedback made the completion of this
+research an enjoyable experience. 
+}
+
+% -----------------------------------------------------------------
+% Typically only one of Preface/Foreward/Prologue would be in your thesis.
+% To choose one simply delete the others and they will automatically dissappear
+
+% Preface
+%\preface{
+%    This is the preface. 
+%    It's another front matter page that offers additional detail into your work.
+%    Typically, only one (preface OR prologue OR foreword) is used. 
+%    You can remove the other sections by deleting them inside \texttt{tex/frontmatter.tex} or using the appropriate show or hide commands.
+%}
+
+%\prologue{
+%    This is the prologe. 
+%    It's another front matter page that offers additional detail into your work.
+%    Typically, only one (preface OR prologue OR foreword) is used. 
+%    You can remove the other sections by deleting them inside \texttt{tex/frontmatter.tex} or using the appropriate show or hide commands.
+%}
+%
+%\foreword[2]{
+%    This is the forword. 
+%    It's another front matter page that offers additional detail into your work.
+%    Typically, only one (preface OR prologue OR foreword) is used. 
+%    You can remove the other sections by deleting them inside \texttt{tex/frontmatter.tex} or using the appropriate show or hide commands.
+%}
+% ----------------------------------------------------------------------
+
+% commands to show or hide front matter pages
+
+\showcopyright
+\showabstract
+\showcommitteepage
+\showdedication
+\showacknowledgments
+%\showpreface
+%\showprologue
+%\showforeword
+
+% ------------ TABLE OF CONTENTS ----------------------
+% Commands to hide or show lists of figures, tables, etc.
+%\showlistoffigures
+%\showlistoftables
+%\hidenomenclature
+%
+%% --------- ACRONYMS and SYMBOLS ------------------------------
+%% TODO Deprecate the entire acronym package and switch to glossaries
+%
+%% You can either use the acronymn or glossaries package (both work)
+%% Definition of any abbreviations used.
+%%\abbreviations{
+%%    \acro{CRTBP}{Circular Restricted Three Body Problem}
+%%    \acro{NSA}{National Security Agency}
+%%    \acro{SSME}{Space Shuttle Main Engine}
+%%}
+%% call an abbreviation using \ac{abbrev}
+%
+%% symbols and acronyms only show up when used in the text
+%%\symbols{
+%%    \acro{J}{Moment of Inertia}
+%%}       
+%
+%% if you want acronymn (simpler) then change these to show
+%\hidelistofabbreviations
+%\hidelistofsymbols
+%
+%% if you want glossaries (more powerful) then leave above as hide
+%% GLOSSARIES package options - automatically turns off front pages from acronym package
+%
+%% acronymns and symbols are basically the same, but there are two provided 
+%% locations where they can show up
+%\setabbreviationstyle[acronym]{long-short}
+%\setabbreviationstyle[abbreviation]{long-short}
+%%\makeglossaries
+%% you can hide/show the glossaries page
+%\hideglossarieslistofabbreviations
+%\hideglossarieslistofsymbols
+%\showglossariesglossaryofterms
+%
+%% acronyms defined in glossaries
+%%\newabbreviation{crtbp}{CRTBP}{Circular Restricted Three Body Problem}
+%%\newabbreviation{lidar}{LIDAR}{Light Detection and Ranging}
+%%% defining abbreviations like this allows for autocompletion
+%%\newglossaryentry{filo}{
+%%    name={FILO},
+%%    type=\glsxtrabbrvtype,
+%%    description={first in last out},
+%%    first={first in last out (FILO)}
+%%}
+%%
+%%% glossary entries
+%%\newglossaryentry{linux}{
+%%    name=Linux,
+%%    description={is a generic term referring to the family of Unix-like computer operating systems that use the Linux kernel},
+%%    plural=Linuces
+%%}
+%%
+%%\newglossaryentry{matrix}{
+%%    name={matrix},
+%%    plural={matrices},
+%%    description={rectangular array of quanttities}
+%%}
+%%
+%%% symbols
+%%\newglossaryentry{M}{
+%%    type=symbols,
+%%    name={\ensuremath{M}},
+%%    sort=M,
+%%    description={a \gls{matrix}}
+%%}
+%%
+%%\newglossaryentry{F}{
+%%    type=symbols,
+%%    name={\ensuremath{F}},
+%%    sort=F,
+%%    description={External Force}
+%%}
+%% Some abstract text
+\abstract{
+The advent of smart devices, i.e., smartphones and smart home devices, has greatly revolutionized and modernize people's daily lives in every aspect. Yet, the security condition of the devices and their corresponding systems is concerning since traditional security measures fail to cope with them due to limitations of computation power and hardware/firmware heterogeneity. In this dissertation, we present our research on studying the security and privacy issues of smartphones and of smart home devices.
+   
+   Firstly, we study the OS security of Android devices. In order to facilitate apps to collaborate to finish complex jobs, Android allows isolated apps to communicate through explicit interfaces. However, the communication mechanisms often give additional privilege to apps, which can be exploited by attackers. The Android Task Structure is a widely-used mechanism to facilitate apps' collaboration. Recent research has identified attacks to the mechanism, allowing attackers to spoof UIs in Android. In this work, we present an analysis of the security of the Android task structure. In particular, we analyze the system/app conditions that can cause the task mechanism to leak privilege. Furthermore, we identify new end-to-end attacks that enable attackers to {\em actively} interfere with victim apps to steal sensitive information. Based on our findings, we also develop a task interference checking app for exploits of the Android task structure.
+   
+    Secondly, we study how the side-channel information publicly available in Android devices can result in severe privacy leakage on social networks. Owing to the various features provided by mobile devices, a user's online social activities are tightly tied to his phone, and are conveniently, sometimes unnecessarily, available to social networks. In this work, we propose a novel attack architecture to show that attackers can infer a user's social network identities behind a mobile device through new dimensions. Specifically, we first developed a correlation between a user's device system states and the social network events, which leverage multiple mechanisms such as learning-based memory regression model, to infer the possible accounts of the user in the social network app. Then we exploited the social network to social network correlation, via which we correlated information across different social networks, to identify the accounts of the target user. We implemented and evaluated these attacks on three popular social networks, and the results corroborate the effectiveness of our design.
+    
+    Thirdly, we explore the defense mechanisms on strengthening the smart home systems. Smart home systems have become more and more prevailing in recent years. On one hand, they greatly convenience our everyday lives; on the other hand, they suffer from the two notorious security problems, namely the open-port problem and the overprivilege problem, making their security situations extremely worrying and uncheerful. In this work, we proposed a novel credential-less authentication framework, CLAF, to effectively defend against the attacks resulted from these two security problems without the need for sensitive credentials. We further detailed an implementation of CLAF based on the side channels that are publicly available in Android smartphones serving as controllers of smart home systems and presented its workflow in protecting against various attacks caused by the open-port and overprivilege problems. Finally, we tested our CLAF implementation on a real-world smart home system and considered four threat models that cover basically all practical attacks, including Mirai and its variants. We also considered the effectiveness of our CLAF implementation on the SmartApps of the Samsung SmartThings platform, which suffers from the open-port and overprivilege problems. The evaluation results indicate that our CLAF realization can successfully defend against over 90\% attack trials with an average latency less than 1 second.
+}

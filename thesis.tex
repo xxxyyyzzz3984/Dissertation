@@ -202,7 +202,7 @@
    \hfill\begin{minipage}{5in}
    {Xiuzhen Cheng, Professor of Computer Science, Dissertation
        Director}\\[\baselineskip]
-  {Hyeong-Ah Choi, Professor of Computer Engineering, Committee Member}\\[\baselineskip]
+  {Hyeong-Ah Choi, Professor of Computer Science, Committee Member}\\[\baselineskip]
   {Arkady Yerukhimovich, Assistant Professor of Computer Science, Committee Member}\\[\baselineskip]
    {Xiang Chen, Assistant Professor of Computer Engineering, Committee Member}\\[\baselineskip]
 
@@ -212,6 +212,10 @@
 
    \newpage
       \section{Abstract}
+
+\centerline{\bf{Security and Privacy of Smart Devices}}
+\vspace*{10px}   
+      
    The advent of smart devices, i.e., smartphones and smart home devices, has greatly revolutionized and modernize people's daily lives in every aspect. Yet, the security condition of the devices and their corresponding systems is concerning since traditional security measures fail to cope with them due to limitations of computation power and hardware/firmware heterogeneity. In this dissertation, we present our research on studying the security and privacy issues of smartphones and of smart home devices.
    
    Firstly, we study the OS security of Android devices. In order to facilitate apps to collaborate to finish complex jobs, Android allows isolated apps to communicate through explicit interfaces. However, the communication mechanisms often give additional privilege to apps, which can be exploited by attackers. The Android Task Structure is a widely-used mechanism to facilitate apps' collaboration. Recent research has identified attacks to the mechanism, allowing attackers to spoof UIs in Android. In this work, we present an analysis of the security of the Android task structure. In particular, we analyze the system/app conditions that can cause the task mechanism to leak privilege. Furthermore, we identify new end-to-end attacks that enable attackers to {\em actively} interfere with victim apps to steal sensitive information. Based on our findings, we also develop a task interference checking app for exploits of the Android task structure.
@@ -1575,7 +1579,7 @@ attacks by enforcing the Android Window Integrity (AWI).
 
    \newpage
    \begin{singlespace}
-   \section{A Novel Attack Architecture for Device-Identity Association based on Android Side-Channels}
+   \section{Device-Identity Association Attack based on Android Side-Channels}
    \end{singlespace}
    \label{sec:dssnassociate}
    
@@ -1933,7 +1937,7 @@ As mentioned in Section~\ref{sec:dssnapproach}, we leveraged a 5-layer feedforwa
 
 \begin{table*}[t]
 \centering
-\caption{Averaged Inference Results on the Posting Timestamps and the Number of Characters in Tweeter}
+\caption{Averaged Inference Results in Twitter}
 \label{tbl:posttimeinf}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{|c|l|c|c|c|}
@@ -2105,7 +2109,7 @@ The router handles all network traffics, and all operations eventually need to g
 \begin{figure}[!htb]
         \centering
         \includegraphics[scale=0.3]{system.png}
-        \caption{A general Smart Home System Model}
+        \caption{A General Smart Home System Model}
         \label{fig:system}
 \end{figure}
 
@@ -2145,7 +2149,7 @@ If a fresh \textit{evidence} is available, whether obtained with the operation o
 \begin{figure*}[!htb]
         \centering
         \includegraphics[scale=0.25]{examples.png}
-        \caption{Three examples.}
+        \caption{Three Examples on Demonstrating CLAF}
         \label{fig:examples}
 \end{figure*}
 
@@ -2350,7 +2354,7 @@ SSL/TLS Encrypted                                               & No            
 \begin{figure}[!htb]
         \centering
         \includegraphics[width=0.5\textwidth]{smarthomesys.png}
-        \caption{The configuration of our experimental smart home system.}
+        \caption{The Configuration of Our Experimental Smart Home System.}
         \floatfoot{The two smartphones are the controllers on which the smart home apps running, and Raspberry Pi B serves as a compromised device (attacking source) in our experiment.}
         \label{fig:smarthomesys}
 \end{figure}
@@ -2413,7 +2417,7 @@ To analyze the accuracy of the function \texttt{AnalyzeAppStates} of {\bf Algori
 \begin{figure*}[!htb]
         \centering
         \includegraphics[width=0.9\textwidth]{appstate.png}
-        \caption{The numbers and percentages of correctly analyzed app states by our algorithm.}
+        \caption{The Numbers and Percentages of Correctly Analyzed App States}
         \label{fig:appstate}
 \end{figure*}
 
@@ -2444,7 +2448,7 @@ We collected the running times of the 3,500 trials conducted for the evaluation 
 \begin{figure*}[!htb]
         \centering
         \includegraphics[width=0.9\textwidth]{overhead.png}
-        \caption{The largest overhead in time for each smart home device.}
+        \caption{The Largest Overhead in Time for Each Smart Home Device}
         \label{fig:overhead}
 \end{figure*}
 
