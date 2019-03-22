@@ -1,6 +1,6 @@
-\contentsline {section}{\numberline {}Abstract}{iii}{section.1}
-\contentsline {section}{\hspace {1.5pt} List of Figures}{vii}{section*.2}
-\contentsline {section}{\hspace {1.5pt} List of Tables}{viii}{section*.4}
+\contentsline {section}{\numberline {}Abstract}{6}{section.1}
+\contentsline {section}{\hspace {1.5pt} List of Figures}{10}{section*.2}
+\contentsline {section}{\hspace {1.5pt} List of Tables}{11}{section*.4}
 \contentsline {section}{\numberline {}Introduction}{1}{section.2}
 \contentsline {subsection}{\numberline {1.1}Exploiting Android Task Mechanism}{2}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Device-Identity Association Attack Using Android Side-Channel Information}{4}{subsection.1.2}

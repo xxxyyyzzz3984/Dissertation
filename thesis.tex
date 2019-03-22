@@ -164,58 +164,27 @@
       {[}{{{\color{delim}{[}}}}{1}
       {]}{{{\color{delim}{]}}}}{1},
 }
-
 \usepackage[colorlinks=true,linkcolor=black,citecolor=red,urlcolor=red,plainpages=false,pdfpagelabels=true, bookmarks=false]{hyperref}
+\usepackage{pdfpages}
+
 \begin{document}
-   \author{{\normalsize Yinhao Xiao}}
-   \title{\Large{\bf Security and Privacy of Smart Devices} \\ \large Dissertation}
-   \date{}
-   \maketitle
-   \thispagestyle{empty}
-   \begin{center}
-       B.S. in Information and Computing Science,\\ May 2012, Guangdong University of Technology \\
-       M.A. in Mathematics,\\ May 2014, The George Washington University \\
-       M.S. in Computer Science,\\ Dec 2015, The George Washington University \\[\baselineskip]
-       
-       A Dissertation submitted to\\
-       The Faculty of\\The School of Engineering and Applied Science\\ of The George
-       Washington University\\ in partial satisfaction of the requirements\\ for the degree
-       of Doctor of Philosophy\\[\baselineskip]
-       March 8, 2018\\[\baselineskip]
-       Dissertation directed by\\[\baselineskip]
-       Xiuzhen Cheng\\Professor of Computer Science
-   \end{center}
-   % display page numbers in the footer and centered. Start with roman numerals %
-   \pagestyle{plain}
-   \setcounter{page}{1}
-   \pagenumbering{roman}
+
+
 
 
    \newpage
    \doublespacing
-   \begin{center}
-   {\Large{\bf Security and Privacy of Smart Devices}\\ \large Dissertation}\\[\baselineskip]
-   {\normalsize Yinhao Xiao}
-   \end{center}
-   \noindent Dissertation Committee:\\
-
-   \hfill\begin{minipage}{5in}
-   {Xiuzhen Cheng, Professor of Computer Science, Dissertation
-       Director}\\[\baselineskip]
-  {Hyeong-Ah Choi, Professor of Computer Science, Committee Member}\\[\baselineskip]
-  {Arkady Yerukhimovich, Assistant Professor of Computer Science, Committee Member}\\[\baselineskip]
-   {Xiang Chen, Assistant Professor of Computer Engineering, Committee Member}\\[\baselineskip]
 
    
-   
-   \end{minipage}
 
-   \newpage
-      \section{Abstract}
+	\includepdf[fitpaper=true, pages=-]{front.pdf}
+	\newpage
 
-\centerline{\bf{Security and Privacy of Smart Devices}}
+        \section{Abstract}
+
+      \centerline{\bf{Security and Privacy of Smart Devices}}
 \vspace*{10px}   
-      
+
    The advent of smart devices, i.e., smartphones and smart home devices, has greatly revolutionized and modernize people's daily lives in every aspect. Yet, the security condition of the devices and their corresponding systems is concerning since traditional security measures fail to cope with them due to limitations of computation power and hardware/firmware heterogeneity. In this dissertation, we present our research on studying the security and privacy issues of smartphones and of smart home devices.
    
    Firstly, we study the OS security of Android devices. In order to facilitate apps to collaborate to finish complex jobs, Android allows isolated apps to communicate through explicit interfaces. However, the communication mechanisms often give additional privilege to apps, which can be exploited by attackers. The Android Task Structure is a widely-used mechanism to facilitate apps' collaboration. Recent research has identified attacks to the mechanism, allowing attackers to spoof UIs in Android. In this work, we present an analysis of the security of the Android task structure. In particular, we analyze the system/app conditions that can cause the task mechanism to leak privilege. Furthermore, we identify new end-to-end attacks that enable attackers to {\em actively} interfere with victim apps to steal sensitive information. Based on our findings, we also develop a task interference checking app for exploits of the Android task structure.
