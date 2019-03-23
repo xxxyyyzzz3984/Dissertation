@@ -608,7 +608,7 @@ located at the third from left to right at the button bar followed by
 they do not reside in the same task. Note that according to our
 experiment, flags such as \texttt{FLAG\_ACTIVITY\_CLEAR\_TOP} and
 \texttt{FLAG\_ACTIVITY\_REORDER\_TO\_FRONT} do not pose a difference
-than the \texttt{SIGLE\_TOP} in our case. Therefore, we only include
+than the \texttt{SIGLE\_TOP} in our case. Therefore, we only include\\
 the \texttt{SINGLE\_TOP} flag in our Table~\ref{tbl:taskinterference}.
 
 \begin{table*}
@@ -800,11 +800,13 @@ the Android broadcast receiver~\cite{androidbroadcastreceiver}.
 In our analysis, we find that if two apps are in the same task, the
 UI-injection attack becomes easier.  The attacker can simply call the
 function \texttt{startActivity()} to achieve the same effect. Through
-understanding the Android SDK source code, \texttt{startActivity()}
-invokes \texttt{startActivityForResult()} with
-\texttt{requestCode=-1}. Later \\
+understanding the Android SDK source code,\\
+ \texttt{startActivity()}
+invokes \texttt{startActivityForResult()} with\\
+\texttt{requestCode=-1}. Later 
 \texttt{startActivityForResult()}
-invokes \texttt{execStartActivity()} in the Instrumentation class, a
+invokes\\
+ \texttt{execStartActivity()} in the Instrumentation class, a
 base class for implementing application instrumentation
 code~\cite{Instrumentation}. \\
  \texttt{execStartActivity()} then checks
@@ -817,7 +819,7 @@ target activity.
 Android does not allow a third-party app to terminate a running app
 unless they are in the same process. Although an app is not in the
 foreground, the Android system still allows any third-party apps to
-make calls to
+make calls to\\
 \texttt{killBackgroundProcesses()}~\cite{killBackgroundProcesses} to
 terminate any specific background app. There is no direct way to
 terminate a foreground-running activity.
@@ -984,7 +986,8 @@ user's protected resources hosted on Facebook servers.
 
 In Android, redirecting to the Facebook app is done by intent
 transition based on \texttt{startActivityForResult()} and
-\texttt{onActivityResult()}.  We implement an MITM attacking app whose
+\texttt{onActivityResult()}.  We implement an\\
+ MITM attacking app whose
 model runs in the following steps, shown in Figure~\ref{fig:mitm}.
 
 \textbf{(1)} It follows the first three steps in the UI Phishing
@@ -1124,7 +1127,7 @@ attack.
 \textbf{(2)} Once a user presses the camera button of Instagram as
 shown in Figure~\ref{fig:gallery}(a), the foreground \texttt{Activity}
 will change to
-\texttt{"com.instagram.android.creation.activity.\-MediaCaptureActivity"}. Therefore,
+\texttt{"com.instagram.android.creation.\-activity.MediaCaptureActivity"}. Therefore,
 Instead of detecting whether the foreground package has changed to
 another app, we zoom in the design to focus on changing of the
 foreground \texttt{Activity}.
@@ -1235,10 +1238,10 @@ employ the tapjacking in Gallery Stealing attack to cover the text to
 be ``Allow Facebook start accessing Internet?'' \\ \textbf{(3)} The
 attack starts capturing screens by calling
 \texttt{startActivityForResult()} which passes a screenshot as an
-intent from which we can extract an object of \texttt{MediaProjection}
+intent from which we can extract an object of\\ \texttt{MediaProjection}
 later, and finally use this \texttt{MediaProjection} object to pass
 the image to an object of \texttt{ImageReader} through its member
-function \texttt{createVirtualDisplay}. Since the screenshots are
+function\\ \texttt{createVirtualDisplay}. Since the screenshots are
 taken in the \texttt{RGBA\_8888} format while bitmap takes
 \texttt{ARGB\_8888}, we still need to do matrix transformations to
 get the image.
@@ -1434,15 +1437,15 @@ cannot be altered during runtime, e.g., \textit{taskAffinity} and
 Android SDK provides standard APIs to get an app's Manifest meta data
 without requiring any permission. Given a package name and a flag, one
 can retrieve an object of \texttt{PackageInfo} through the
-\texttt{PackageManager}. Here, we set the flag to
+\texttt{PackageManager}. Here, we set the flag to\\
 \texttt{GET\_ACTIVITIES} and we retrieve a list of
-\texttt{ActivityInfo} by fetching the attribute
+\texttt{ActivityInfo} by fetching the attribute\\
 \texttt{PackageInfo.activities}. ActivityInfo contains all the meta
 data described in the \texttt{Manifest} about every activity of a
-package, including those we care, e.g., \texttt{taskAffinity},
+package, including those we care, e.g.,\\ \texttt{taskAffinity},
 \texttt{FLAG\_ALLOW\_TASK\_REPARENTING}, \texttt{LAUNCH\_SINGLE\_TASK}
 and so on. The key APIs of getting \texttt{packageManager} and
-\texttt{packageInfo} are respectively \texttt{getPackageManager()} and
+\texttt{packageInfo} are respectively\\ \texttt{getPackageManager()} and
 \texttt{getPackageInfo()}.
 
 
@@ -1947,29 +1950,77 @@ Samsung Galaxy S4            & 90.93\% & 85.87\%   & 98.93\% \\ \hline
 \end{table}
 
 
-\begin{table*}[!htb]
+
+\begin{table}
 \centering
 \caption{Attack Results on Volunteers}
 \label{tbl:volunteers}
-\resizebox{1.2\columnwidth}{!}{
-\hspace{-27ex}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline \hline
-\multicolumn{13}{|c|}{Attack Results on Volunteers}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline \hline
-\multirow{2}{*}{\# of Timestamps} & \multicolumn{6}{c|}{\begin{tabular}[c]{@{}c@{}}Number of Potential \\ Twitter Identities\\ (Without Number-of-Character Filter)\end{tabular}} & \multicolumn{6}{c|}{\begin{tabular}[c]{@{}c@{}}Number of Potential \\ Twitter Identities\\ (With Number-of-Character Filter)\end{tabular}}                                                                                                                                                                                                                                                                                                                                                                                              \\ \cline{2-13} 
-                                  & Participant 1          & Participant 2          & Participant 3          & Participant 4          & Participant 5          & Average          & Participant 1                                                                        & Participant 2                                                                        & Participant 3                                                                        & Participant 4                                                                        & Participant 5                                                                        & Average                                                                              \\ \hline
-1                                 & 52,120                 & 61,810                 & 55,132                 & 51,205                 & 50,037                 & 54,060           & \begin{tabular}[c]{@{}c@{}}2,313 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}2,538 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}2,272 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}1,971 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}2,067 ($\epsilon=0.3$)\end{tabular} & \begin{tabular}[c]{@{}c@{}}2,232 ($\epsilon=0.3$)\end{tabular} \\ \hline
-2                                 & 369                    & 403                    & 331                    & 324                    & 347                    & 354              & \begin{tabular}[c]{@{}c@{}}21 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}19 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}22 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}12 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}10 ($\epsilon=0.3$)\end{tabular}       & \begin{tabular}[c]{@{}c@{}}16 ($\epsilon=0.3$)\end{tabular}       \\ \hline
-3                                 & 52                     & 61                     & 71                     & 43                     & 57                     & 56               & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}2 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
-4                                 & 11                     & 8                      & 13                     & 9                      & 7                      & 9                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$) \end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
-5                                 & 4                      & 3                      & 5                      & 4                      & 3                      & 3                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
-6                                 & 3                      & 2                      & 2                      & 1                      & 1                      & 1                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$))\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
-7                                 & 3                      & 2                      & 1                      & 1                      & 1                      & 1                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
-8                                 & 1                      & 2                      & 1                      & 1                      & 1                      & 1                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
-9                                 & 1                      & 1                      & 1                      & 1                      & 1                      & 1                & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         & \begin{tabular}[c]{@{}c@{}}1 ($\epsilon=0.3$)\end{tabular}         \\ \hline
+\resizebox{0.9\columnwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|c|} 
+\hline\hline
+\multicolumn{7}{|c|}{Attack Results on Volunteers}                                                                                                                                  \\ 
+\hline\hline
+\multirow{2}{*}{\# of Timestamps} & \multicolumn{6}{c|}{\begin{tabular}[c]{@{}c@{}}Number of Potential \\ Twitter Identities\\ (Without Number-of-Character Filter) \end{tabular}}  \\ 
+\cline{2-7}
+                                  & Participant 1 & Participant 2 & Participant 3 & Participant 4 & Participant 5 & Average                                                         \\ 
+\hline
+1                                 & 52,120        & 61,810        & 55,132        & 51,205        & 50,037        & 54,060                                                          \\ 
+\hline
+2                                 & 369           & 403           & 331           & 324           & 347           & 354                                                             \\ 
+\hline
+3                                 & 52            & 61            & 71            & 43            & 57            & 56                                                              \\ 
+\hline
+4                                 & 11            & 8             & 13            & 9             & 7             & 9                                                               \\ 
+\hline
+5                                 & 4             & 3             & 5             & 4             & 3             & 3                                                               \\ 
+\hline
+6                                 & 3             & 2             & 2             & 1             & 1             & 1                                                               \\ 
+\hline
+7                                 & 3             & 2             & 1             & 1             & 1             & 1                                                               \\ 
+\hline
+8                                 & 1             & 2             & 1             & 1             & 1             & 1                                                               \\ 
+\hline
+9                                 & 1             & 1             & 1             & 1             & 1             & 1                                                               \\
+\hline
 \end{tabular}
 }
-\end{table*}
+\end{table}
+
+
+\begin{table}
+\centering
+\caption{Attack Results on Volunteers (Continued)}
+\label{tbl:volunteers2}
+\resizebox{0.9\columnwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|c|} 
+\hline\hline
+\multicolumn{7}{|c|}{Attack Results on Volunteers}                                                                                                                                             \\ 
+\hline\hline
+\multirow{2}{*}{\# of Timestamps} & \multicolumn{6}{c|}{\begin{tabular}[c]{@{}c@{}}Number of Potential \\ Twitter Identities\\ (With Number-of-Character Filter) \end{tabular}}                \\ 
+\cline{2-7}
+                                  & Participant 1           & Participant 2           & Participant 3           & Participant 4           & Participant 5           & Average                  \\ 
+\hline
+1                                 & 2,313 ($\epsilon=0.3$)  & 2,538 ($\epsilon=0.3$)  & 2,272 ($\epsilon=0.3$)  & 1,971 ($\epsilon=0.3$)  & 2,067 ($\epsilon=0.3$)  & 2,232 ($\epsilon=0.3$)   \\ 
+\hline
+2                                 & 21 ($\epsilon=0.3$)     & 19 ($\epsilon=0.3$)     & 22 ($\epsilon=0.3$)     & 12 ($\epsilon=0.3$)     & 10 ($\epsilon=0.3$)     & 16 ($\epsilon=0.3$)      \\ 
+\hline
+3                                 & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 2 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)       \\ 
+\hline
+4                                 & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)       \\ 
+\hline
+5                                 & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)       \\ 
+\hline
+6                                 & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$))     & 1 ($\epsilon=0.3$)       \\ 
+\hline
+7                                 & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)       \\ 
+\hline
+8                                 & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)       \\ 
+\hline
+9                                 & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)      & 1 ($\epsilon=0.3$)       \\
+\hline
+\end{tabular}
+}
+\end{table}
 
 \textbf{Inference of the Number of Characters in a Tweet}
 
