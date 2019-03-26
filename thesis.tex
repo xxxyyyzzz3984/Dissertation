@@ -14,6 +14,7 @@
 \newtocstyle[standard][leaders]{mytocstyle}{\settocfeature[1]{entryhook}{\normalfont\bfseries}}
 \usepackage[capposition=top]{floatrow}
 \usepackage{listings}
+\usepackage{textcomp}
 \usepackage{cite}
 \usepackage{esvect}
 \usepackage{footnote}
@@ -168,18 +169,145 @@
 \usepackage{pdfpages}
 
 \begin{document}
+\pagenumbering{gobble}
+\singlespacing
+~\\
+~\\
+~\\
+~\\
+~\\
+\centerline{\bf{Security and Privacy of Smart Devices}}
+~\\
+~\\
+~\\
+\centerline{by Yinhao Xiao}
+~\\
+~\\
+~\\
+\centerline{B.S. in Applied Mathematics, May 2012, Guangdong University of Technology}
 
+\centerline{M.S. in Mathematics, May 2014, The George Washington University}
 
+\centerline{M.S. in Computer Science, Jan 2016, The George Washington University}
+~\\
+~\\
+~\\
+\centerline{A Dissertation submitted to}
+~\\
+~\\
+~\\
+\centerline{The Faculty of}
 
+\centerline{The School of Engineering and Applied Science}
 
+\centerline{of The George Washington University}
+
+\centerline{in partial satisfaction of the requirements}
+
+\centerline{for the degree of Doctor of Philosophy}
+~\\
+~\\
+~\\
+\centerline{May 19, 2019}
+~\\
+~\\
+~\\
+\centerline{Dissertation directed by}
+~\\
+~\\
+\centerline{Xiuzhen Cheng}
+\centerline{Professor of Computer Science}
+
+	
+	
    \newpage
    \doublespacing
+   \pagenumbering{roman}
+	\setcounter{page}{2}
+\noindent The School of Engineering and Applied Science of The George Washington University
+certifies that Yinhao Xiao has passed the Final Examination for the degree of Doctor of
+Philosophy as of March 8, 2019. This is the final and approved form of the dissertation.
 
-   
+~\\
+~\\
+\centerline{\bf{Security and Privacy of Smart Devices}}
 
-	\includepdf[fitpaper=true, pages=-]{front.pdf}
+\centerline{Yinhao Xiao}
+
+\vspace*{50px}
+
+Dissertation Research Committee:
+   \singlespacing
+\hspace{50px} Xiuzhen Cheng, Professor of Computer Science,
+Dissertation Director
+
+\vspace*{20px}
+
+\hspace{50px} Hyeong-Ah Choi, Professor of Computer Science,
+Committee Member
+
+\vspace*{20px}
+
+\hspace{50px} Arkady Yerukhimovich, Assistant Professor of Computer Science,
+
+\hspace{50px} Committee Member
+
+\vspace*{20px}
+
+\hspace{50px} Xiang Chen, Assistant Professor of Computer Engineering,
+Committee
+
+\hspace{50px} Member
+
 	\newpage
+   \singlespacing
+%copyright
+\vspace*{220px}% * is needed here
 
+\hspace{120px}
+\textcopyright  ~Copyright 2019 by Yinhao Xiao
+
+
+
+\hspace{156px}
+All rights reserved
+
+
+
+\newpage
+\doublespacing
+\section{Dedication}
+~\\
+I dedicate my dissertation work to my family and many friends. A special feeling of
+gratitude to my loving parents, Zhilian Xiao and Liuyan Xiao whose words of encouragement
+and push for tenacity ring in my ears.
+
+I also dedicate this dissertation to my dear academic advisor, Xiuzhen Cheng who has
+dedicated a significant portion of her time guiding my research direction, inspiring my
+thoughts and ideas, and revising my academic papers.
+
+Finally, I dedicate this work and give special thanks to my laboratory group members
+and friends who assisted me on accomplishing this dissertation.
+
+\newpage
+\section{Acknowledgments}
+~\\
+I wish to thank my committee members who were more than generous with their expertise
+and precious time. A special thanks to Prof. Xiuzhen Cheng, my dissertation director for
+her countless hours of reflecting, reading, encouraging, and most of all patience throughout
+the entire process. Thank you Prof. Hyeong-Ah Choi, Prof. Arkady Yerukhimovich, and
+Prof. Xiang Chen for agreeing to serve on my committee.
+
+I would like to acknowledge and thank my school division for allowing me to conduct
+my research and providing any assistance requested. Special thanks goes to the members of
+staff development and computer science department for their continued support.
+
+Finally I would like to thank the beginning teachers, mentor-teachers and administrators
+in our school division that assisted me with this project. Their excitement and willingness to
+provide feedback made the completion of this research an enjoyable experience.
+
+
+\newpage
         \section{Abstract}
 
       \centerline{\bf{Security and Privacy of Smart Devices}}
@@ -196,7 +324,7 @@
    
       \newpage
 
-   \newgeometry{top=1in, bottom=1in, left=1.125in, right=1.125in}
+   \newgeometry{top=1in, bottom=1in}
    \tableofcontents
    \restoregeometry
    \newpage
@@ -292,7 +420,7 @@ identify the risks related to Android tasks.
 
 The details of this work are presented in Section~\ref{sec:atmtitle}. 
 
-\subsection{Device-Identity Association Attack Using Android Side-Channel Information}
+\subsection{Device-Identity Association Attack}
 Online social networks such as Twitter and Flickr revolutionize the ways people interact with each other. More and more users begin to access social networks through mobile devices, making it completely possible to de-anonymize a target individual based on the side-channel information from his mobile device due to the rich features generated by the user's device while operating on social network apps. We call this kind of attack \emph{device-identity association}. Though it is relatively difficult for an attacker to trick users into installing malware with strong permissions, recent research shows that public information obtained from the Android system without permission can be used to link to a user's identity \cite{zhou2013identity}. Nevertheless, the attack method proposed in \cite{zhou2013identity} by observing the fixed TCP payload sequence pattern is no longer effective due to the recent updates of the social network apps. We manually monitored the Twitter app's TCP sequence while tweeting and found that the sequence was irregular and noisy. Then we used Frida, an injection framework~\cite{frida}, to trace the function calls of the Twitter app, and found that the root cause lies in that the Twitter app no longer handles each tweeting event in a separate TLS session (separate calls to the \texttt{url.openConnection()} function), but rather combining them into one TLS session (only one call to the \texttt{url.openConnection()} function).
 
 We also observed that the attack based solely on the mobile device side-channels faces challenges due to limited information from one social network app. Nevertheless, in practice, the majority of social network users access their accounts very infrequently, according to our study on 500,008 Twitter accounts); and a user typically has accounts in different social networks such as Twitter, Flickr, and Instagram; furthermore, the social network accounts of the same user are often highly similar/correlated in their user profiles, e.g., user name, picture, and locations. Such facts reveal a high potential of device-identity association based on account correlations. 
@@ -432,7 +560,7 @@ the memory data of an app, which are listed below:
   process. These commands also use information from the \texttt{/proc}
   file system.
 \item In some devices, \texttt{/system/xbin/procrank} is provided.
-  The command \texttt{procrank} yields all four types of memory
+  The command\\ \texttt{procrank} yields all four types of memory
   information for all processes in real time.
 \end{itemize}
 
@@ -488,7 +616,7 @@ One can see from the above studies that the two security problems have a broad i
 
    \newpage
    \begin{singlespace}
-   \section{Privilege Leakage and Information Stealing through the Android Task Mechanism}
+   \section{Privilege Leakage through the Android Task Mechanism}
    \end{singlespace}
     \label{sec:atmtitle}
 
@@ -2094,7 +2222,7 @@ Many of these attacks mainly de-anonymize users based on their social relationsh
 
    \newpage
    \begin{singlespace}
-   \section{CLAF: A Credential-Less Authentication Framework for Smart Home Systems}
+   \section{CLAF: A Credential-Less Authentication Framework}
    \end{singlespace}
    \label{sec:claf}
    
